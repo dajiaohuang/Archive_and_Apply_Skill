@@ -1,6 +1,6 @@
 ---
 name: experience-library-maintainer
-description: Maintain and extend the personal experience-library workflow used to turn source experience notes into resume, interview, and company-specific application materials. Use when working in an experience archive repo with folders like internships/, projects/, publications/, cv/, and interview/, especially for tasks such as adding or updating source entries, syncing derivative resume files, generating or revising interview talking points, creating company-specific mock interview packs, or keeping README/index files aligned with the current workflow and file layout.
+description: Maintain and extend the personal experience-library workflow used to turn source experience notes into resume, interview, and company-specific application materials. Use when working in an experience archive repo with folders like internships/, projects/, publications/, cv/, and interview/, especially for tasks such as adding or updating source entries, syncing derivative resume files, generating or revising interview talking points, creating company-specific interview prep packs, or keeping README/index files aligned with the current workflow and file layout.
 ---
 
 # Experience Library Maintainer
@@ -16,7 +16,7 @@ Maintain the repo as a source-first career-materials system: update detailed sou
 - If the user wants speaking materials:
   Update `interview/` artifacts, not just `cv/`.
 - If the user wants company-specific prep:
-  Create or update a focused pack under a company folder such as `interview/binance/`.
+  Create or update a focused pack under a company folder such as `interview/<company>/`.
 - If the user mentions README, AGENTS, or repo instructions:
   Sync only after checking the current filesystem and current workflow outputs.
 
@@ -29,7 +29,7 @@ Read [references/file-map.md](references/file-map.md) at the start of non-trivia
 - Prefer updating existing artifacts over creating parallel duplicates.
 - When interview materials exist in both generic and company-specific form, keep:
   - generic material in `interview/interview.md`
-  - company-specific material in subfolders like `interview/binance/`
+  - company-specific material in subfolders like `interview/<company>/`
 - If docs mention files that no longer exist, verify against the filesystem before propagating the stale reference.
 
 ## Standard Workflow
@@ -73,7 +73,7 @@ Keep the entry bank opinionated:
 Use:
 
 - `interview/interview.md` for reusable project/experience introductions and topic prep
-- company folders such as `interview/binance/` for tailored mocks, domain notes, and closing questions
+- company folders such as `interview/<company>/` for tailored mocks, domain notes, and closing questions
 
 When adding interview material:
 

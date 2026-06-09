@@ -26,12 +26,6 @@ These hold detailed factual material and should be updated first when experience
 - `interview/interview.md` for general reusable speaking materials
 - `interview/<company>/` for company-specific prep
 
-Current known company-specific pattern:
-
-- `interview/binance/crypto.md`
-- `interview/binance/mock.md`
-- `interview/binance/my-q.md`
-
 ## Maintenance conventions
 
 - Keep Chinese as the default for repo-authored archival and interview notes unless the artifact is explicitly English or bilingual.

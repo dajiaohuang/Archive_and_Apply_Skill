@@ -13,7 +13,7 @@ This skill was designed around a real workflow with folders such as:
 The core idea is simple:
 
 1. Keep detailed source experience notes as the factual ground truth.
-2. Derive resume bullets, interview scripts, and company-specific mocks from those source files.
+2. Derive resume bullets, interview scripts, and company-specific prep materials from those source files.
 3. Keep the whole repo consistent as the workflow evolves.
 
 ## What the Skill Does
@@ -76,7 +76,7 @@ Typical requests:
 
 - “Add a new internship and sync the resume bullets.”
 - “Update my project facts, then revise the interview introduction.”
-- “Create a Binance-specific mock interview pack based on this JD.”
+- “Create a company-specific mock interview pack based on this JD.”
 - “Fix stale README references after I changed the interview file layout.”
 
 ## Workflow Philosophy
@@ -100,7 +100,7 @@ The skill assumes and encourages these conventions:
 
 - source facts live in `internships/`, `projects/`, `publications/`
 - generic interview prep lives in `interview/interview.md`
-- company-specific prep lives in subfolders such as `interview/binance/`
+- company-specific prep lives in subfolders such as `interview/<company>/`
 - resume selection and wording are maintained through `cv/CV_ENTRY_BANK.md`
 
 ## My Actual Multi-Agent Workflow
@@ -183,7 +183,7 @@ This skill encodes those decisions.
 - Maintain a long-term experience archive for internships, projects, and publications.
 - Turn source notes into a curated resume entry bank.
 - Keep interview scripts aligned with updated project facts.
-- Build tailored company-specific mock packs, such as Binance-focused prep.
+- Build tailored company-specific mock packs for specific employers or roles.
 - Migrate the workflow across Codex, Claude Code, and OpenClaw/Hermes-style agent setups without losing artifact discipline.
 
 ## License
