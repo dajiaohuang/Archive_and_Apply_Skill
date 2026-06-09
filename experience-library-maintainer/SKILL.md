@@ -17,7 +17,7 @@ Bootstrap or maintain an experience-library repo as a source-first career-materi
 ## Workflow Decision Tree
 
 - If the user wants to create a new experience library:
-  Scaffold the repo at the chosen location using `assets/lib-scaffold/`, copy in `TEMPLATE.md`, TeX templates, and TeX check scripts.
+  Scaffold the repo at the chosen location using `assets/lib-scaffold/`, copy in the correct Chinese or English scaffold files, source-entry template, TeX templates, and TeX check scripts.
 - If the user gives a directory, repo, or raw material folder and wants entries created:
   Explore the provided material, classify content into `experiences/`, `projects/`, or `publications/`, then create or strengthen source entries.
 - If the user changes the facts of an experience:
@@ -39,6 +39,9 @@ Read [references/role-cv-audit.md](references/role-cv-audit.md) when the user wa
 
 - Treat source experience files as the factual ground truth.
 - Preserve Chinese in repo-authored content unless the target artifact is explicitly English or bilingual.
+- If the user wants the whole library in Chinese, use Chinese templates consistently for source entries, CV entry files, and interview files.
+- If the user wants the whole library in English, use English templates consistently for source entries, CV entry files, and interview files.
+- If the user does not specify a language, follow the existing language of the target repo or target folder.
 - Prefer updating existing artifacts over creating parallel duplicates.
 - After every meaningful milestone, explicitly offer 2 to 4 concrete next-step options instead of ending with status only.
 - Present next-step menus as multi-select by default: the user may choose one or more follow-up actions unless there is a true dependency that forces sequencing.
@@ -89,6 +92,13 @@ When the user wants to create an experience library at a chosen location:
    - TeX check scripts from `scripts/`
 4. Make sure the repo is immediately usable for source entries, CV generation, and interview prep.
 
+When bootstrapping language-sensitive files:
+
+- choose Chinese or English scaffold docs for root `README.md`, root `AGENTS.md`, `cv/README.md`, `cv/templates/README.md`, and `interview/README.md`
+- choose `TEMPLATE.cn.md` or `TEMPLATE.en.md` for the root source-entry template
+- choose Chinese or English `CV_ENTRY_BANK` / `CV_ENTRY_AUDIT` templates
+- choose Chinese or English interview templates
+
 When bootstrapping:
 
 - prefer `experiences/` over `internships/` for new repos
@@ -108,7 +118,7 @@ When experience facts, scope, metrics, responsibilities, or technical details ch
 
 When creating a brand-new source entry:
 
-- start from `assets/source-templates/TEMPLATE.md`
+- start from `assets/source-templates/TEMPLATE.cn.md` or `assets/source-templates/TEMPLATE.en.md`
 - adapt sections by entry type instead of writing from a blank file
 
 When the user provides a directory, repo, or mixed material dump:

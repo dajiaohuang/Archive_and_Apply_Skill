@@ -48,6 +48,7 @@ It also works when the repo does not exist yet and must be scaffolded from zero.
 ```text
 experience-library-maintainer-skill-repo/
 |-- README.md
+|-- README-cn.md
 |-- LICENSE
 `-- experience-library-maintainer/
     |-- SKILL.md
@@ -61,9 +62,16 @@ experience-library-maintainer-skill-repo/
     |   |   `-- interview/
     |   |-- cv-templates/
     |   |   |-- CV_ENTRY_AUDIT.md
-    |   |   `-- CV_ENTRY_BANK.md
+    |   |   |-- CV_ENTRY_AUDIT.cn.md
+    |   |   |-- CV_ENTRY_AUDIT.en.md
+    |   |   |-- CV_ENTRY_BANK.md
+    |   |   |-- CV_ENTRY_BANK.cn.md
+    |   |   `-- CV_ENTRY_BANK.en.md
+    |   |-- interview-templates/
     |   |-- source-templates/
-    |   |   `-- TEMPLATE.md
+    |   |   |-- TEMPLATE.md
+    |   |   |-- TEMPLATE.cn.md
+    |   |   `-- TEMPLATE.en.md
     |   `-- tex-templates/
     |-- scripts/
     |   |-- check_tex_pages.py
@@ -131,7 +139,7 @@ This avoids common failure modes in job-search repos:
 The skill assumes and encourages these conventions:
 
 - source facts live in `experiences/` or legacy `internships/`, `projects/`, `publications/`
-- new source entries can start from a reusable `TEMPLATE.md` bundled with the skill
+- new source entries can start from reusable Chinese or English templates bundled with the skill
 - generic interview prep lives in `interview/interview.md`
 - company-specific prep lives in subfolders such as `interview/<company>/`
 - company-specific directories should usually save the JD first, then generate `mock.md`
@@ -212,9 +220,11 @@ In other words, OpenClaw / Hermes can be great for orchestration, planning, and 
 - `experience-library-maintainer/assets/lib-scaffold/`
   Starter files and folders for creating a new experience-library repo at a chosen path.
 - `experience-library-maintainer/assets/cv-templates/`
-  Reusable templates for `CV_ENTRY_BANK.md` and `CV_ENTRY_AUDIT.md`.
+  Reusable Chinese and English templates for `CV_ENTRY_BANK.md` and `CV_ENTRY_AUDIT.md`.
+- `experience-library-maintainer/assets/interview-templates/`
+  Reusable Chinese and English templates for `interview.md`, `jd.md`, `mock.md`, and `my-q.md`.
 - `experience-library-maintainer/assets/source-templates/TEMPLATE.md`
-  A reusable source-entry template distilled from a real experience-library repo.
+  Reusable source-entry templates in Chinese and English, plus a legacy default `TEMPLATE.md`.
 - `experience-library-maintainer/assets/tex-templates/`
   Canonical TeX resume templates copied from a real experience-library repo.
 - `experience-library-maintainer/scripts/detect_tex_dependencies.py`

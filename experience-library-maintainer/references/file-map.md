@@ -18,6 +18,8 @@ When creating a new library from scratch, prefer this base structure:
 - root `TEMPLATE.md`
 - root `.gitignore`
 
+When the user prefers a language-specific library, choose Chinese or English scaffold files and copy them into these canonical names.
+
 ## Source-of-truth layers
 
 ### Source experiences
@@ -29,7 +31,8 @@ When creating a new library from scratch, prefer this base structure:
 
 When creating a new source entry from scratch, start from:
 
-- `assets/source-templates/TEMPLATE.md` inside the skill
+- `assets/source-templates/TEMPLATE.cn.md` inside the skill for Chinese libraries
+- `assets/source-templates/TEMPLATE.en.md` inside the skill for English libraries
 
 These hold detailed factual material and should be updated first when experience content changes.
 
