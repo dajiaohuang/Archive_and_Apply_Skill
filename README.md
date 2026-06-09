@@ -21,6 +21,7 @@ The core idea is simple:
 The skill helps an agent:
 
 - update source experience entries before touching derived materials
+- start from a reusable source-entry template instead of drafting from scratch
 - maintain an opinionated resume entry bank
 - sync Chinese and English resume variants
 - maintain canonical TeX resume templates
@@ -45,6 +46,13 @@ experience-library-maintainer-skill-repo/
     ├── SKILL.md
     ├── agents/
     │   └── openai.yaml
+    ├── assets/
+    │   ├── source-templates/
+    │   │   └── TEMPLATE.md
+    │   └── tex-templates/
+    ├── scripts/
+    │   ├── check_tex_pages.py
+    │   └── detect_tex_dependencies.py
     └── references/
         └── file-map.md
 ```
@@ -103,6 +111,7 @@ This avoids a common failure mode in job-search repos:
 The skill assumes and encourages these conventions:
 
 - source facts live in `experiences/` or legacy `internships/`, `projects/`, `publications/`
+- new source entries can start from a reusable `TEMPLATE.md` bundled with the skill
 - generic interview prep lives in `interview/interview.md`
 - company-specific prep lives in subfolders such as `interview/<company>/`
 - resume selection and wording are maintained through `cv/CV_ENTRY_BANK.md`
@@ -184,6 +193,8 @@ This skill encodes those decisions.
   Repo-specific file roles, update order, and stale-doc signals.
 - `experience-library-maintainer/assets/tex-templates/`
   Canonical TeX resume templates copied from a real experience-library repo.
+- `experience-library-maintainer/assets/source-templates/TEMPLATE.md`
+  A reusable source-entry template distilled from a real experience-library repo.
 - `experience-library-maintainer/scripts/detect_tex_dependencies.py`
   Detects LaTeX packages, included files, and local compile tools.
 - `experience-library-maintainer/scripts/check_tex_pages.py`

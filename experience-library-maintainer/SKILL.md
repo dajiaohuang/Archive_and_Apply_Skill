@@ -52,6 +52,11 @@ When experience facts, scope, metrics, responsibilities, or technical details ch
 - update the source entry first
 - then update resume/interview derivatives
 
+When creating a brand-new source entry:
+
+- start from `assets/source-templates/TEMPLATE.md`
+- adapt sections by entry type instead of writing from a blank file
+
 Do not let `cv/` or `interview/` contain stronger claims than the source files unless the user explicitly wants speculative drafting.
 
 ### 3. Sync Resume Artifacts

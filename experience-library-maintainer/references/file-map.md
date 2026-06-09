@@ -11,6 +11,10 @@ Use this reference when the repo appears to be an experience archive that feeds 
 - `projects/`
 - `publications/`
 
+When creating a new source entry from scratch, start from:
+
+- `assets/source-templates/TEMPLATE.md` inside the skill
+
 These hold detailed factual material and should be updated first when experience content changes.
 
 ### Resume derivatives
