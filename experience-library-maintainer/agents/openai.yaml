@@ -1,0 +1,4 @@
+interface:
+  display_name: "Experience Library"
+  short_description: "Maintain resume and interview materials"
+  default_prompt: "Use $experience-library-maintainer to update my experience library, resume materials, and interview docs consistently."
