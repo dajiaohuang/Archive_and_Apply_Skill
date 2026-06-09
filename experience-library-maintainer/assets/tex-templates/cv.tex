@@ -1,5 +1,5 @@
 %----------------------------------------------------------------------------------------
-% Agent / LLM internship CV
+% Generic two-page English CV template
 %----------------------------------------------------------------------------------------
 \documentclass[a4paper,11pt]{extarticle}
 
@@ -42,71 +42,75 @@
 \pagestyle{empty}
 
 \begin{center}
-  {\LARGE\bfseries Shuwen Wu} \\[4pt]
+  {\LARGE\bfseries Candidate Name} \\[4pt]
   {\small
-    Singapore \ $|$ \
-    \href{https://github.com/dajiaohuang}{\faGithub\ dajiaohuang} \ $|$ \
-    \href{mailto:mikewushuwen@gmail.com}{\faEnvelope\ mikewushuwen@gmail.com} \ $|$ \
-    \href{tel:+65 82737235}{\faMobile\ +65 82737235}
+    City, Country \ $|$ \
+    \href{https://github.com/your-handle}{\faGithub\ your-handle} \ $|$ \
+    \href{mailto:you@example.com}{\faEnvelope\ you@example.com} \ $|$ \
+    \href{https://www.linkedin.com/in/your-handle}{\faLinkedin\ your-linkedin}
   }\\[-1pt]
-  % {\small Target: Agent / LLM / ML Engineering Internship, Singapore or Remote}
 \end{center}
 
 \section{Education}
-\textbf{National University of Singapore} \hfill \textit{2025 -- Present}\\
-M.Sc., Data Science \& Machine Learning
+\textbf{University Name} \hfill \textit{2023 -- 2025}\\
+M.Sc., Program Name
 
-\textbf{Shanghai Jiao Tong University} \hfill \textit{2021 -- 2025}\\
-B.Eng., Information Security, IEEE Honor Class \hfill GPA: 85.5 / 100
+\textbf{University Name} \hfill \textit{2019 -- 2023}\\
+B.Eng., Program Name \hfill GPA: 3.8 / 4.0
 
 \section{Experience}
-\datedentry{China Pacific Insurance, Digital Intelligence Institute}{Feb 2025 -- Jul 2025}{Algorithm Intern / Agentic RAG Engineer}
+\datedentry{Company or Lab Name}{2024 -- 2025}{Role Title}
 \vspace{-0.6em}
 {\small
 \begin{itemize}
-  \item Independently built a version-aware OceanBase Agentic RAG system for database documentation QA and troubleshooting, exposing Search, QA, Troubleshoot, Index Management, and unified \texttt{POST /api/v1/agent/query} workflows over FastAPI.
-  \item Designed the LangGraph state flow across preparation, query rewrite, worker fanout, answer aggregation, and verification/finalization, integrating Query Router, Version Resolver, specialized / multi-hop retrievers, session memory, clarifying questions, evidence verification, and observable Agent Trace.
-  \item Built hybrid retrieval with Milvus dense vectors, sparse vectors, scalar metadata filters, reranking, and context construction over about \texttt{82,843} OceanBase documentation chunks; covered parameters, system views, SQL syntax, version changes, and troubleshooting cases.
-  \item Defined enterprise launch gates and risk boundaries: read-only diagnostic tool contract, no production SQL execution or parameter mutation, \texttt{37} passing tests, Retrieval Score \(\geq\) 80, Generation Score \(\geq\) 82, Unsafe Suggestion Rate \(\leq\) 1\%, and Hallucination Rate \(\leq\) 8\%.
+  \item Built or supported a system relevant to the target role; summarize the core problem, technical scope, and user or business value.
+  \item Describe the architecture or workflow using concrete tools such as FastAPI, PyTorch, vector retrieval, evaluation gates, or production constraints.
+  \item Add one quantified outcome such as latency, accuracy, coverage, reliability, test count, or launch criteria.
 \end{itemize}
 }
 
-\datedentry{Shanghai Jiao Tong University}{Jul 2023 -- May 2024}{Research Intern}
+\datedentry{Institution or Team Name}{2023 -- 2024}{Research Intern / Engineer / Analyst}
 \vspace{-0.6em}
 {\small
 \begin{itemize}
-  \item Supported Inter-X and HIMO human interaction research by building motion-data cleaning, visualization, annotation, manual calibration, and model-validation workflows for text-to-motion and human-object interaction generation.
-  \item Worked with Matching Score, R-precision, FID, Diversity, MPJPE, and MPJVE; built Unreal C++ / Blueprint and Blender rendering pipelines for consistent motion visualization.
-  \item Contributed to research outputs accepted by CVPR 2024 and ECCV 2024; participated in the CVPR 2024 Ego-Exo4D body pose challenge, where the SJTU-SEIEE team ranked 3rd in the body pose track.
+  \item Summarize a second experience with emphasis on your contribution boundary, methodology, and measurable result.
+  \item Mention datasets, experiments, or downstream impact when relevant.
 \end{itemize}
 }
 
 \section{Selected Projects}
-\projectentry{SJTU Agent}{May 2026}
-\projectkeywords{Agent, MCP, Skill Injection}
+\projectentry{Project Name}{2025}
+\projectkeywords{Agent, RAG, Evaluation}
 \vspace{-0.7em}
 {\small
 \begin{itemize}
-  \item Built \texttt{sjtu-agent} as a campus-oriented extensible Agent runtime with shared CLI / Web SSE / bot entrypoints, conversation context management, OpenAI-compatible / Anthropic streaming loops, and multimodal parsing pipelines for complex file inputs.
-  \item Extended MCP and Skill capabilities with dynamic MCP registration, short-lived clients, and \texttt{SKILL.md} prompt injection; developed Shuiyuan MCP (\texttt{26} tools + \texttt{10} resources + \texttt{1} prompt) with a deepsearch forum-research workflow, and YKST Treehole MCP (\texttt{48} tools + \texttt{15} resources + \texttt{4} prompts).
-  \item Built the multimodal parsing and multi-platform support layer around \texttt{parsing/router.py} and shared entry adapters, routing file inputs through automatic parser selection, OCR/ASR, and PDF/PPT fallback chains while keeping CLI, Web SSE, Telegram, Feishu, and WeChat behaviors consistent.
+  \item Explain what the project does, why it matters, and what you specifically built.
+  \item Highlight one strong engineering decision, one model or system choice, and one evaluation result.
 \end{itemize}
 }
 
-\projectentry{MemeSense: Multimodal Meme Understanding}{Mar 2026 -- Apr 2026}
-\projectkeywords{Multimodal, Captioning, Distillation, RAG}
+\projectentry{Project Name}{2024}
+\projectkeywords{Multimodal, Training, Deployment}
 \vspace{-0.7em}
 {\small
 \begin{itemize}
-  \item Built an interpretable meme-understanding pipeline covering EasyOCR preprocessing, GPT-4o structured silver labeling, cultural-context need classification, BM25 RAG retrieval, and LLaVA-1.5-7B + QLoRA generation; selective context injection was preferred over original captions in \texttt{83.3\%} of a 30-sample human evaluation.
+  \item Use this space for another project, open-source build, or research prototype with concrete scope and outcome.
+\end{itemize}
+}
+
+\section{Publications}
+{\small
+\begin{itemize}
+  \item \textbf{Paper Title}, Venue 2024. One-line description of the problem, your contribution, and the significance.
+  \item \textbf{Paper Title}, Venue 2023. One-line description of the problem, your contribution, and the significance.
 \end{itemize}
 }
 
 \section{Skills}
 {\small
-\textbf{Agent / LLM:} Agent System Design, MCP, RAG, Agent Skill, prompt engineering, PEFT, Distillation, Harness Engineering, Milvus.\\
-\textbf{ML / AI:} PyTorch, Transformers, GNNs, diffusion models, ComfyUI.\\
-\textbf{Engineering:} Python, C++, C, TypeScript / Node.js, SQL, Docker, Git, Linux, SSE, Spark, Unreal Engine, Blender, Godot, VHDL, JavaScript.
+\textbf{ML / AI:} PyTorch, Transformers, retrieval, evaluation, multimodal modeling.\\
+\textbf{Systems:} Python, TypeScript, SQL, Docker, Linux, APIs, testing.\\
+\textbf{Focus Areas:} agent systems, data science, applied ML, computer vision, recommendation.
 }
 
 \end{document}

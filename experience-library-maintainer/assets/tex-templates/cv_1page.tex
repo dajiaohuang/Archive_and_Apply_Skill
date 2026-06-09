@@ -1,5 +1,5 @@
 %----------------------------------------------------------------------------------------
-% One-page Agent / LLM internship CV
+% Generic one-page English CV template
 %----------------------------------------------------------------------------------------
 \documentclass[a4paper,10pt]{extarticle}
 
@@ -42,81 +42,59 @@
 \pagestyle{empty}
 
 \begin{center}
-  {\LARGE\bfseries Shuwen Wu} \\[3pt]
-  {\small Singapore \ $|$ \
-  \href{https://github.com/dajiaohuang}{\faGithub\ dajiaohuang} \ $|$ \
-  \href{mailto:mikewushuwen@gmail.com}{\faEnvelope\ mikewushuwen@gmail.com} \ $|$ \
-  \href{tel:+65 82737235}{\faMobile\ +65 82737235}}
+  {\LARGE\bfseries Candidate Name} \\[3pt]
+  {\small City, Country \ $|$ \
+  \href{https://github.com/your-handle}{\faGithub\ your-handle} \ $|$ \
+  \href{mailto:you@example.com}{\faEnvelope\ you@example.com} \ $|$ \
+  \href{https://www.linkedin.com/in/your-handle}{\faLinkedin\ your-linkedin}}
 \end{center}
 
 \section{Education}
-\textbf{National University of Singapore} -- M.Sc., Data Science \& Machine Learning \hfill \textit{2025 -- Present}\\
-\textbf{Shanghai Jiao Tong University} -- B.Eng., Information Security, IEEE Honor Class \hfill \textit{2021 -- 2025}; GPA: 85.5 / 100
+\textbf{University Name} -- M.Sc., Program Name \hfill \textit{2023 -- 2025}\\
+\textbf{University Name} -- B.Eng., Program Name \hfill \textit{2019 -- 2023}; GPA: 3.8 / 4.0
 
 \section{Experience}
-\entry{China Pacific Insurance, Digital Intelligence Institute}{Feb 2025 -- Jul 2025}{Algorithm Intern / Agentic RAG Engineer}
+\entry{Company or Lab Name}{2024 -- 2025}{Role Title}
 \vspace{-0.7em}
 {\small
 \begin{itemize}
-  \item Independently built a version-aware OceanBase Agentic RAG system for documentation QA and troubleshooting, exposing Search, QA, Troubleshoot, Index Management, and unified \texttt{/api/v1/agent/query} workflows over FastAPI.
-  \item Designed LangGraph orchestration with Query Router, Version Resolver, specialized / multi-hop retrieval, Evidence Verifier, session memory, clarifying questions, and observable Agent Trace.
-  \item Built Milvus dense+sparse hybrid retrieval over about \texttt{82,843} documentation chunks; defined read-only launch boundaries, \texttt{37} passing tests, and evaluation gates for retrieval quality, hallucination, and unsafe suggestions.
+  \item Summarize the most relevant work: what you built, how it worked, and what measurable outcome or constraint mattered.
+  \item Keep one strong line about architecture and one strong line about evaluation or impact.
 \end{itemize}
 }
 
-\entry{Shanghai Jiao Tong University}{Jul 2023 -- May 2024}{Research Intern}
+\entry{Institution or Team Name}{2023 -- 2024}{Research Intern / Engineer / Analyst}
 \vspace{-0.7em}
 {\small
 \begin{itemize}
-  \item Built motion-data cleaning, visualization, annotation, calibration, and model-validation workflows for Inter-X / HIMO text-to-motion and HOI research; outputs were accepted by CVPR 2024 and ECCV 2024, and the SJTU-SEIEE team ranked 3rd in the CVPR 2024 Ego-Exo4D body pose challenge.
+  \item Use this block for a second core experience with one concise, evidence-backed summary.
 \end{itemize}
 }
 
 \section{Selected Projects}
-\project{SJTU Agent}{May 2026}
-\projectkeywords{Agent, MCP, Skill Injection}
+\project{Project Name}{2025}
+\projectkeywords{Agent, RAG, Systems}
 \vspace{-0.85em}
 {\small
 \begin{itemize}
-  \item Built \texttt{sjtu-agent} as a campus-oriented tool-calling chatbot with shared CLI / Web SSE / bot entrypoints, conversation context management, and OpenAI-compatible / Anthropic streaming tool loops.
-  \item Extended MCP and Skill capabilities with dynamic MCP registration, short-lived clients, and \texttt{SKILL.md} prompt injection; developed Shuiyuan MCP (\texttt{26} tools + \texttt{10} resources + \texttt{1} prompt) and YKST Treehole MCP (\texttt{48} tools + \texttt{15} resources + \texttt{4} prompts).
-  \item Built a multimodal parsing and multi-platform support layer around \texttt{parsing/router.py} and shared entry adapters, routing file inputs through OCR/ASR and PDF/PPT fallback chains while keeping CLI, Web SSE, Telegram, Feishu, and WeChat behavior consistent.
+  \item Describe the problem, your ownership, and one concrete result.
 \end{itemize}
 }
 
-\project{CoLLM: LLM Recommendation}{Apr 2026 -- May 2026}
-\projectkeywords{Generative Recommender, QLoRA}
+\project{Project Name}{2024}
+\projectkeywords{Multimodal, Training, Evaluation}
 \vspace{-0.85em}
 {\small
 \begin{itemize}
-  \item Migrated a CoLLM-style recommender from Vicuna/LLaMA to Qwen2-7B + QLoRA with 4-bit NF4; fixed AMP NaN loss, missing \texttt{<unk>} token handling, collaborative-token embedding alignment, and evaluation bugs.
-  \item Implemented two-stage training where Stage 2 freezes LLM + LoRA and trains an MF-to-hidden-space projection MLP; on MovieLens-1M, improved AUC from \texttt{0.6784} to \texttt{0.6909}, above MF-only \texttt{0.6736}.
-\end{itemize}
-}
-
-\project{MemeSense: Multimodal Meme Understanding}{Mar 2026 -- Apr 2026}
-\projectkeywords{Multimodal, Captioning, Distillation, RAG}
-\vspace{-0.85em}
-{\small
-\begin{itemize}
-  \item Built an OCR \(\rightarrow\) GPT-4o labeling \(\rightarrow\) cultural-context classifier \(\rightarrow\) BM25 RAG \(\rightarrow\) LLaVA-1.5-7B + QLoRA generation pipeline; selective context injection was preferred over original captions in \texttt{83.3\%} of a 30-sample human evaluation.
-\end{itemize}
-}
-
-\project{Additional Projects}{2023 -- 2024}
-\projectkeywords{Stable Diffusion, 3D Pose Estimation, Transformer}
-\vspace{-0.85em}
-{\small
-\begin{itemize}
-  \item SVD-InST: Stable Diffusion v1.4 + Textual Inversion + SVDiff style transfer with \texttt{3.7M} trainable parameters and FID \texttt{125.1}; Spoken NLU: BERT-RNN semantic parsing for noisy Chinese ASR, F1 \texttt{82.75}; Ego-Exo4D: Transformer-based 17-keypoint 3D pose regression for the CVPR challenge.
+  \item Add a second strong project with a compact technical summary.
 \end{itemize}
 }
 
 \section{Skills}
 {\scriptsize
-\textbf{Agent / LLM:} Agent System Design, MCP, RAG, Agent Skill, prompt engineering, PEFT, Distillation, Harness Engineering, Milvus.\\
-\textbf{ML / AI:} PyTorch, Transformers, GNNs, diffusion models, ComfyUI.\\
-\textbf{Engineering:} Python, C++, C, TypeScript / Node.js, SQL, Docker, Git, Linux, SSE, Spark, Unreal Engine, Blender, Godot, VHDL, JavaScript.
+\textbf{ML / AI:} PyTorch, Transformers, retrieval, evaluation, multimodal modeling.\\
+\textbf{Engineering:} Python, TypeScript, SQL, Docker, Linux, APIs, testing.\\
+\textbf{Focus Areas:} data science, agent systems, computer vision, recommendation.
 }
 
 \end{document}

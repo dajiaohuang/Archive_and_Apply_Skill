@@ -1,0 +1,12 @@
+# LaTeX auxiliary
+*.aux
+*.log
+*.out
+*.bcf
+*.run.xml
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Local cloned skill repos
+skill-repos/

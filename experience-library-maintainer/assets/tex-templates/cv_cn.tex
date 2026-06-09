@@ -1,207 +1,99 @@
 %----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
+% Generic two-page Chinese CV template
 %----------------------------------------------------------------------------------------
-
-% article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,12pt]{article}
 
-%----------------------------------------------------------------------------------------
-%	CHINESE SUPPORT
-%----------------------------------------------------------------------------------------
 \usepackage[UTF8]{ctex}
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES
-%----------------------------------------------------------------------------------------
 \usepackage{url}
 \usepackage{parskip}
-
-%other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
-
-%tabularx environment
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-
-%to prevent spillover of tabular into next pages
 \usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
 \usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
-
-%CV Sections inspired by:
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\bfseries\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{6pt}{4pt}
-
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
+\usepackage[style=authoryear,sorting=ynt,maxbibnames=2]{biblatex}
 \usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-
-%for social icons
 \usepackage{fontawesome5}
 
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\titleformat{\section}{\Large\bfseries\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{4pt}
+\setlength{\parindent}{0pt}
 \hyphenpenalty=5000
 \tolerance=1000
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
-%----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
 \begin{document}
-
-% non-numbered pages
 \pagestyle{empty}
 
-%----------------------------------------------------------------------------------------
-%	TITLE
-%----------------------------------------------------------------------------------------
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{吴舒文} \\[7.5pt]
-\href{https://github.com/dajiaohuang}{\raisebox{-0.05\height}\faGithub\ dajiaohuang} \ $|$ \
-\href{mailto:mikewushuwen@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ mikewushuwen@gmail.com} \ $|$ \
-\href{tel:+65 82737235}{\raisebox{-0.05\height}\faMobile \ +65 82737235}\\
+\Huge{候选人姓名} \\[7.5pt]
+\href{https://github.com/your-handle}{\raisebox{-0.05\height}\faGithub\ your-handle} \ $|$ \
+\href{mailto:you@example.com}{\raisebox{-0.05\height}\faEnvelope \ you@example.com} \ $|$ \
+\href{https://www.linkedin.com/in/your-handle}{\raisebox{-0.05\height}\faLinkedin \ your-linkedin}\\
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-\vspace{-1em}
 \section{教育背景}
-\vspace{-0.3em}
-\textbf{上海交通大学 (SJTU)} \hfill \textit{2021年9月 -- 2025年6月}\\
-\textit{工学学士，信息安全（IEEE 试点班）} \hfill 均分: 85.5 / 100
-\vspace{-0.8em}
+\textbf{学校名称} \hfill \textit{2023年9月 -- 2025年6月}\\
+硕士，专业名称
+
+\textbf{学校名称} \hfill \textit{2019年9月 -- 2023年6月}\\
+学士，专业名称 \hfill 均分 / GPA：示例数值
+
+\section{经历}
+\textbf{公司或实验室名称} \hfill \textit{2024年 -- 2025年}\\
+\textit{岗位名称}
 {\small
-\begin{itemize}
-\setlength{\itemsep}{0em}
-    \item \textbf{核心课程：} 算法设计与分析 (A)、C++ 程序设计实践 (A+)、虚幻引擎程序设计 (A+)、人工智能原理 (A)、自然语言处理 (A)
-    \item \textbf{荣誉奖项：} ``一流网安''奖学金 (2023)、上海交通大学优秀团员 (2022)、优秀新生奖学金 (2021)
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
+  \item 用 2 到 4 条说明这个经历解决的核心问题、你的职责边界和交付内容。
+  \item 优先写系统能力、模型方案、评测方式、上线边界或业务价值。
+  \item 至少保留一条带数字的结果，例如准确率、时延、覆盖率、测试数或排名。
 \end{itemize}
 }
 
-\vspace{-0.3em}
-\textbf{新加坡国立大学 (NUS)} \hfill \textit{2025年8月 -- 至今} \\
-\textit{理学硕士，数据科学与机器学习}
-\vspace{-0.8em}
+\textbf{团队或机构名称} \hfill \textit{2023年 -- 2024年}\\
+\textit{科研实习生 / 工程师 / 分析师}
 {\small
-\begin{itemize}
-\setlength{\itemsep}{0em}
-    \item \textbf{核心课程：} 机器学习、可扩展分布式计算、数据管理与检索
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
+  \item 用这一段概括第二段核心经历，强调研究或工程链路中的实际贡献。
 \end{itemize}
 }
 
-%----------------------------------------------------------------------------------------
-% EXPERIENCE
-%----------------------------------------------------------------------------------------
-\vspace{-1em}
-\section{实习经历}
-\vspace{-0.3em}
-\textbf{上海交通大学 计算机科学与工程系 人工智能研究所} \hfill \textit{2023年7月 -- 2024年5月}\\
-\textit{本科科研实习生 \quad （导师：杨小康、晏轶超）}
-\vspace{-0.8em}
-{\small
-\begin{itemize}
-\setlength{\itemsep}{0em}
-    \item \textbf{数据管线与工具开发：} 负责动作捕捉采集协调与流程优化；开发人体动作序列处理与可视化工具（数据切片、片段检查、文本标注、手动偏移校正），解决动捕手套与身体动捕系统的系统性偏差，实现 Inter-X 与 HIMO 数据集对齐。
-    \item \textbf{模型训练与基础设施：} 训练并评测 Human Motion Diffusion、Motion Latent Diffusion、Text-to-Motion 等模型；参与 Inter-X text-to-motion 与 HIMO HOI 生成流程，并独立搭建 Unreal Engine + Blender 批量渲染管线。
-\end{itemize}
-}
-
-\vspace{-0.3em}
-\textbf{中国太平洋保险 数智研究院} \hfill \textit{2025年2月 -- 2025年7月}\\
-\textit{算法实习生 \quad （导师：王辉）}
-\vspace{-0.8em}
-{\small
-\begin{itemize}
-\setlength{\itemsep}{0em}
-    \item \textbf{OceanBase Agentic RAG：} 参与交付面向数据管理人员的 OceanBase 文档问答与排障工作台，基于 FastAPI、Milvus dense/sparse vector、metadata filters 和 DeepSeek OpenAI-compatible API 搭建 Search、QA、Troubleshoot、Index Management 前端与 API，支撑参数、系统视图、SQL、版本差异和报错排障场景。
-    \item \textbf{Agent 能力与安全评估：} 将普通 RAG 升级为 QA / Troubleshoot Agent，实现 Query Router、版本解析、专用/多跳检索、Evidence Verifier、主动追问、session memory 和 Agent Trace；设计只读诊断工具契约，一期不执行生产 SQL 或高风险变更，37 个单元测试通过，并建议以版本解析准确率、引用覆盖率和排障人工可接受率验收试点。
-\end{itemize}
-}
-
-%----------------------------------------------------------------------------------------
-% PROJECTS
-%----------------------------------------------------------------------------------------
-\vspace{-1em}
 \section{项目经历}
-\vspace{-0.3em}
-\textbf{校园场景 Agent 与 MCP 工具生态} \hfill \href{https://github.com/dajiaohuang/shuiyuan-mcp}{\faGithub} \textit{2026年5月} \\
-\vspace{-1.5em}
+\textbf{项目名称} \hfill \textit{2025年}\\
 {\small
-\begin{itemize}
-\setlength{\itemsep}{0em}
-    \item \textbf{Agent Runtime：} 将 SJTU Agent 从固定内置工具表升级为可扩展本地 Agent Runtime；实现动态 MCP 工具发现、OpenAI / Anthropic 流式 tool loop、stdio/SSE/streamable HTTP 适配、短生命周期 MCP session、\texttt{SKILL.md} prompt 注入，以及围绕 \texttt{parsing/router.py} 的多模态 parsing 与 OCR/ASR/PDF/PPT 回退链路，并统一接入 CLI、Web SSE 聊天、Telegram、飞书、微信和后台提醒入口。
-    \item \textbf{MCP 生态：} 开发 Shuiyuan MCP（Discourse + SSO cookie / CSRF，26 tools、10 Resources、1 prompt，并补充 deepsearch 论坛研究 workflow）；从网页 bundle 与 Android APK 逆向亦可赛艇树洞 gRPC-Web / protobuf 协议，手写 unary client 并封装 48 tools、15 Resources、4 prompts，覆盖搜索、阅读、身份、通知、订阅、上传下载和设置等能力。
-    \item \textbf{安全与工程化：} 设计 CLI 安装/启用流程、pin commit、外部 MCP 命令注册确认、对话端禁用安装工具、写操作 \texttt{confirm: true} 与本地 cookie/session 脱敏；补充 pytest / Node smoke 覆盖 MCP 路由、异步事件循环适配、Skill 管理和写操作边界。
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
+  \item 说明项目目标、核心架构、个人贡献和结果。
+  \item 如果是 agent / system / infra 项目，建议明确输入输出、关键模块和安全边界。
 \end{itemize}
 }
 
-\vspace{-0.3em}
-\textbf{CoLLM：基于大语言模型的协同推荐} \hfill \href{https://github.com/dajiaohuang/CoLLM}{\faGithub} \textit{2026.04 -- 05} \\
-\vspace{-1.5em}
+\textbf{项目名称} \hfill \textit{2024年}\\
 {\small
-\begin{itemize}
-\setlength{\itemsep}{0em}
-    \item \textbf{复现与迁移：} 将 CoLLM 从 Vicuna/LLaMA 迁移至 Qwen2-7B + QLoRA（4-bit NF4、double quantization）；修复混合精度 AMP 导致的 NaN loss、补全缺失 \textless unk\textgreater{} token、对齐 prompt embedding 替换逻辑。使用单卡 NVIDIA A100 40GB。
-    \item \textbf{两阶段训练：} Stage 1 基于 Qwen2-7B + QLoRA 做文本推荐（AUC 0.678、uAUC 0.662）；Stage 2 冻结 LLM + LoRA，训练两层 GELU MLP 将 MF 嵌入投影至 LLM 隐空间作为 soft collaborative token，AUC 提升至 0.691，高于 MF-only 基线 0.674。
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
+  \item 用更紧凑的方式补充第二个代表项目。
 \end{itemize}
 }
 
-\vspace{-0.3em}
-\textbf{MemeSense：面向梗图理解的选择性知识注入} \hfill \textit{2026年3月 -- 4月} \\
-\vspace{-1.5em}
+\section{论文与成果}
 {\small
-\begin{itemize}
-\setlength{\itemsep}{0em}
-    \item \textbf{多阶段管线设计：} 设计面向梗图理解的可解释多阶段管线：EasyOCR 自适应预处理 $\to$ GPT-4o 结构化银标注（5 类主要理解机制、evidence source、cultural context）$\to$ 文化背景二分类 $\to$ BM25 RAG 检索 $\to$ LLaVA-1.5-7B + QLoRA caption 生成。
-    \item \textbf{选择性知识注入：} 提出“仅在真正需要时注入外部知识”的策略；三种 context mode 消融验证 adaptive 策略优于始终检索或从不检索。30 样本人工评估中 83.3\% 的预测 caption 优于原始 caption，并以 token F1、ROUGE-L、BERTScore 做多输入消融。
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
+  \item \textbf{论文标题}，会议 / 期刊，年份。用一句话说明研究问题、你的关联和价值。
+  \item \textbf{成果标题}，比赛 / 数据集 / 基准，年份。用一句话说明结果。
 \end{itemize}
 }
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\vspace{-1em}
-\section{发表论文}
-\vspace{-0.3em}
-\textbf{Inter-X: Towards Versatile Human-Human Interaction Analysis}
-\hfill \textbf{CVPR 2024} \textbar{} \href{https://liangxuy.github.io/inter-x/}{项目主页} \textbar{} \href{https://doi.org/10.1109/cvpr52733.2024.02101}{DOI}\\
-{\small L.~Xu, X.~Lv, Y.~Yan, X.~Jin, \textbf{S.~Wu} \textit{et al.}, W.~Zeng*, X.~Yang*. 最大双人交互基准数据集，约 1.14 万交互片段，含 SMPL-X、骨架、文本描述及人格元标注。}
-
-\vspace{-0.3em}
-\textbf{HIMO: A New Benchmark for Full-Body Human Interacting with Multiple Objects}
-\hfill \textbf{ECCV 2024} \textbar{} \href{https://lvxintao.github.io/himo/}{项目主页} \textbar{} \href{https://doi.org/10.1007/978-3-031-73235-5_17}{DOI}\\
-{\small X.~Lv, L.~Xu, Y.~Yan, X.~Jin, C.~Xu, \textbf{S.~Wu} \textit{et al.}, W.~Zeng*, X.~Yang*. 大规模全身人-物交互动捕数据集，含双物体/三物体设定，并支持文本条件 HOI 合成。}
-
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\vspace{-1em}
-\section{专业技能}
+\section{技能}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{Agent / LLM} & Agent System Design, MCP, RAG, Agent Skill, Prompt Engineering, PEFT, Distillation, Harness Engineering, Milvus\\
-\textbf{ML / AI} & PyTorch, Transformers, GNNs, Diffusion Models, ComfyUI\\
-\textbf{工程能力} & Python, C++, C, TypeScript / Node.js, SQL, Docker, Git, Linux, SSE, Spark, Unreal Engine, Blender, Godot, VHDL, JavaScript\\
+\textbf{机器学习 / AI} & PyTorch、Transformers、检索、评测、多模态建模 \\
+\textbf{工程能力} & Python、TypeScript、SQL、Docker、Linux、API、测试 \\
+\textbf{关注方向} & 数据科学、Agent 系统、计算机视觉、推荐系统 \\
 \end{tabularx}
-
-\vfill
 
 \end{document}

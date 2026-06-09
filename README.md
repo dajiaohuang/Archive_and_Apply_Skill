@@ -1,6 +1,6 @@
 # Experience Library Maintainer
 
-A publishable Codex skill for maintaining a personal experience archive as a source-first system for resume, interview, and company-specific application materials.
+A publishable Codex skill for bootstrapping and maintaining a personal experience archive as a source-first system for resume, interview, and company-specific application materials.
 
 This skill was designed around a real workflow with folders such as:
 
@@ -12,49 +12,64 @@ This skill was designed around a real workflow with folders such as:
 
 The core idea is simple:
 
-1. Keep detailed source experience notes as the factual ground truth.
-2. Derive resume bullets, interview scripts, and company-specific prep materials from those source files.
-3. Keep the whole repo consistent as the workflow evolves.
+1. Create a usable experience-library repo when needed.
+2. Keep detailed source experience notes as the factual ground truth.
+3. Derive resume bullets, interview scripts, and company-specific prep materials from those source files.
+4. Keep the whole repo consistent as the workflow evolves.
 
 ## What the Skill Does
 
 The skill helps an agent:
 
+- create a brand-new experience library at a user-chosen path
+- explore a given local directory, repo, or material dump and turn it into source entries
 - update source experience entries before touching derived materials
 - start from a reusable source-entry template instead of drafting from scratch
 - maintain an opinionated resume entry bank
 - sync Chinese and English resume variants
 - maintain canonical TeX resume templates
 - detect LaTeX package and tool dependencies
-- check actual page count and per-page fill heuristics
+- compile a resume and check actual page count plus per-page fill heuristics
 - maintain reusable interview talking points
 - create company-specific interview prep packs
+- save the JD into a company folder before generating mocks
 - keep `README.md` / `AGENTS.md` aligned with the current file layout and workflow
+- guide the user step by step with explicit next-action options after each milestone
 
 It is especially useful when one repo has both:
 
 - archival long-form experience notes
 - downstream job-search artifacts that must stay consistent
 
+It also works when the repo does not exist yet and must be scaffolded from zero.
+
 ## Repo Layout
 
 ```text
 experience-library-maintainer-skill-repo/
-├── README.md
-├── LICENSE
-└── experience-library-maintainer/
-    ├── SKILL.md
-    ├── agents/
-    │   └── openai.yaml
-    ├── assets/
-    │   ├── source-templates/
-    │   │   └── TEMPLATE.md
-    │   └── tex-templates/
-    ├── scripts/
-    │   ├── check_tex_pages.py
-    │   └── detect_tex_dependencies.py
-    └── references/
-        └── file-map.md
+|-- README.md
+|-- LICENSE
+`-- experience-library-maintainer/
+    |-- SKILL.md
+    |-- agents/
+    |   `-- openai.yaml
+    |-- assets/
+    |   |-- lib-scaffold/
+    |   |   |-- AGENTS.md
+    |   |   |-- README.md
+    |   |   |-- cv/
+    |   |   `-- interview/
+    |   |-- cv-templates/
+    |   |   |-- CV_ENTRY_AUDIT.md
+    |   |   `-- CV_ENTRY_BANK.md
+    |   |-- source-templates/
+    |   |   `-- TEMPLATE.md
+    |   `-- tex-templates/
+    |-- scripts/
+    |   |-- check_tex_pages.py
+    |   `-- detect_tex_dependencies.py
+    `-- references/
+        `-- file-map.md
 ```
 
 The actual skill lives inside `experience-library-maintainer/`.
@@ -80,31 +95,36 @@ Copy-Item -Recurse .\experience-library-maintainer `
 Example prompt:
 
 ```text
-Use $experience-library-maintainer to update my experience library, resume materials, and interview docs consistently.
+Use $experience-library-maintainer to create or maintain my experience library, CV materials, and interview docs consistently.
 ```
 
 Typical requests:
 
-- “Add a new internship and sync the resume bullets.”
-- “Update my project facts, then revise the interview introduction.”
-- “Create a company-specific mock interview pack based on this JD.”
-- “Check whether my Chinese resume still fits into 1 page and whether the last page is too sparse.”
-- “Fix stale README references after I changed the interview file layout.”
+- "Create a new experience library in this folder and seed it with the standard structure."
+- "Explore this repo and turn the relevant projects into source entries in my library."
+- "Add a new internship and sync the resume bullets."
+- "Update my project facts, then revise the interview introduction."
+- "Create a company-specific mock interview pack based on this JD."
+- "Check whether my Chinese resume still fits into 1 page and whether the last page is too sparse."
+- "Fix stale README references after I changed the interview file layout."
 
 ## Workflow Philosophy
 
 This skill enforces a source-first derivative workflow:
 
-1. Update factual experience notes in `experiences/` or legacy `internships/`, `projects/`, or `publications/`.
-2. Sync the resume layer in `cv/`.
-3. Sync the interview layer in `interview/`.
-4. Sync repo documentation only after checking the actual filesystem.
+1. If needed, create the experience-library repo scaffold at the chosen path.
+2. Build or update factual experience notes in `experiences/` or legacy `internships/`, `projects/`, or `publications/`.
+3. Sync the resume layer in `cv/`.
+4. Sync the interview layer in `interview/`.
+5. Sync repo documentation only after checking the actual filesystem.
 
-This avoids a common failure mode in job-search repos:
+This avoids common failure modes in job-search repos:
 
 - resume bullets becoming stronger than the source facts
 - interview scripts drifting away from what is actually documented
 - stale README / agent instructions pointing to deleted files
+- company-specific packs being generated before the JD is actually captured
+- users not knowing the most natural next action after each step
 
 ## Canonical Artifact Rules
 
@@ -114,8 +134,10 @@ The skill assumes and encourages these conventions:
 - new source entries can start from a reusable `TEMPLATE.md` bundled with the skill
 - generic interview prep lives in `interview/interview.md`
 - company-specific prep lives in subfolders such as `interview/<company>/`
+- company-specific directories should usually save the JD first, then generate `mock.md`
 - resume selection and wording are maintained through `cv/CV_ENTRY_BANK.md`
 - TeX template assets and TeX validation scripts can be bundled with the skill
+- every completed step should be followed by a small menu of likely next steps
 
 ## My Actual Multi-Agent Workflow
 
@@ -127,11 +149,12 @@ This is the most direct path when the agent can edit the repo locally.
 
 Typical flow:
 
-1. Ask Codex to inspect the relevant source experience file.
-2. Update the source file first if facts changed.
-3. Sync `cv/` artifacts.
-4. Sync `interview/` artifacts.
-5. Update `README.md` or `AGENTS.md` only if needed.
+1. Create the library scaffold if the repo does not exist yet.
+2. Inspect the relevant source experience file or raw material folder.
+3. Update or create source files first.
+4. Sync `cv/` artifacts.
+5. Sync `interview/` artifacts.
+6. Update `README.md` or `AGENTS.md` only if needed.
 
 This is the cleanest mode for structured repo maintenance because the skill can directly enforce the source-first workflow.
 
@@ -153,7 +176,7 @@ In practice, this flow is strongest when Claude is used with explicit repo conve
 
 ### 3. OpenClaw / Hermes Flow
 
-I treat OpenClaw / Hermes-style setups as orchestration layers rather than freeform writers.
+Treat OpenClaw / Hermes-style setups as orchestration layers rather than freeform writers.
 
 Typical flow:
 
@@ -161,8 +184,10 @@ Typical flow:
    - target company
    - job description
    - desired artifact type
-2. Use the agent to decide whether the request is:
-   - source update
+   - source path or repo path if ingestion is needed
+2. Decide whether the request is:
+   - library bootstrap
+   - source ingest
    - resume sync
    - interview sync
    - company-specific prep
@@ -171,19 +196,10 @@ Typical flow:
    - do not let it strengthen claims beyond source files
    - do not let it create parallel interview files unless explicitly needed
    - do not let it update repo docs without checking the filesystem
+   - do not let it generate company mocks before saving the JD
+   - remember the canonical library path after first bootstrap when the surface supports memory
 
 In other words, OpenClaw / Hermes can be great for orchestration, planning, and multi-step agentic handoff, but this skill is what keeps the artifact logic stable.
-
-## Why This Matters
-
-As agents become better at drafting and planning, the hard part is no longer generating text. The hard part is keeping the repository trustworthy:
-
-- which file is the source of truth
-- which file is canonical for speaking materials
-- which claims are safe to reuse in resumes and interviews
-- how to keep company-specific prep separate from reusable base materials
-
-This skill encodes those decisions.
 
 ## Included Skill Files
 
@@ -191,10 +207,16 @@ This skill encodes those decisions.
   Core workflow instructions and trigger description.
 - `experience-library-maintainer/references/file-map.md`
   Repo-specific file roles, update order, and stale-doc signals.
-- `experience-library-maintainer/assets/tex-templates/`
-  Canonical TeX resume templates copied from a real experience-library repo.
+- `experience-library-maintainer/references/user-flow.md`
+  Guided step-by-step flow and recommended next-action menus.
+- `experience-library-maintainer/assets/lib-scaffold/`
+  Starter files and folders for creating a new experience-library repo at a chosen path.
+- `experience-library-maintainer/assets/cv-templates/`
+  Reusable templates for `CV_ENTRY_BANK.md` and `CV_ENTRY_AUDIT.md`.
 - `experience-library-maintainer/assets/source-templates/TEMPLATE.md`
   A reusable source-entry template distilled from a real experience-library repo.
+- `experience-library-maintainer/assets/tex-templates/`
+  Canonical TeX resume templates copied from a real experience-library repo.
 - `experience-library-maintainer/scripts/detect_tex_dependencies.py`
   Detects LaTeX packages, included files, and local compile tools.
 - `experience-library-maintainer/scripts/check_tex_pages.py`
@@ -204,6 +226,8 @@ This skill encodes those decisions.
 
 ## Example Use Cases
 
+- Create an experience-library repo from scratch in a new directory.
+- Explore a codebase or notes folder and ingest the relevant material into source entries.
 - Maintain a long-term experience archive for experiences, projects, and publications.
 - Turn source notes into a curated resume entry bank.
 - Keep TeX resume templates healthy and detect page-count drift.
