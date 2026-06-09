@@ -39,6 +39,7 @@ Read [references/role-cv-audit.md](references/role-cv-audit.md) when the user wa
 
 - Treat source experience files as the factual ground truth.
 - Preserve Chinese in repo-authored content unless the target artifact is explicitly English or bilingual.
+- On first bootstrap of a new library, if the user's install prompt or first invocation prompt is in Chinese, default to a Chinese library; otherwise default to an English library.
 - If the user wants the whole library in Chinese, use Chinese templates consistently for source entries, CV entry files, and interview files.
 - If the user wants the whole library in English, use English templates consistently for source entries, CV entry files, and interview files.
 - If the user does not specify a language, follow the existing language of the target repo or target folder.
@@ -94,6 +95,9 @@ When the user wants to create an experience library at a chosen location:
 
 When bootstrapping language-sensitive files:
 
+- if this is the first bootstrap and the user prompt is Chinese, default to Chinese scaffold docs and templates
+- otherwise, default to English scaffold docs and templates unless the user explicitly requested another language
+- if the target repo or target folder already exists, follow its existing language instead of the prompt default
 - choose Chinese or English scaffold docs for root `README.md`, root `AGENTS.md`, `cv/README.md`, `cv/templates/README.md`, and `interview/README.md`
 - choose `TEMPLATE.cn.md` or `TEMPLATE.en.md` for the root source-entry template
 - choose Chinese or English `CV_ENTRY_BANK` / `CV_ENTRY_AUDIT` templates

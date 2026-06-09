@@ -106,6 +106,13 @@ Example prompt:
 Use $experience-library-maintainer to create or maintain my experience library, CV materials, and interview docs consistently.
 ```
 
+Default language rule on first bootstrap:
+
+- if the user's installation or first-invocation prompt to the agent is written in Chinese, default to creating the library in Chinese
+- otherwise, default to creating the library in English
+- if the user explicitly asks for another language, follow the explicit request
+- if the target repo already exists, follow the existing language of that repo or folder instead of the prompt default
+
 Typical requests:
 
 - "Create a new experience library in this folder and seed it with the standard structure."

@@ -92,6 +92,13 @@ Copy-Item -Recurse .\experience-library-maintainer `
 Use $experience-library-maintainer to create or maintain my experience library, CV materials, and interview docs consistently.
 ```
 
+首次建库的默认语言规则：
+
+- 如果用户给 agent 的安装 prompt 或第一次调用 prompt 是中文，则默认按中文建库
+- 否则默认按英文建库
+- 如果用户明确指定了语言，以用户明确指定为准
+- 如果目标 repo 已存在，则优先沿用该 repo 或目标目录已有语言，而不是按 prompt 默认值
+
 ## 典型用法
 
 - “在这个目录里创建一个新的 experience library。”

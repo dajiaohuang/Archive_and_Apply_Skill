@@ -17,6 +17,13 @@ Do not end a milestone with only a status summary when there is an obvious next 
 
 When the user has just installed or first invoked the skill, the default next-step prompt should point to library creation.
 
+Default language behavior for first library bootstrap:
+
+- if the user's install prompt or first invocation prompt is in Chinese, default the new library to Chinese
+- otherwise, default the new library to English
+- if the user explicitly requests another language, follow that request
+- if the target repo already exists, follow the repo's current language instead of the prompt default
+
 Recommended options:
 
 - create a new experience library at a chosen path
