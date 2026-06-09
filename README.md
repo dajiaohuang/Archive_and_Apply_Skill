@@ -4,7 +4,7 @@ A publishable Codex skill for maintaining a personal experience archive as a sou
 
 This skill was designed around a real workflow with folders such as:
 
-- `internships/`
+- `experiences/` or legacy `internships/`
 - `projects/`
 - `publications/`
 - `cv/`
@@ -23,6 +23,9 @@ The skill helps an agent:
 - update source experience entries before touching derived materials
 - maintain an opinionated resume entry bank
 - sync Chinese and English resume variants
+- maintain canonical TeX resume templates
+- detect LaTeX package and tool dependencies
+- check actual page count and per-page fill heuristics
 - maintain reusable interview talking points
 - create company-specific interview prep packs
 - keep `README.md` / `AGENTS.md` aligned with the current file layout and workflow
@@ -77,13 +80,14 @@ Typical requests:
 - “Add a new internship and sync the resume bullets.”
 - “Update my project facts, then revise the interview introduction.”
 - “Create a company-specific mock interview pack based on this JD.”
+- “Check whether my Chinese resume still fits into 1 page and whether the last page is too sparse.”
 - “Fix stale README references after I changed the interview file layout.”
 
 ## Workflow Philosophy
 
 This skill enforces a source-first derivative workflow:
 
-1. Update factual experience notes in `internships/`, `projects/`, or `publications/`.
+1. Update factual experience notes in `experiences/` or legacy `internships/`, `projects/`, or `publications/`.
 2. Sync the resume layer in `cv/`.
 3. Sync the interview layer in `interview/`.
 4. Sync repo documentation only after checking the actual filesystem.
@@ -98,10 +102,11 @@ This avoids a common failure mode in job-search repos:
 
 The skill assumes and encourages these conventions:
 
-- source facts live in `internships/`, `projects/`, `publications/`
+- source facts live in `experiences/` or legacy `internships/`, `projects/`, `publications/`
 - generic interview prep lives in `interview/interview.md`
 - company-specific prep lives in subfolders such as `interview/<company>/`
 - resume selection and wording are maintained through `cv/CV_ENTRY_BANK.md`
+- TeX template assets and TeX validation scripts can be bundled with the skill
 
 ## My Actual Multi-Agent Workflow
 
@@ -120,6 +125,8 @@ Typical flow:
 5. Update `README.md` or `AGENTS.md` only if needed.
 
 This is the cleanest mode for structured repo maintenance because the skill can directly enforce the source-first workflow.
+
+It is also the best mode for TeX resume maintenance, because the same agent can update source wording, sync `.tex` variants, detect missing LaTeX dependencies, compile the resume, and check whether it really fits into 1 page or 2 pages.
 
 ### 2. Claude Code Flow
 
@@ -175,13 +182,20 @@ This skill encodes those decisions.
   Core workflow instructions and trigger description.
 - `experience-library-maintainer/references/file-map.md`
   Repo-specific file roles, update order, and stale-doc signals.
+- `experience-library-maintainer/assets/tex-templates/`
+  Canonical TeX resume templates copied from a real experience-library repo.
+- `experience-library-maintainer/scripts/detect_tex_dependencies.py`
+  Detects LaTeX packages, included files, and local compile tools.
+- `experience-library-maintainer/scripts/check_tex_pages.py`
+  Compiles a TeX resume, reports actual page count, and estimates per-page fill.
 - `experience-library-maintainer/agents/openai.yaml`
   UI metadata and default invocation prompt.
 
 ## Example Use Cases
 
-- Maintain a long-term experience archive for internships, projects, and publications.
+- Maintain a long-term experience archive for experiences, projects, and publications.
 - Turn source notes into a curated resume entry bank.
+- Keep TeX resume templates healthy and detect page-count drift.
 - Keep interview scripts aligned with updated project facts.
 - Build tailored company-specific mock packs for specific employers or roles.
 - Migrate the workflow across Codex, Claude Code, and OpenClaw/Hermes-style agent setups without losing artifact discipline.

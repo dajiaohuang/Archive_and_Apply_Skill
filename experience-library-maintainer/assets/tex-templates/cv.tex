@@ -1,0 +1,112 @@
+%----------------------------------------------------------------------------------------
+% Agent / LLM internship CV
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{extarticle}
+
+\usepackage{url}
+\usepackage{parskip}
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[margin=0.58in]{geometry}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[unicode, draft=false]{hyperref}
+\usepackage{fontawesome5}
+
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{4pt}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt,parsep=0pt,partopsep=0pt}
+\hyphenpenalty=5000
+\tolerance=1000
+
+\newcommand{\datedentry}[3]{%
+  \textbf{#1} \hfill \textit{#2}\\
+  \textit{#3}
+}
+
+\newcommand{\projectentry}[2]{%
+  \textbf{#1} \hfill \textit{#2}
+}
+
+\newcommand{\projectkeywords}[1]{%
+  \\[-1pt]{\footnotesize\textit{Keywords: #1}}
+}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+  {\LARGE\bfseries Shuwen Wu} \\[4pt]
+  {\small
+    Singapore \ $|$ \
+    \href{https://github.com/dajiaohuang}{\faGithub\ dajiaohuang} \ $|$ \
+    \href{mailto:mikewushuwen@gmail.com}{\faEnvelope\ mikewushuwen@gmail.com} \ $|$ \
+    \href{tel:+65 82737235}{\faMobile\ +65 82737235}
+  }\\[-1pt]
+  % {\small Target: Agent / LLM / ML Engineering Internship, Singapore or Remote}
+\end{center}
+
+\section{Education}
+\textbf{National University of Singapore} \hfill \textit{2025 -- Present}\\
+M.Sc., Data Science \& Machine Learning
+
+\textbf{Shanghai Jiao Tong University} \hfill \textit{2021 -- 2025}\\
+B.Eng., Information Security, IEEE Honor Class \hfill GPA: 85.5 / 100
+
+\section{Experience}
+\datedentry{China Pacific Insurance, Digital Intelligence Institute}{Feb 2025 -- Jul 2025}{Algorithm Intern / Agentic RAG Engineer}
+\vspace{-0.6em}
+{\small
+\begin{itemize}
+  \item Independently built a version-aware OceanBase Agentic RAG system for database documentation QA and troubleshooting, exposing Search, QA, Troubleshoot, Index Management, and unified \texttt{POST /api/v1/agent/query} workflows over FastAPI.
+  \item Designed the LangGraph state flow across preparation, query rewrite, worker fanout, answer aggregation, and verification/finalization, integrating Query Router, Version Resolver, specialized / multi-hop retrievers, session memory, clarifying questions, evidence verification, and observable Agent Trace.
+  \item Built hybrid retrieval with Milvus dense vectors, sparse vectors, scalar metadata filters, reranking, and context construction over about \texttt{82,843} OceanBase documentation chunks; covered parameters, system views, SQL syntax, version changes, and troubleshooting cases.
+  \item Defined enterprise launch gates and risk boundaries: read-only diagnostic tool contract, no production SQL execution or parameter mutation, \texttt{37} passing tests, Retrieval Score \(\geq\) 80, Generation Score \(\geq\) 82, Unsafe Suggestion Rate \(\leq\) 1\%, and Hallucination Rate \(\leq\) 8\%.
+\end{itemize}
+}
+
+\datedentry{Shanghai Jiao Tong University}{Jul 2023 -- May 2024}{Research Intern}
+\vspace{-0.6em}
+{\small
+\begin{itemize}
+  \item Supported Inter-X and HIMO human interaction research by building motion-data cleaning, visualization, annotation, manual calibration, and model-validation workflows for text-to-motion and human-object interaction generation.
+  \item Worked with Matching Score, R-precision, FID, Diversity, MPJPE, and MPJVE; built Unreal C++ / Blueprint and Blender rendering pipelines for consistent motion visualization.
+  \item Contributed to research outputs accepted by CVPR 2024 and ECCV 2024; participated in the CVPR 2024 Ego-Exo4D body pose challenge, where the SJTU-SEIEE team ranked 3rd in the body pose track.
+\end{itemize}
+}
+
+\section{Selected Projects}
+\projectentry{SJTU Agent}{May 2026}
+\projectkeywords{Agent, MCP, Skill Injection}
+\vspace{-0.7em}
+{\small
+\begin{itemize}
+  \item Built \texttt{sjtu-agent} as a campus-oriented extensible Agent runtime with shared CLI / Web SSE / bot entrypoints, conversation context management, OpenAI-compatible / Anthropic streaming loops, and multimodal parsing pipelines for complex file inputs.
+  \item Extended MCP and Skill capabilities with dynamic MCP registration, short-lived clients, and \texttt{SKILL.md} prompt injection; developed Shuiyuan MCP (\texttt{26} tools + \texttt{10} resources + \texttt{1} prompt) with a deepsearch forum-research workflow, and YKST Treehole MCP (\texttt{48} tools + \texttt{15} resources + \texttt{4} prompts).
+  \item Built the multimodal parsing and multi-platform support layer around \texttt{parsing/router.py} and shared entry adapters, routing file inputs through automatic parser selection, OCR/ASR, and PDF/PPT fallback chains while keeping CLI, Web SSE, Telegram, Feishu, and WeChat behaviors consistent.
+\end{itemize}
+}
+
+\projectentry{MemeSense: Multimodal Meme Understanding}{Mar 2026 -- Apr 2026}
+\projectkeywords{Multimodal, Captioning, Distillation, RAG}
+\vspace{-0.7em}
+{\small
+\begin{itemize}
+  \item Built an interpretable meme-understanding pipeline covering EasyOCR preprocessing, GPT-4o structured silver labeling, cultural-context need classification, BM25 RAG retrieval, and LLaVA-1.5-7B + QLoRA generation; selective context injection was preferred over original captions in \texttt{83.3\%} of a 30-sample human evaluation.
+\end{itemize}
+}
+
+\section{Skills}
+{\small
+\textbf{Agent / LLM:} Agent System Design, MCP, RAG, Agent Skill, prompt engineering, PEFT, Distillation, Harness Engineering, Milvus.\\
+\textbf{ML / AI:} PyTorch, Transformers, GNNs, diffusion models, ComfyUI.\\
+\textbf{Engineering:} Python, C++, C, TypeScript / Node.js, SQL, Docker, Git, Linux, SSE, Spark, Unreal Engine, Blender, Godot, VHDL, JavaScript.
+}
+
+\end{document}

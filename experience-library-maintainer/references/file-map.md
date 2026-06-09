@@ -6,7 +6,8 @@ Use this reference when the repo appears to be an experience archive that feeds 
 
 ### Source experiences
 
-- `internships/`
+- `experiences/`
+- legacy `internships/`
 - `projects/`
 - `publications/`
 
@@ -21,10 +22,22 @@ These hold detailed factual material and should be updated first when experience
 - `cv/cv.tex`
 - optional draft files in `cv/`
 
+### Resume templates and checks
+
+- `assets/tex-templates/` inside the skill for canonical TeX resume templates
+- `scripts/detect_tex_dependencies.py` for package and tool detection
+- `scripts/check_tex_pages.py` for page count and fill heuristics
+
 ### Interview derivatives
 
 - `interview/interview.md` for general reusable speaking materials
 - `interview/<company>/` for company-specific prep
+
+Current known company-specific pattern:
+
+- `interview/binance/crypto.md`
+- `interview/binance/mock.md`
+- `interview/binance/my-q.md`
 
 ## Maintenance conventions
 

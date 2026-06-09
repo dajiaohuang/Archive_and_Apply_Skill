@@ -1,6 +1,6 @@
 ---
 name: experience-library-maintainer
-description: Maintain and extend the personal experience-library workflow used to turn source experience notes into resume, interview, and company-specific application materials. Use when working in an experience archive repo with folders like internships/, projects/, publications/, cv/, and interview/, especially for tasks such as adding or updating source entries, syncing derivative resume files, generating or revising interview talking points, creating company-specific interview prep packs, or keeping README/index files aligned with the current workflow and file layout.
+description: Maintain and extend the personal experience-library workflow used to turn source experience notes into resume, interview, and company-specific application materials. Use when working in an experience archive repo with folders like experiences/ or legacy internships/, projects/, publications/, cv/, and interview/, especially for tasks such as adding or updating source entries, syncing derivative resume files, generating or revising interview talking points, creating company-specific interview prep packs, keeping README/index files aligned with the current workflow and file layout, or maintaining TeX-based resume templates and checks.
 ---
 
 # Experience Library Maintainer
@@ -10,13 +10,13 @@ Maintain the repo as a source-first career-materials system: update detailed sou
 ## Workflow Decision Tree
 
 - If the user changes the facts of an experience:
-  Update the source file under `internships/`, `projects/`, or `publications/` first.
+  Update the source file under `experiences/` or legacy `internships/`, `projects/`, or `publications/` first.
 - If the user wants better resume bullets or selection:
   Update the source file if facts changed, then sync `cv/` artifacts.
 - If the user wants speaking materials:
   Update `interview/` artifacts, not just `cv/`.
 - If the user wants company-specific prep:
-  Create or update a focused pack under a company folder such as `interview/<company>/`.
+  Create or update a focused pack under a company folder such as `interview/binance/`.
 - If the user mentions README, AGENTS, or repo instructions:
   Sync only after checking the current filesystem and current workflow outputs.
 
@@ -29,7 +29,7 @@ Read [references/file-map.md](references/file-map.md) at the start of non-trivia
 - Prefer updating existing artifacts over creating parallel duplicates.
 - When interview materials exist in both generic and company-specific form, keep:
   - generic material in `interview/interview.md`
-  - company-specific material in subfolders like `interview/<company>/`
+  - company-specific material in subfolders like `interview/binance/`
 - If docs mention files that no longer exist, verify against the filesystem before propagating the stale reference.
 
 ## Standard Workflow
@@ -62,6 +62,12 @@ When working in `cv/`, use this order:
 2. resume variants such as `cv/cv_cn.tex`, `cv/cv_cn_1page.tex`, `cv/cv.tex`
 3. audits or supporting docs such as `cv/RESUME_ENTRY_AUDIT.md`
 
+When maintaining TeX resumes:
+
+- use bundled template assets under `assets/tex-templates/` as canonical examples
+- run `scripts/detect_tex_dependencies.py` to inspect required LaTeX packages and local tools
+- run `scripts/check_tex_pages.py` after edits to check actual page count and per-page fill heuristics
+
 Keep the entry bank opinionated:
 
 - mark mainline items clearly
@@ -73,7 +79,7 @@ Keep the entry bank opinionated:
 Use:
 
 - `interview/interview.md` for reusable project/experience introductions and topic prep
-- company folders such as `interview/<company>/` for tailored mocks, domain notes, and closing questions
+- company folders such as `interview/binance/` for tailored mocks, domain notes, and closing questions
 
 When adding interview material:
 
@@ -122,6 +128,12 @@ Only describe workflows that are actually current. Prefer filesystem truth over 
   - short resume version
   - longer interview version
   - bilingual version if needed
+
+### Maintain resume templates
+
+- keep TeX templates under `assets/tex-templates/`
+- prefer updating the template assets when the repo has settled on a better resume layout
+- use dependency and page-check scripts before declaring the resume variants healthy
 
 ## Output Style Guidelines
 

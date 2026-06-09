@@ -1,0 +1,97 @@
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,9pt]{extarticle}
+%----------------------------------------------------------------------------------------
+\usepackage[UTF8]{ctex}
+\usepackage{url}
+\usepackage{parskip}
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\usepackage{titlesec}
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\usepackage{fontawesome5}
+
+\titleformat{\section}{\large\bfseries\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{4pt}{2pt}
+\setlength{\parindent}{0pt}
+\hyphenpenalty=5000
+\tolerance=1000
+
+\begin{document}
+\pagestyle{empty}
+
+% ── HEADER ──
+\begin{center}
+  {\LARGE\bfseries 吴舒文} \\[4pt]
+  {\small
+    \href{https://github.com/dajiaohuang}{\faGithub\ dajiaohuang} \ $|$ \
+    \href{mailto:mikewushuwen@gmail.com}{\faEnvelope\ mikewushuwen@gmail.com} \ $|$ \
+    \href{tel:+65 82737235}{\faMobile\ +65 82737235}
+  }
+\end{center}
+
+% ── EDUCATION ──
+\section{教育背景}
+\textbf{上海交通大学} \hfill 2021 -- 2025 \\
+工学学士，信息安全（IEEE 试点班） \hfill 均分: 85.5 / 100
+
+\textbf{新加坡国立大学} \hfill 2025 -- 至今 \\
+理学硕士，数据科学与机器学习
+
+% ── EXPERIENCE ──
+\section{实习经历}
+
+\noindent\textbf{中国太平洋保险 数智研究院 \quad 算法实习生} \hfill 2025.02 -- 07
+
+{\small 参与交付 OceanBase 内部 Agentic RAG 工作台，基于 FastAPI、Milvus dense/sparse vector、metadata filters 和 DeepSeek OpenAI-compatible API 支撑文档问答与排障。实现/集成 QAAgent、TroubleshootAgent、Query Router、版本解析、专用/多跳检索、证据校验、主动追问、session memory 与 Agent Trace；一期采用只读诊断工具契约，不连接生产库执行高风险操作，37 个测试通过，并设计版本解析、引用覆盖率、排障人工可接受率等试点验收指标。}
+
+\vspace{3pt}
+\noindent\textbf{上海交通大学 AI 研究所 \quad 科研实习生} \hfill 2023.07 -- 2024.05
+
+{\small 参与 Inter-X / HIMO 人体动作与交互数据集研究，开发动捕数据处理、可视化、标注与手动校准工具，训练并评测 text-to-motion / HOI 生成模型验证数据质量；相关工作发表于 \textbf{CVPR 2024}、\textbf{ECCV 2024}，另获 CVPR 2024 Ego-Exo4D body pose challenge 第三名。}
+
+% ── PROJECTS ──
+\section{项目经历}
+
+\noindent\textbf{校园场景 Agent 与 MCP 工具生态} \hfill 2026.05
+\href{https://github.com/dajiaohuang/shuiyuan-mcp}{\small\faGithub}
+
+{\small 将 SJTU Agent 从固定工具表升级为可扩展本地 Agent Runtime：实现动态 MCP 工具发现、OpenAI / Anthropic 流式 tool loop、stdio/SSE/HTTP transport、短生命周期 MCP session、\texttt{SKILL.md} prompt 注入，以及围绕 \texttt{parsing/router.py} 的多模态 parsing 与 OCR/ASR/PDF/PPT 回退链路，统一接入 CLI、Web SSE、Telegram、飞书、微信和后台提醒。开发 Shuiyuan MCP（Discourse + SSO cookie / CSRF，26 tools、10 Resources、1 prompt，并补充 deepsearch 论坛研究 workflow）；逆向树洞 gRPC-Web / protobuf 协议，手写 unary client 封装 48 tools、15 Resources、4 prompts，并为外部命令与写操作加入 \texttt{confirm:true}、pin commit、本地 session 脱敏与 pytest / Node smoke 边界测试。}
+
+\vspace{3pt}
+\noindent\textbf{CoLLM：基于大语言模型的协同推荐} \hfill 2026.04 -- 05
+\href{https://github.com/dajiaohuang/CoLLM}{\small\faGithub}
+
+{\small 复现并迁移 CoLLM 到 Qwen2-7B + QLoRA（4-bit NF4），修复 AMP NaN loss、缺失 \textless unk\textgreater{} token 与 collaborative token embedding 对齐。两阶段训练将 AUC 从 0.678 提升至 0.691，高于 MF-only 基线 0.674。}
+
+\vspace{3pt}
+\noindent\textbf{MemeSense：选择性知识注入的多模态解释生成} \hfill 2026.03 -- 04
+
+{\small 构建梗图理解管线：EasyOCR 预处理 $\to$ GPT-4o 银标注 $\to$ 背景需求分类 $\to$ BM25 RAG 检索 $\to$ LLaVA-1.5-7B + QLoRA 生成。提出“按需检索”策略，30 样本人工评估中 83.3\% 生成解释优于原始 caption。}
+
+\vspace{3pt}
+\noindent\textbf{SVD-InST：图像风格迁移} \hfill 2023.11 -- 12
+\href{https://github.com/dajiaohuang/SVD-InST}{\small\faGithub}
+
+{\small 基于 Stable Diffusion v1.4 结合 Textual Inversion 与 SVDiff 奇异值微调，仅训练约 3.7M（0.25\%）参数实现风格迁移；在九色鹿壁画风格任务上 FID 125.1，优于 InST（127.5）、CycleGAN（178.3）和 StyTR-2（171.3）。}
+
+\vspace{3pt}
+\noindent\textbf{口语自然语言理解（车载导航）} \hfill 2024.11 -- 12
+\href{https://github.com/CalciumArgon/CS3602_Natural_Language_Processing}{\small\faGithub}
+
+{\small 面向中文 ASR 噪声输入抽取 `(act, slot, value)` 语义三元组，构建 BERT-RNN + 数据增强 + 词块融合方案；在课程评测中达到 F1 82.75，并补充 zero-shot/few-shot LLM 提示解析路线做对比。}
+
+% ── SKILLS ──
+\section{专业技能}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Agent / LLM} & Agent System Design, MCP, RAG, Agent Skill, Prompt Engineering, PEFT, Distillation, Harness Engineering, Milvus\\
+\textbf{ML / AI} & PyTorch, Transformers, GNNs, Diffusion Models, ComfyUI\\
+\textbf{工程能力} & Python, C++, C, TypeScript / Node.js, SQL, Docker, Git, Linux, SSE, Spark, Unreal Engine, Blender, Godot, VHDL, JavaScript\\
+\end{tabularx}
+
+\end{document}
