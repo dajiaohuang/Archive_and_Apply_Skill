@@ -1,6 +1,6 @@
-# Experience Library Maintainer
+# Archive and Apply Skill
 
-A publishable Codex skill for bootstrapping and maintaining a personal experience archive as a source-first system for resume, interview, and company-specific application materials.
+A publishable Codex skill for bootstrapping and maintaining a personal archive-and-apply workspace as a source-first system for resume, interview, and company-specific application materials.
 
 This skill was designed around a real workflow with folders such as:
 
@@ -12,7 +12,7 @@ This skill was designed around a real workflow with folders such as:
 
 The core idea is simple:
 
-1. Create a usable experience-library repo when needed.
+1. Create a usable archive-and-apply repo when needed.
 2. Keep detailed source experience notes as the factual ground truth.
 3. Derive resume bullets, interview scripts, and company-specific prep materials from those source files.
 4. Keep the whole repo consistent as the workflow evolves.
@@ -21,7 +21,7 @@ The core idea is simple:
 
 The skill helps an agent:
 
-- create a brand-new experience library at a user-chosen path
+- create a brand-new archive-and-apply workspace at a user-chosen path
 - explore a given local directory, repo, or material dump and turn it into source entries
 - update source experience entries before touching derived materials
 - start from a reusable source-entry template instead of drafting from scratch
@@ -46,16 +46,16 @@ It also works when the repo does not exist yet and must be scaffolded from zero.
 ## Repo Layout
 
 ```text
-experience-library-maintainer-skill-repo/
+archive-and-apply-skill-repo/
 |-- README.md
 |-- README-cn.md
 |-- LICENSE
-`-- experience-library-maintainer/
+`-- archive-and-apply/
     |-- SKILL.md
     |-- agents/
     |   `-- openai.yaml
     |-- assets/
-    |   |-- lib-scaffold/
+    |   |-- workspace-scaffold/
     |   |   |-- AGENTS.md
     |   |   |-- README.md
     |   |   |-- cv/
@@ -80,22 +80,22 @@ experience-library-maintainer-skill-repo/
         `-- file-map.md
 ```
 
-The actual skill lives inside `experience-library-maintainer/`.
+The actual skill lives inside `archive-and-apply/`.
 
 ## Installation
 
 Copy the skill folder into your Codex skills directory:
 
 ```powershell
-Copy-Item -Recurse .\experience-library-maintainer `
-  $HOME\.codex\skills\experience-library-maintainer
+Copy-Item -Recurse .\archive-and-apply `
+  $HOME\.codex\skills\archive-and-apply
 ```
 
 If `CODEX_HOME` is set, use:
 
 ```powershell
-Copy-Item -Recurse .\experience-library-maintainer `
-  $env:CODEX_HOME\skills\experience-library-maintainer
+Copy-Item -Recurse .\archive-and-apply `
+  $env:CODEX_HOME\skills\archive-and-apply
 ```
 
 ## Triggering the Skill
@@ -103,20 +103,20 @@ Copy-Item -Recurse .\experience-library-maintainer `
 Example prompt:
 
 ```text
-Use $experience-library-maintainer to create or maintain my experience library, CV materials, and interview docs consistently.
+Use $archive-and-apply to create or maintain my archive-and-apply workspace, CV materials, and interview docs consistently.
 ```
 
 Default language rule on first bootstrap:
 
-- if the user's installation or first-invocation prompt to the agent is written in Chinese, default to creating the library in Chinese
-- otherwise, default to creating the library in English
+- if the user's installation or first-invocation prompt to the agent is written in Chinese, default to creating the workspace in Chinese
+- otherwise, default to creating the workspace in English
 - if the user explicitly asks for another language, follow the explicit request
 - if the target repo already exists, follow the existing language of that repo or folder instead of the prompt default
 
 Typical requests:
 
-- "Create a new experience library in this folder and seed it with the standard structure."
-- "Explore this repo and turn the relevant projects into source entries in my library."
+- "Create a new archive-and-apply workspace in this folder and seed it with the standard structure."
+- "Explore this repo and turn the relevant projects into source entries in my workspace."
 - "Add a new internship and sync the resume bullets."
 - "Update my project facts, then revise the interview introduction."
 - "Create a company-specific mock interview pack based on this JD."
@@ -127,7 +127,7 @@ Typical requests:
 
 This skill enforces a source-first derivative workflow:
 
-1. If needed, create the experience-library repo scaffold at the chosen path.
+1. If needed, create the archive-and-apply repo scaffold at the chosen path.
 2. Build or update factual experience notes in `experiences/` or legacy `internships/`, `projects/`, or `publications/`.
 3. Sync the resume layer in `cv/`.
 4. Sync the interview layer in `interview/`.
@@ -164,7 +164,7 @@ This is the most direct path when the agent can edit the repo locally.
 
 Typical flow:
 
-1. Create the library scaffold if the repo does not exist yet.
+1. Create the workspace scaffold if the repo does not exist yet.
 2. Inspect the relevant source experience file or raw material folder.
 3. Update or create source files first.
 4. Sync `cv/` artifacts.
@@ -201,7 +201,7 @@ Typical flow:
    - desired artifact type
    - source path or repo path if ingestion is needed
 2. Decide whether the request is:
-   - library bootstrap
+   - workspace bootstrap
    - source ingest
    - resume sync
    - interview sync
@@ -212,40 +212,40 @@ Typical flow:
    - do not let it create parallel interview files unless explicitly needed
    - do not let it update repo docs without checking the filesystem
    - do not let it generate company mocks before saving the JD
-   - remember the canonical library path after first bootstrap when the surface supports memory
+   - remember the canonical workspace path after first bootstrap when the surface supports memory
 
 In other words, OpenClaw / Hermes can be great for orchestration, planning, and multi-step agentic handoff, but this skill is what keeps the artifact logic stable.
 
 ## Included Skill Files
 
-- `experience-library-maintainer/SKILL.md`
+- `archive-and-apply/SKILL.md`
   Core workflow instructions and trigger description.
-- `experience-library-maintainer/references/file-map.md`
+- `archive-and-apply/references/file-map.md`
   Repo-specific file roles, update order, and stale-doc signals.
-- `experience-library-maintainer/references/user-flow.md`
+- `archive-and-apply/references/user-flow.md`
   Guided step-by-step flow and recommended next-action menus.
-- `experience-library-maintainer/assets/lib-scaffold/`
-  Starter files and folders for creating a new experience-library repo at a chosen path.
-- `experience-library-maintainer/assets/cv-templates/`
+- `archive-and-apply/assets/workspace-scaffold/`
+  Starter files and folders for creating a new archive-and-apply repo at a chosen path.
+- `archive-and-apply/assets/cv-templates/`
   Reusable Chinese and English templates for `CV_ENTRY_BANK.md` and `CV_ENTRY_AUDIT.md`.
-- `experience-library-maintainer/assets/interview-templates/`
+- `archive-and-apply/assets/interview-templates/`
   Reusable Chinese and English templates for `interview.md`, `jd.md`, `mock.md`, and `my-q.md`.
-- `experience-library-maintainer/assets/source-templates/TEMPLATE.md`
+- `archive-and-apply/assets/source-templates/TEMPLATE.md`
   Reusable source-entry templates in Chinese and English, plus a legacy default `TEMPLATE.md`.
-- `experience-library-maintainer/assets/tex-templates/`
-  Canonical TeX resume templates copied from a real experience-library repo.
-- `experience-library-maintainer/scripts/detect_tex_dependencies.py`
+- `archive-and-apply/assets/tex-templates/`
+  Canonical TeX resume templates copied from a real archive-and-apply repo.
+- `archive-and-apply/scripts/detect_tex_dependencies.py`
   Detects LaTeX packages, included files, and local compile tools.
-- `experience-library-maintainer/scripts/check_tex_pages.py`
+- `archive-and-apply/scripts/check_tex_pages.py`
   Compiles a TeX resume, reports actual page count, and estimates per-page fill.
-- `experience-library-maintainer/agents/openai.yaml`
+- `archive-and-apply/agents/openai.yaml`
   UI metadata and default invocation prompt.
 
 ## Example Use Cases
 
-- Create an experience-library repo from scratch in a new directory.
+- Create an archive-and-apply repo from scratch in a new directory.
 - Explore a codebase or notes folder and ingest the relevant material into source entries.
-- Maintain a long-term experience archive for experiences, projects, and publications.
+- Maintain a long-term archive-and-apply workspace for experiences, projects, and publications.
 - Turn source notes into a curated resume entry bank.
 - Keep TeX resume templates healthy and detect page-count drift.
 - Keep interview scripts aligned with updated project facts.

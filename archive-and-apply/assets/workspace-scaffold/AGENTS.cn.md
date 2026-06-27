@@ -4,7 +4,7 @@
 
 ## 目的
 
-这是一个个人经历资料库：以 source-first 为原则，沉淀 experiences、projects、publications、CV 产物和 interview 材料。
+这是一个个人 archive-and-apply 工作区：以 source-first 为原则，沉淀 experiences、projects、publications、CV 产物和 interview 材料。
 
 ## 核心规则
 

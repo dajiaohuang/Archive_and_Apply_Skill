@@ -1,23 +1,23 @@
 ---
-name: experience-library-maintainer
-description: Bootstrap and maintain a personal experience-library workflow that turns source experience notes into resume, interview, and company-specific application materials. Use when the user wants to create a new experience library at a chosen path, ingest material from local directories or repos into source entries, derive CV artifacts from the library, compile and check TeX resumes, or generate reusable and company-specific interview prep packs.
+name: archive-and-apply
+description: Bootstrap and maintain a personal archive-and-apply workflow that turns source experience notes into resume, interview, and company-specific application materials. Use when the user wants to create a new archive-and-apply workspace at a chosen path, ingest material from local directories or repos into source entries, derive CV artifacts from the workspace, compile and check TeX resumes, or generate reusable and company-specific interview prep packs.
 ---
 
-# Experience Library Maintainer
+# Archive and Apply Skill
 
-Bootstrap or maintain an experience-library repo as a source-first career-materials system: create the library when needed, ingest source facts from raw materials or external directories/repos, then sync derivative resume and interview artifacts.
+Bootstrap or maintain an archive-and-apply repo as a source-first career-materials system: create the workspace when needed, ingest source facts from raw materials or external directories/repos, then sync derivative resume and interview artifacts.
 
 ## Primary Modes
 
-- Bootstrap a new experience library at a user-chosen path
+- Bootstrap a new archive-and-apply workspace at a user-chosen path
 - Explore a given local directory, repository, notes folder, or material dump and convert relevant content into source entries
 - Derive CV entry banks and TeX resumes from source entries, then compile and check page count and page fill
 - Generate reusable and company-specific interview materials, including storing the JD before generating mocks
 
 ## Workflow Decision Tree
 
-- If the user wants to create a new experience library:
-  Scaffold the repo at the chosen location using `assets/lib-scaffold/`, copy in the correct Chinese or English scaffold files, source-entry template, TeX templates, and TeX check scripts.
+- If the user wants to create a new archive-and-apply workspace:
+  Scaffold the repo at the chosen location using `assets/workspace-scaffold/`, copy in the correct Chinese or English scaffold files, source-entry template, TeX templates, and TeX check scripts.
 - If the user gives a directory, repo, or raw material folder and wants entries created:
   Explore the provided material, classify content into `experiences/`, `projects/`, or `publications/`, then create or strengthen source entries.
 - If the user changes the facts of an experience:
@@ -39,9 +39,9 @@ Read [references/role-cv-audit.md](references/role-cv-audit.md) when the user wa
 
 - Treat source experience files as the factual ground truth.
 - Preserve Chinese in repo-authored content unless the target artifact is explicitly English or bilingual.
-- On first bootstrap of a new library, if the user's install prompt or first invocation prompt is in Chinese, default to a Chinese library; otherwise default to an English library.
-- If the user wants the whole library in Chinese, use Chinese templates consistently for source entries, CV entry files, and interview files.
-- If the user wants the whole library in English, use English templates consistently for source entries, CV entry files, and interview files.
+- On first bootstrap of a new workspace, if the user's install prompt or first invocation prompt is in Chinese, default to a Chinese workspace; otherwise default to an English workspace.
+- If the user wants the whole workspace in Chinese, use Chinese templates consistently for source entries, CV entry files, and interview files.
+- If the user wants the whole workspace in English, use English templates consistently for source entries, CV entry files, and interview files.
 - If the user does not specify a language, follow the existing language of the target repo or target folder.
 - Prefer updating existing artifacts over creating parallel duplicates.
 - After every meaningful milestone, explicitly offer 2 to 4 concrete next-step options instead of ending with status only.
@@ -55,12 +55,12 @@ Read [references/role-cv-audit.md](references/role-cv-audit.md) when the user wa
 
 ### 1. Build Context
 
-- If the library does not exist yet, create the structure before writing content.
+- If the workspace does not exist yet, create the structure before writing content.
 - Inspect the relevant source file(s).
 - Inspect the derivative artifact(s) the user actually uses.
 - If the user provided a path, repo, or folder of materials, inspect it before drafting entries.
 - Check whether the request is:
-  - library bootstrap
+  - workspace bootstrap
   - external-material exploration and ingest
   - source update
   - resume sync
@@ -68,9 +68,9 @@ Read [references/role-cv-audit.md](references/role-cv-audit.md) when the user wa
   - company-specific prep
   - repo documentation sync
 
-### 2. Bootstrap a New Library
+### 2. Bootstrap a New Workspace
 
-When the user wants to create an experience library at a chosen location:
+When the user wants to create an archive-and-apply workspace at a chosen location:
 
 1. Create:
    - `experiences/`
@@ -108,8 +108,8 @@ When bootstrapping:
 - prefer `experiences/` over `internships/` for new repos
 - keep the scaffold simple and editable
 - preserve Chinese defaults for content-facing files unless the user wants another language
-- report the canonical library path after creation
-- if the agent surface supports memory, store the canonical library path for future reuse
+- report the canonical workspace path after creation
+- if the agent surface supports memory, store the canonical workspace path for future reuse
 - on OpenClaw / Hermes style surfaces, treat the first successful bootstrap as a memory-worthy event
 
 ### 3. Update or Create Source Before Derivatives
@@ -153,7 +153,7 @@ The intended flow is:
 When maintaining TeX resumes:
 
 - use bundled template assets under `assets/tex-templates/` as canonical examples
-- on the first CV workflow in a library, detect local TeX tooling before committing to compile-based actions
+- on the first CV workflow in a workspace, detect local TeX tooling before committing to compile-based actions
 - run `scripts/detect_tex_dependencies.py` to inspect required LaTeX packages and local tools
 - run `scripts/check_tex_pages.py` after edits to check actual page count and per-page fill heuristics
 
@@ -211,9 +211,9 @@ Only describe workflows that are actually current. Prefer filesystem truth over 
 
 ## Common Task Patterns
 
-### Create a new library at a chosen path
+### Create a new workspace at a chosen path
 
-- create the directory structure from `assets/lib-scaffold/`
+- create the directory structure from `assets/workspace-scaffold/`
 - copy in the source-entry template
 - copy in TeX templates and TeX check scripts
 - seed interview and CV readmes so future agents know the canonical files
@@ -232,7 +232,7 @@ Only describe workflows that are actually current. Prefer filesystem truth over 
 - if `cv/CV_ENTRY_BANK.md` already exists, prompt whether to sync it now
 - sync any affected `cv/` and `interview/` artifacts
 
-### Build CV artifacts from library content
+### Build CV artifacts from workspace content
 
 - mine source entries for strong, verifiable bullets
 - update `cv/CV_ENTRY_BANK.md`
@@ -299,11 +299,11 @@ Only describe workflows that are actually current. Prefer filesystem truth over 
 
 ### After skill install or first invocation
 
-- create a new experience library at a chosen path
-- inspect an existing library
-- ingest a local directory, repo, or notes folder into a library
+- create a new archive-and-apply workspace at a chosen path
+- inspect an existing workspace
+- ingest a local directory, repo, or notes folder into a workspace
 
-### After library bootstrap
+### After workspace bootstrap
 
 - create the first source entries from raw materials
 - ingest a local repo or folder into source entries

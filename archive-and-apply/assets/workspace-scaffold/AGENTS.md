@@ -4,7 +4,7 @@ This file provides guidance to coding agents when working in this repository.
 
 ## Purpose
 
-This is a personal experience documentation library: a source-first archive of experiences, projects, publications, CV artifacts, and interview materials.
+This is a personal archive-and-apply workspace: a source-first archive of experiences, projects, publications, CV artifacts, and interview materials.
 
 ## Core Rules
 

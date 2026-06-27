@@ -15,27 +15,27 @@ Do not end a milestone with only a status summary when there is an obvious next 
 
 ## Step 0: Skill Installed or First Invocation
 
-When the user has just installed or first invoked the skill, the default next-step prompt should point to library creation.
+When the user has just installed or first invoked the skill, the default next-step prompt should point to workspace creation.
 
-Default language behavior for first library bootstrap:
+Default language behavior for first workspace bootstrap:
 
-- if the user's install prompt or first invocation prompt is in Chinese, default the new library to Chinese
-- otherwise, default the new library to English
+- if the user's install prompt or first invocation prompt is in Chinese, default the new workspace to Chinese
+- otherwise, default the new workspace to English
 - if the user explicitly requests another language, follow that request
 - if the target repo already exists, follow the repo's current language instead of the prompt default
 
 Recommended options:
 
-- create a new experience library at a chosen path
-- point the agent at an existing library to inspect its structure
-- give a directory, repo, or notes folder to ingest into a library
+- create a new archive-and-apply workspace at a chosen path
+- point the agent at an existing workspace to inspect its structure
+- give a directory, repo, or notes folder to ingest into a workspace
 
-## Step 1: Library Created
+## Step 1: Workspace Created
 
-Immediately after creating a new library:
+Immediately after creating a new workspace:
 
-- report the canonical library path
-- if the agent surface supports memory, store that path as the default experience-library location
+- report the canonical workspace path
+- if the agent surface supports memory, store that path as the default archive-and-apply location
 - if the agent surface has explicit memory or profile features, prefer persisting the path there
 - if persistent memory is unavailable, write the path into the repo README or remind the user to reuse the same path in future requests
 
@@ -48,7 +48,7 @@ Recommended options after bootstrap:
 Special note for OpenClaw / Hermes style surfaces:
 
 - treat the first successful bootstrap as a memory-worthy event
-- remember the canonical library path so later tasks can say "use my experience lib" without restating the location
+- remember the canonical workspace path so later tasks can say "use my archive-and-apply workspace" without restating the location
 
 ## Step 2: First Entries Created
 
@@ -69,7 +69,7 @@ Recommended options:
 After creating a CV content bank:
 
 - tell the user it can now be used to draft `.tex` resumes
-- if this is the first CV workflow in the library, detect TeX tooling first
+- if this is the first CV workflow in the workspace, detect TeX tooling first
 
 Recommended options:
 
