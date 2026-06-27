@@ -23,5 +23,5 @@ Each company folder usually contains:
 Recommended order:
 
 1. Save `jd.md` first
-2. Generate `mock.md` from the JD and the existing library
+2. Generate `mock.md` from the JD and the existing workspace
 3. Refine `my-q.md` last

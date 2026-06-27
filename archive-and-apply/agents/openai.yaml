@@ -1,0 +1,4 @@
+interface:
+  display_name: "Archive and Apply"
+  short_description: "Maintain resume and interview materials"
+  default_prompt: "Use $archive-and-apply to update my archive-and-apply workspace, resume materials, and interview docs consistently."

@@ -1,10 +1,10 @@
-# Experience Library File Map
+# Archive and Apply File Map
 
-Use this reference when the repo appears to be an experience archive that feeds resume and interview outputs.
+Use this reference when the repo appears to be an archive-and-apply workspace that feeds resume and interview outputs.
 
-## Bootstrap shape for a new library
+## Bootstrap shape for a new workspace
 
-When creating a new library from scratch, prefer this base structure:
+When creating a new archive-and-apply workspace from scratch, prefer this base structure:
 
 - `experiences/`
 - `projects/`
@@ -18,7 +18,7 @@ When creating a new library from scratch, prefer this base structure:
 - root `TEMPLATE.md`
 - root `.gitignore`
 
-When the user prefers a language-specific library, choose Chinese or English scaffold files and copy them into these canonical names.
+When the user prefers a language-specific workspace, choose Chinese or English scaffold files and copy them into these canonical names.
 
 ## Source-of-truth layers
 
