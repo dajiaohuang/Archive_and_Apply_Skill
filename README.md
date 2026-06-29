@@ -1,54 +1,60 @@
 # Archive and Apply Skill
 
-A publishable Codex skill for bootstrapping and maintaining a personal archive-and-apply workspace as a source-first system for resume, interview, and company-specific application materials.
+[English Version](README-en.md)
 
-This skill was designed around a real workflow with folders such as:
+一个可发布的 Codex skill，用于从零搭建并维护"个人 archive-and-apply 工作区"，把源经历条目持续转化为 CV、面试材料和公司定制申请材料。
 
-- `experiences/` or legacy `internships/`
+这个 skill 基于真实工作流设计，目标仓库通常包含：
+
+- `experiences/` 或历史 `internships/`
 - `projects/`
 - `publications/`
 - `cv/`
 - `interview/`
 
-The core idea is simple:
+核心思路很简单：
 
-1. Create a usable archive-and-apply repo when needed.
-2. Keep detailed source experience notes as the factual ground truth.
-3. Derive resume bullets, interview scripts, and company-specific prep materials from those source files.
-4. Keep the whole repo consistent as the workflow evolves.
+1. 需要时先创建一个可用的 archive-and-apply 仓库。
+2. 把详细 source entry 作为事实层。
+3. 从 source entry 提炼 CV bullet、面试介绍和定制材料。
+4. 随着工作流演进，持续保持整库一致。
 
-## What the Skill Does
+## 这个 Skill 能做什么
 
-The skill helps an agent:
+- 在用户指定路径创建一个新的 archive-and-apply 工作区
+- 探索本地目录、repo、材料文件夹，并把内容转成 source entry
+- 先更新 source entry，再同步下游 `cv/` 和 `interview/`
+- 从模板开始创建 source entry，而不是每次从空白文件写起
+- 维护 `CV_ENTRY_BANK.md` 和 `CV_ENTRY_AUDIT.md`
+- 维护中英文 `.tex` CV，并检测 TeX 依赖、编译结果、页数和页面填充
+- 维护通用面试文件和公司定制面试目录
+- 先保存 JD，再生成 `mock.md`
+- 每个阶段结束后，用可多选的 next-step 菜单提示用户下一步可以做什么
 
-- create a brand-new archive-and-apply workspace at a user-chosen path
-- explore a given local directory, repo, or material dump and turn it into source entries
-- update source experience entries before touching derived materials
-- start from a reusable source-entry template instead of drafting from scratch
-- maintain an opinionated resume entry bank
-- sync Chinese and English resume variants
-- maintain canonical TeX resume templates
-- detect LaTeX package and tool dependencies
-- compile a resume and check actual page count plus per-page fill heuristics
-- maintain reusable interview talking points
-- create company-specific interview prep packs
-- save the JD into a company folder before generating mocks
-- keep `README.md` / `AGENTS.md` aligned with the current file layout and workflow
-- guide the user step by step with explicit next-action options after each milestone
+## 中英文模板支持
 
-It is especially useful when one repo has both:
+这个 skill 现在同时提供中文和英文模板，适用于：
 
-- archival long-form experience notes
-- downstream job-search artifacts that must stay consistent
+- source entry
+- `CV_ENTRY_BANK.md`
+- `CV_ENTRY_AUDIT.md`
+- `interview/interview.md`
+- `interview/<company>/jd.md`
+- `interview/<company>/mock.md`
+- `interview/<company>/my-q.md`
 
-It also works when the repo does not exist yet and must be scaffolded from zero.
+推荐约定：
 
-## Repo Layout
+- 如果用户想把整个工作区 都写成中文，就优先使用 `*.cn.md` 模板
+- 如果用户想把整个工作区 都写成英文，就优先使用 `*.en.md` 模板
+- 如果用户没有特别说明，优先沿用目标仓库现有语言
+
+## 仓库结构
 
 ```text
 archive-and-apply-skill-repo/
 |-- README.md
-|-- README-cn.md
+|-- README-en.md
 |-- LICENSE
 `-- archive-and-apply/
     |-- SKILL.md
@@ -56,202 +62,53 @@ archive-and-apply-skill-repo/
     |   `-- openai.yaml
     |-- assets/
     |   |-- workspace-scaffold/
-    |   |   |-- AGENTS.md
-    |   |   |-- README.md
-    |   |   |-- cv/
-    |   |   `-- interview/
     |   |-- cv-templates/
-    |   |   |-- CV_ENTRY_AUDIT.md
-    |   |   |-- CV_ENTRY_AUDIT.cn.md
-    |   |   |-- CV_ENTRY_AUDIT.en.md
-    |   |   |-- CV_ENTRY_BANK.md
-    |   |   |-- CV_ENTRY_BANK.cn.md
-    |   |   `-- CV_ENTRY_BANK.en.md
     |   |-- interview-templates/
     |   |-- source-templates/
-    |   |   |-- TEMPLATE.md
-    |   |   |-- TEMPLATE.cn.md
-    |   |   `-- TEMPLATE.en.md
     |   `-- tex-templates/
     |-- scripts/
-    |   |-- check_tex_pages.py
-    |   `-- detect_tex_dependencies.py
     `-- references/
-        `-- file-map.md
 ```
 
-The actual skill lives inside `archive-and-apply/`.
+## 安装
 
-## Installation
-
-Copy the skill folder into your Codex skills directory:
+把 `archive-and-apply/` 复制到你的 Codex skills 目录：
 
 ```powershell
 Copy-Item -Recurse .\archive-and-apply `
   $HOME\.codex\skills\archive-and-apply
 ```
 
-If `CODEX_HOME` is set, use:
+如果设置了 `CODEX_HOME`，则使用：
 
 ```powershell
 Copy-Item -Recurse .\archive-and-apply `
   $env:CODEX_HOME\skills\archive-and-apply
 ```
 
-## Triggering the Skill
+## 触发方式
 
-Example prompt:
+示例：
 
 ```text
 Use $archive-and-apply to create or maintain my archive-and-apply workspace, CV materials, and interview docs consistently.
 ```
 
-Default language rule on first bootstrap:
+首次建库的默认语言规则：
 
-- if the user's installation or first-invocation prompt to the agent is written in Chinese, default to creating the workspace in Chinese
-- otherwise, default to creating the workspace in English
-- if the user explicitly asks for another language, follow the explicit request
-- if the target repo already exists, follow the existing language of that repo or folder instead of the prompt default
+- 如果用户给 agent 的安装 prompt 或第一次调用 prompt 是中文，则默认按中文建库
+- 否则默认按英文建库
+- 如果用户明确指定了语言，以用户明确指定为准
+- 如果目标 repo 已存在，则优先沿用该 repo 或目标目录已有语言，而不是按 prompt 默认值
 
-Typical requests:
+## 典型用法
 
-- "Create a new archive-and-apply workspace in this folder and seed it with the standard structure."
-- "Explore this repo and turn the relevant projects into source entries in my workspace."
-- "Add a new internship and sync the resume bullets."
-- "Update my project facts, then revise the interview introduction."
-- "Create a company-specific mock interview pack based on this JD."
-- "Check whether my Chinese resume still fits into 1 page and whether the last page is too sparse."
-- "Fix stale README references after I changed the interview file layout."
+- "在这个目录里创建一个新的 archive-and-apply 工作区。"
+- "探索这个 repo，把相关项目整理成 source entry。"
+- "基于现在的条目生成 `CV_ENTRY_BANK.md`。"
+- "按 data science 方向审计这版 CV 应该保留哪些条目和 Skills。"
+- "给这个岗位建一个 `interview/<company>/` 目录，并保存 JD。"
 
-## Workflow Philosophy
-
-This skill enforces a source-first derivative workflow:
-
-1. If needed, create the archive-and-apply repo scaffold at the chosen path.
-2. Build or update factual experience notes in `experiences/` or legacy `internships/`, `projects/`, or `publications/`.
-3. Sync the resume layer in `cv/`.
-4. Sync the interview layer in `interview/`.
-5. Sync repo documentation only after checking the actual filesystem.
-
-This avoids common failure modes in job-search repos:
-
-- resume bullets becoming stronger than the source facts
-- interview scripts drifting away from what is actually documented
-- stale README / agent instructions pointing to deleted files
-- company-specific packs being generated before the JD is actually captured
-- users not knowing the most natural next action after each step
-
-## Canonical Artifact Rules
-
-The skill assumes and encourages these conventions:
-
-- source facts live in `experiences/` or legacy `internships/`, `projects/`, `publications/`
-- new source entries can start from reusable Chinese or English templates bundled with the skill
-- generic interview prep lives in `interview/interview.md`
-- company-specific prep lives in subfolders such as `interview/<company>/`
-- company-specific directories should usually save the JD first, then generate `mock.md`
-- resume selection and wording are maintained through `cv/CV_ENTRY_BANK.md`
-- TeX template assets and TeX validation scripts can be bundled with the skill
-- every completed step should be followed by a small menu of likely next steps
-
-## My Actual Multi-Agent Workflow
-
-The same repo can be maintained through different agent surfaces. This skill is built to make those surfaces converge on the same artifact order and decision rules.
-
-### 1. Codex Flow
-
-This is the most direct path when the agent can edit the repo locally.
-
-Typical flow:
-
-1. Create the workspace scaffold if the repo does not exist yet.
-2. Inspect the relevant source experience file or raw material folder.
-3. Update or create source files first.
-4. Sync `cv/` artifacts.
-5. Sync `interview/` artifacts.
-6. Update `README.md` or `AGENTS.md` only if needed.
-
-This is the cleanest mode for structured repo maintenance because the skill can directly enforce the source-first workflow.
-
-It is also the best mode for TeX resume maintenance, because the same agent can update source wording, sync `.tex` variants, detect missing LaTeX dependencies, compile the resume, and check whether it really fits into 1 page or 2 pages.
-
-### 2. Claude Code Flow
-
-This works well as an alternative editing surface or as a second-pass drafting surface.
-
-Typical flow:
-
-1. Point Claude Code at the same repo.
-2. Make sure it sees the same source-first expectations.
-3. Ask it to update source files before derivatives.
-4. Use it for rewriting, tightening interview phrasing, or generating bilingual variants.
-5. Verify that it updates the same canonical interview files instead of creating duplicates.
-
-In practice, this flow is strongest when Claude is used with explicit repo conventions rather than as a free-form writer.
-
-### 3. OpenClaw / Hermes Flow
-
-Treat OpenClaw / Hermes-style setups as orchestration layers rather than freeform writers.
-
-Typical flow:
-
-1. Use OpenClaw / Hermes to collect the task context:
-   - target company
-   - job description
-   - desired artifact type
-   - source path or repo path if ingestion is needed
-2. Decide whether the request is:
-   - workspace bootstrap
-   - source ingest
-   - resume sync
-   - interview sync
-   - company-specific prep
-3. Route the task through the same source-first workflow.
-4. Keep the agent bounded:
-   - do not let it strengthen claims beyond source files
-   - do not let it create parallel interview files unless explicitly needed
-   - do not let it update repo docs without checking the filesystem
-   - do not let it generate company mocks before saving the JD
-   - remember the canonical workspace path after first bootstrap when the surface supports memory
-
-In other words, OpenClaw / Hermes can be great for orchestration, planning, and multi-step agentic handoff, but this skill is what keeps the artifact logic stable.
-
-## Included Skill Files
-
-- `archive-and-apply/SKILL.md`
-  Core workflow instructions and trigger description.
-- `archive-and-apply/references/file-map.md`
-  Repo-specific file roles, update order, and stale-doc signals.
-- `archive-and-apply/references/user-flow.md`
-  Guided step-by-step flow and recommended next-action menus.
-- `archive-and-apply/assets/workspace-scaffold/`
-  Starter files and folders for creating a new archive-and-apply repo at a chosen path.
-- `archive-and-apply/assets/cv-templates/`
-  Reusable Chinese and English templates for `CV_ENTRY_BANK.md` and `CV_ENTRY_AUDIT.md`.
-- `archive-and-apply/assets/interview-templates/`
-  Reusable Chinese and English templates for `interview.md`, `jd.md`, `mock.md`, and `my-q.md`.
-- `archive-and-apply/assets/source-templates/TEMPLATE.md`
-  Reusable source-entry templates in Chinese and English, plus a legacy default `TEMPLATE.md`.
-- `archive-and-apply/assets/tex-templates/`
-  Canonical TeX resume templates copied from a real archive-and-apply repo.
-- `archive-and-apply/scripts/detect_tex_dependencies.py`
-  Detects LaTeX packages, included files, and local compile tools.
-- `archive-and-apply/scripts/check_tex_pages.py`
-  Compiles a TeX resume, reports actual page count, and estimates per-page fill.
-- `archive-and-apply/agents/openai.yaml`
-  UI metadata and default invocation prompt.
-
-## Example Use Cases
-
-- Create an archive-and-apply repo from scratch in a new directory.
-- Explore a codebase or notes folder and ingest the relevant material into source entries.
-- Maintain a long-term archive-and-apply workspace for experiences, projects, and publications.
-- Turn source notes into a curated resume entry bank.
-- Keep TeX resume templates healthy and detect page-count drift.
-- Keep interview scripts aligned with updated project facts.
-- Build tailored company-specific mock packs for specific employers or roles.
-- Migrate the workflow across Codex, Claude Code, and OpenClaw/Hermes-style agent setups without losing artifact discipline.
-
-## License
+## 许可证
 
 MIT
