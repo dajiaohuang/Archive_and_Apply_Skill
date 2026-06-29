@@ -13,6 +13,7 @@ When creating a new archive-and-apply workspace from scratch, prefer this base s
 - `cv/templates/`
 - `cv/tools/`
 - `interview/coding/`
+- `academia/`
 - root `README.md`
 - root `AGENTS.md`
 - root `TEMPLATE.md`
@@ -78,6 +79,26 @@ Current known company-specific pattern:
 - `interview/binance/crypto.md`
 - `interview/binance/mock.md`
 - `interview/binance/my-q.md`
+
+### Academia derivatives
+
+- `academia/PUBLICATION_SUMMARY.md` — 1-2 sentence academic abstracts for all papers. Always kept current; cite from here in other materials.
+- `academia/SOP.md` — Statement of Purpose. Research motivation + experience narrative. Customize per school.
+- `academia/RESEARCH_STATEMENT.md` — PhD / research master's only. Deeper technical narrative, names potential advisors.
+- `academia/PERSONAL_STATEMENT.md` — required by some programs. Personal growth narrative; do not copy SOP content here.
+- `academia/REC_TRACKER.md` — tracks recommenders: relationship, highlights, request timing, submission status.
+- `academia/<school>/` — per-school customized materials: copy general files and swap school / professor / lab names.
+- `academia/writing-samples/` — writing sample storage (course papers, published work).
+
+**Typical update order for academia:**
+
+1. Source entries complete and current
+2. `academia/PUBLICATION_SUMMARY.md`
+3. `academia/SOP.md`
+4. `academia/RESEARCH_STATEMENT.md` (if PhD / research master's)
+5. `academia/PERSONAL_STATEMENT.md` (if required)
+6. `academia/REC_TRACKER.md` — start early, 1-2 months before deadline
+7. Per-school customization in `academia/<school>/`
 
 ### Archive and discard areas
 

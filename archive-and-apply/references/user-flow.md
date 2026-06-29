@@ -132,3 +132,63 @@ Recommended options:
 - refresh the relevant TeX resume
 - refresh `interview/interview.md`
 - refresh a company-specific mock pack that depended on this entry
+
+## Step 8: Academia Application Started
+
+When the user starts a graduate / professional school application:
+
+- first ensure source entries under `experiences/`, `projects/`, and `publications/` are complete — this is the foundation for all academic materials
+- generate `academia/PUBLICATION_SUMMARY.md` from paper-ready projects and publications
+- determine which materials the target program requires: SOP only, SOP + Personal Statement, Research Statement, Writing Sample
+
+Recommended options:
+
+- generate `academia/SOP.md` from source entries (PhD, research master's, or fellowship)
+- generate `academia/RESEARCH_STATEMENT.md` (PhD / research master's)
+- generate `academia/PERSONAL_STATEMENT.md` (if required by the program)
+- audit source entries for research-relevant content before drafting
+
+## Step 9: SOP / Research Statement Drafted
+
+After drafting SOP or Research Statement:
+
+- explicitly check that all claims are traceable to source entries
+- note that this draft should be customized per school later
+- if applying to multiple programs, suggest creating per-school subdirectories
+
+Recommended options:
+
+- review for factual accuracy against source entries
+- generate the other narrative type (SOP if you drafted Research Statement, or vice versa)
+- start identifying recommenders and fill `academia/REC_TRACKER.md`
+
+## Step 10: Recommender Identified
+
+When recommenders are identified and tracked:
+
+- remind the user to reach out 1-2 months before the earliest deadline
+- suggest providing recommenders with CV + SOP draft to help them write personalized letters
+- track the relationship depth: which specific work or qualities each recommender can highlight
+
+Recommended options:
+
+- send initial outreach email to recommenders
+- prepare CV + SOP draft to send to recommenders
+- check whether each recommender can speak to your research in concrete detail
+- if a recommender cannot provide specific examples, consider finding someone else
+
+## Step 11: Per-School Customization
+
+When general application materials are ready and the user has a list of target schools:
+
+- for each school, create `academia/<school-name>/`
+- copy the general SOP / Research Statement / Personal Statement into that directory
+- customize per school: swap school name, professor names, lab descriptions, course names
+- keep the core research narrative unchanged across schools
+
+Recommended options:
+
+- create the first school subdirectory and customize it
+- generate per-school `notes.md` with school selection reasoning and professor research notes
+- track deadlines in `academia/<school>/deadline.md`
+- do a final review to make sure school-specific names are accurate (check professor pages / lab websites)
