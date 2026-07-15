@@ -50,6 +50,8 @@ These hold detailed factual material and should be updated first when experience
 
 If `cv/CV_ENTRY_BANK.md` already exists, any source-entry update should consider whether the bank needs to be refreshed from the updated source facts.
 
+When drafting or rewriting bullets, read `references/resume-bullet-writing.md` from the skill before editing the entry bank or TeX resume.
+
 Use `cv/CV_ENTRY_AUDIT.md` when the user wants role-specific CV decisions such as:
 
 - which entries belong in an Agent / LLM CV versus a Data Science CV
@@ -61,7 +63,8 @@ Use `cv/CV_ENTRY_AUDIT.md` when the user wants role-specific CV decisions such a
 - `assets/tex-templates/` inside the skill for canonical TeX resume templates
 - `cv/templates/README.md` inside the repo for the current template mapping
 - `cv/tools/detect_tex_dependencies.py` inside the repo for local dependency checks
-- `cv/tools/check_tex_pages.py` inside the repo for local page-count and fill checks
+- `cv/tools/check_tex_pages.py` inside the repo for local page-count, text fill, and bottom-fill checks
+- `cv/tools/check_pdf_fill.py` inside the repo for standalone bottom-fill analysis on an already-compiled PDF
 - `scripts/detect_tex_dependencies.py` for package and tool detection
 - `scripts/check_tex_pages.py` for page count and fill heuristics
 

@@ -7,7 +7,10 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from PyPDF2 import PdfReader
+try:
+    from pypdf import PdfReader
+except ImportError:  # Backward compatibility for older workspace environments.
+    from PyPDF2 import PdfReader
 
 
 def choose_engine(preferred: str | None = None) -> str:
@@ -84,11 +87,79 @@ def inspect_pdf(pdf_path: Path):
     return {"page_count": len(reader.pages), "pages": pages}
 
 
+def inspect_bottom_fill(pdf_path: Path, margin_inch: float):
+    pdftotext = shutil.which("pdftotext") or shutil.which("pdftotext.exe")
+    if not pdftotext:
+        return {"status": "skipped", "reason": "pdftotext not found on PATH"}
+
+    proc = subprocess.run(
+        [pdftotext, "-bbox", str(pdf_path), "-"],
+        capture_output=True,
+        check=False,
+    )
+    if proc.returncode != 0:
+        error = proc.stderr.decode("utf-8", errors="replace").strip()
+        return {"status": "skipped", "reason": error or "pdftotext failed"}
+
+    data = proc.stdout.decode("utf-8", errors="replace")
+    page_matches = re.findall(
+        r'<page\b[^>]*height="([\d.]+)"[^>]*>(.*?)</page>',
+        data,
+        flags=re.DOTALL,
+    )
+    if not page_matches:
+        return {"status": "skipped", "reason": "no page positions found"}
+
+    target_margin_points = margin_inch * 72
+    pages = []
+    for index, (height, page_data) in enumerate(page_matches, start=1):
+        y_max_values = [
+            float(value) for value in re.findall(r'yMax="([\d.]+)"', page_data)
+        ]
+        if not y_max_values:
+            pages.append({"page": index, "status": "empty"})
+            continue
+
+        bottom_gap = float(height) - max(y_max_values)
+        excess = bottom_gap - target_margin_points
+        if excess > 5:
+            status = "underfilled"
+        elif excess >= -5:
+            status = "at-margin"
+        else:
+            status = "below-margin"
+        pages.append(
+            {
+                "page": index,
+                "bottom_gap_points": round(bottom_gap, 1),
+                "excess_points": round(excess, 1),
+                "status": status,
+            }
+        )
+
+    return {
+        "status": "ok",
+        "target_margin_inches": margin_inch,
+        "pages": pages,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description="Compile a TeX resume and inspect page count and fill heuristics.")
     parser.add_argument("tex_file", help="Path to a .tex file")
     parser.add_argument("--engine", help="TeX engine to use, e.g. pdflatex or xelatex")
     parser.add_argument("--target-pages", type=int, choices=[1, 2], help="Expected page count")
+    parser.add_argument(
+        "--margin",
+        type=float,
+        default=0.42,
+        help="Target bottom margin in inches for fill analysis",
+    )
+    parser.add_argument(
+        "--skip-bottom-fill",
+        action="store_true",
+        help="Skip positional bottom-margin analysis",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON")
     args = parser.parse_args()
 
@@ -102,6 +173,8 @@ def main():
     report["tex_file"] = str(tex_file)
     report["compiled_pdf"] = str(compiled_pdf)
     report["engine"] = engine_path
+    if not args.skip_bottom_fill:
+        report["bottom_fill"] = inspect_bottom_fill(compiled_pdf, args.margin)
 
     if args.target_pages is not None:
         report["target_pages"] = args.target_pages
@@ -124,6 +197,20 @@ def main():
             f"  - page {page['page']}: chars={page['chars']}, "
             f"fill_ratio={page['fill_ratio']}, status={page['fill_label']}"
         )
+    if "bottom_fill" in report:
+        bottom_fill = report["bottom_fill"]
+        if bottom_fill["status"] == "skipped":
+            print(f"Bottom fill: skipped ({bottom_fill['reason']})")
+        else:
+            print(f"Bottom fill (target margin {args.margin:.2f} in):")
+            for page in bottom_fill["pages"]:
+                if page["status"] == "empty":
+                    print(f"  - page {page['page']}: empty")
+                else:
+                    print(
+                        f"  - page {page['page']}: gap={page['bottom_gap_points']} pts, "
+                        f"excess={page['excess_points']} pts, status={page['status']}"
+                    )
 
 
 if __name__ == "__main__":

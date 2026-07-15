@@ -106,6 +106,7 @@ Use $archive-and-apply to create or maintain my archive-and-apply workspace, CV 
 - "在这个目录里创建一个新的 archive-and-apply 工作区。"
 - "探索这个 repo，把相关项目整理成 source entry。"
 - "基于现在的条目生成 `CV_ENTRY_BANK.md`。"
+- "把核心项目改成 HR 能看懂总览、技术面试官能继续读出方案与结果的 bullet。"
 - "按 data science 方向审计这版 CV 应该保留哪些条目和 Skills。"
 - "给这个岗位建一个 `interview/<company>/` 目录，并保存 JD。"
 

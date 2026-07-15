@@ -35,6 +35,7 @@ Read these references when relevant:
 - [references/file-map.md](references/file-map.md) — canonical file roles, update order, and stale-doc signals. Read at the start of non-trivial tasks.
 - [references/user-flow.md](references/user-flow.md) — guided next-step menus for each milestone.
 - [references/role-cv-audit.md](references/role-cv-audit.md) — role-specific CV audit directions and a catalog of common role paths.
+- [references/resume-bullet-writing.md](references/resume-bullet-writing.md) — recruiter-readable, technically credible bullet structure. Read whenever drafting or rewriting resume bullets.
 
 ## Workflow Decision Tree
 
@@ -109,8 +110,11 @@ Flow:
 3. Select and place them into the target TeX resume
 4. Compile and check whether the actual pages match the target
 5. Check whether a 1-page or 2-page resume is too sparse
+6. Check whether content reaches the bottom margin (not just character count)
 
-**TeX maintenance:** use bundled template assets under `assets/tex-templates/` as canonical examples; on the first CV workflow in a workspace, detect local TeX tooling before committing to compile-based actions; run `scripts/detect_tex_dependencies.py` to inspect required LaTeX packages and local tools; run `scripts/check_tex_pages.py` after edits to check actual page count and per-page fill heuristics.
+**Bullet writing:** follow `references/resume-bullet-writing.md`. For a major entry, use the first bullet as a plain-language overview that a recruiter can understand, then use later bullets for concrete technical problems, decisions, boundaries, and results. For a compact one-bullet project, use `what was built -> key approach -> result`. Do not lead with internal class names or architecture inventories.
+
+**TeX maintenance:** use bundled template assets under `assets/tex-templates/` as canonical examples; on the first CV workflow in a workspace, detect local TeX tooling before committing to compile-based actions; run `scripts/detect_tex_dependencies.py` to inspect required LaTeX packages and local tools; run `scripts/check_tex_pages.py` after edits to check actual page count, per-page fill heuristics, and bottom-margin fill (content reaching the bottom edge rather than leaving whitespace). Use `cv/tools/check_pdf_fill.py` as a standalone check on an already-compiled PDF.
 
 **Entry bank conventions:** mark mainline items clearly; demote dropped items instead of deleting useful history; keep claims concise and verifiable.
 

@@ -239,7 +239,9 @@ In other words, OpenClaw / Hermes can be great for orchestration, planning, and 
 - `archive-and-apply/scripts/detect_tex_dependencies.py`
   Detects LaTeX packages, included files, and local compile tools.
 - `archive-and-apply/scripts/check_tex_pages.py`
-  Compiles a TeX resume, reports actual page count, and estimates per-page fill.
+  Compiles a TeX resume, reports actual page count, per-page fill heuristics, and bottom-margin fill analysis.
+- `archive-and-apply/scripts/check_pdf_fill.py`
+  Standalone bottom-fill analysis on an already-compiled PDF — checks whether content reaches the bottom margin edge.
 - `archive-and-apply/agents/openai.yaml`
   UI metadata and default invocation prompt.
 
@@ -249,6 +251,7 @@ In other words, OpenClaw / Hermes can be great for orchestration, planning, and 
 - Explore a codebase or notes folder and ingest the relevant material into source entries.
 - Maintain a long-term archive-and-apply workspace for experiences, projects, and publications.
 - Turn source notes into a curated resume entry bank.
+- Rewrite resume entries so recruiters understand the overview while domain engineers can inspect the technical decisions and results.
 - Keep TeX resume templates healthy and detect page-count drift.
 - Keep interview scripts aligned with updated project facts.
 - Build tailored company-specific mock packs for specific employers or roles.

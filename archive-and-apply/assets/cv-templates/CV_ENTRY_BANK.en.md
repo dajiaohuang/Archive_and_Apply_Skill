@@ -18,6 +18,14 @@
   - `Drop`: historical only, no longer worth polishing
 - Update this file before syncing `.tex` CV files.
 
+### Bullet Structure
+
+- Write for two readers: a recruiter should understand what was built and why, while a domain engineer should still see a concrete design and result.
+- For a major entry, use 2-3 bullets: overview first, followed by technical problems, decisions, boundaries, or outcomes.
+- For a compact project, use `what was built -> key approach -> result`.
+- Do not lead with internal class names or architecture inventories; use component names as implementation evidence.
+- Make every bullet independently understandable and traceable to a source entry.
+
 ## 2. Mainline Summary
 
 ### P0
