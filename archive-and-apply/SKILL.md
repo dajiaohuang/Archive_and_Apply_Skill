@@ -114,7 +114,23 @@ Flow:
 
 **Bullet writing:** follow `references/resume-bullet-writing.md`. For a major entry, use the first bullet as a plain-language overview that a recruiter can understand, then use later bullets for concrete technical problems, decisions, boundaries, and results. For a compact one-bullet project, use `what was built -> key approach -> result`. Do not lead with internal class names or architecture inventories.
 
-**TeX maintenance:** use bundled template assets under `assets/tex-templates/` as canonical examples; on the first CV workflow in a workspace, detect local TeX tooling before committing to compile-based actions; run `scripts/detect_tex_dependencies.py` to inspect required LaTeX packages and local tools; run `scripts/check_tex_pages.py` after edits to check actual page count, per-page fill heuristics, and bottom-margin fill (content reaching the bottom edge rather than leaving whitespace). Use `cv/tools/check_pdf_fill.py` as a standalone check on an already-compiled PDF.
+**TeX maintenance:** use bundled template assets under `assets/tex-templates/` as canonical examples; on the first CV workflow in a workspace, detect local TeX tooling before committing to compile-based actions; run `scripts/detect_tex_dependencies.py` to inspect required LaTeX packages and local tools.
+
+**CV 排版规范准则（编辑时遵循）：**
+
+1. **日期格式统一** — 同一简历内所有日期使用同一格式。中文 CV 推荐 `2026年4月 -- 5月`（年份完整，月份可简写）；英文 CV 推荐 `Apr 2026 -- May 2026`。禁止混用 `2026.04`、`2026年4月`、`Apr 2026` 等多种格式。
+2. **Section 间距统一** — 各 section（教育背景、实习经历、项目经历等）之间的垂直间距必须一致。禁止对某个 section 单独使用 `\vspace{-1em}` 等负间距压缩，除非整份简历统一调整。
+3. **项目按时间倒序排列** — 同 section 内条目按结束时间从新到旧排列。当前进行中的项目（`至今` / `Present`）排在最前。
+4. **技能表中文化** — 中文 CV 的技能表中，非专有名词必须翻译：如 `Agent System Design` → `智能体系统设计`，`Prompt Engineering` → `提示工程`。专有技术名词（MCP、RAG、PEFT、PyTorch、Milvus 等）保留英文。
+5. **分页控制优先于内容压缩** — 当需要控制分页时，优先用 `\vspace{正间距}` 或 `\vspace{负间距}` 微调空白；若仍无法解决，再考虑精简条目内容。禁止为凑页数而删除 P0 关键可核验事实。
+
+**CV 排版检测准则（每次编译后必须执行）：**
+
+1. **测页数** — 实际页数必须等于目标页数（1 页或 2 页）。超页时优先精简非 P0 条目；不足时检查是否有过度压缩或遗漏关键内容。
+2. **测末页到底边距离** — 末页正文必须接近底边（理想状态：距底边 `\vfill` 量级），不能留大片空白。若末页太空，说明内容密度不足或条目优先级分配不均。
+3. **分割页不隔开板块** — 同一 section（如"项目经历"）不能被分页拆开；若 section 标题在第一页末尾而其内容在第二页开头，应通过调整前序条目长度或插入空行，将 section 整体推至下一页。禁止让单个条目的标题与 bullets 被分页割裂。
+
+检测工具：运行 `scripts/check_tex_pages.py` 自动检查页数与末页填充率；运行 `cv/tools/check_pdf_fill.py` 对已有 PDF 做独立检查。若脚本不可用，人工对照上述三条准则执行验证。
 
 **Entry bank conventions:** mark mainline items clearly; demote dropped items instead of deleting useful history; keep claims concise and verifiable.
 
