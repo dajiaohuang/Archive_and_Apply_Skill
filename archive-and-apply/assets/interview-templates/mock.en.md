@@ -1,25 +1,34 @@
 # Mock Interview
 
-## Intro / Why This Role
+- Company / role:
+- JD path:
+- Generated / updated: YYYY-MM-DD
 
-### Q1
+## Priority overview
 
-**Question:**
+| Priority | Topic | Why it is likely | Evidence risk |
+|---|---|---|---|
+| P0 |  |  |  |
 
-**Answer:**
+## Question 1
 
-## Project Deep Dive
+- Type: motivation / project / technical / collaboration / behavioral
+- Question:
+- 30–90 second answer outline:
+- Evidence source:
+- Claim boundary:
+- Likely follow-ups:
 
-### Q2
+## Question 2
 
-**Question:**
+- Type:
+- Question:
+- Answer outline:
+- Evidence source:
+- Likely follow-ups:
 
-**Answer:**
+## Debrief
 
-## Technical Follow-Ups
-
-### Q3
-
-**Question:**
-
-**Answer:**
+- Answers too long:
+- Evidence gaps:
+- Research to complete:

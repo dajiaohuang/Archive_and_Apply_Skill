@@ -1,80 +1,71 @@
-# CV Entry Audit
+# Target Resume/CV Audit
 
-> Purpose: audit which entries to keep, weaken, or drop for different role directions, and decide what belongs in the Skills section.
-> Status: template
+## Target and constraints
 
-## 1. Audit Goal
+- Company / role:
+- JD path / URL:
+- Locale and document type:
+- Page / file / deadline requirements:
+- Audit date:
 
-- Different role directions should use different entry combinations
-- Different role directions should emphasize different Skills content
-- 1-page CVs, 2-page CVs, and role-specific CVs should have explicit selection logic
+## Expected reader path
 
-## 2. Evaluation Dimensions
+| Reader / system | Confirmed or assumed | Decision to make | Signal the resume must provide |
+|---|---|---|---|
+| ATS / application system |  | parseability and supported role terminology |  |
+| Recruiter / HR |  | baseline fit, level, scope, and constraints |  |
+| Hiring manager / team leader |  | job performance, judgment, ownership, and impact |  |
+| Technical interviewer |  | depth, tradeoffs, validation, and probe-worthiness |  |
+| Potential peer / cross-functional partner |  | interfaces, quality, communication, and team leverage |  |
 
-- `completeness`
-- `ready_for_cv`
-- `role_relevance`
-- `skills_relevance`
-- `priority`: `P0` / `P1` / `Drop`
+## Target signals
 
-## 3. Entry Table
+### Must-have
 
-| Entry | Source | In Current CV | Completeness | Ready for CV | Role Relevance | Skills Relevance | Priority | Conclusion |
-| --- | --- | --- | ---: | ---: | ---: | ---: | --- | --- |
-| Example Entry A | `projects/example-project.md` | yes | 5 | 4 | 5 | 4 | P0 | keep |
+-
 
-## 4. Role-Specific Recommendations
+### Preferred
 
-### Agent / LLM Engineering
+-
+
+### Responsibilities and success signals
+
+-
+
+### Hard constraints
+
+-
+
+## Requirement-to-evidence matrix
+
+| Target signal | Source evidence | Strength | Gap / risk | Resume action |
+|---|---|---:|---|---|
+|  | `projects/example.md` | 0–3 |  | keep / rewrite / omit |
+
+## Entry decisions
+
+| Entry | Relevance | Evidence | Ownership | Differentiation | Reader coverage | Decision | Rationale |
+|---|---:|---:|---:|---:|---:|---|---|
+|  | 0–3 | 0–3 | 0–3 | 0–3 | 0–3 | must keep / if space / rewrite / omit |  |
+
+## Multi-reader coverage check
+
+- Recruiter / HR can understand from the first bullet:
+- Hiring manager / team leader can judge:
+- Technical interviewer can probe these decisions / tradeoffs / validation choices:
+- Potential peer or cross-functional partner can see these interface / quality / collaboration signals:
+- Claims likely to mislead, overstate, or fail follow-up:
+
+## Skills decisions
 
 - Keep:
-  - Example Entry A
-- Skills focus:
-  - agent systems
-  - RAG
-  - tool calling
-  - evaluation
+- Keep only inside entries:
+- Remove or de-emphasize:
 
-### Data Science / Applied AI
+## Output plan
 
-- Keep:
-  - Example Entry A
-- Skills focus:
-  - experimentation
-  - metrics
-  - modeling
-  - Python / SQL
-
-### CV / Multimodal
-
-- Keep:
-  - vision / multimodal entries
-- Skills focus:
-  - computer vision
-  - multimodal modeling
-  - benchmark metrics
-
-## 5. Skills Section Audit
-
-### Good Skills Candidates
-
-- appear across multiple entries
-- important keywords for the target role
-- easy to defend in an interview
-
-### Poor Skills Candidates
-
-- only used once
-- hard to defend
-- better kept inside project bullets
-
-## 6. Output Format
-
-- target role direction:
-- must-keep entries:
-- optional entries:
-- weaken / drop entries:
-- keep in Skills:
-- weaken / drop from Skills:
-- 1-page advice:
-- 2-page advice:
+- Target file:
+- Ordering and layout strategy:
+- Pending facts:
+- Likely interview probes:
+- Exact entries to change:

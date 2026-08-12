@@ -1,41 +1,29 @@
 # AGENTS.md
 
-This file provides guidance to coding agents when working in this repository.
+本仓库是 source-first 的经历、求职与申请材料工作区。
 
-## Purpose
+## 核心规则
 
-This is a personal archive-and-apply workspace: a source-first archive of experiences, projects, publications, CV artifacts, and interview materials.
+- `experiences/`、`projects/`、`publications/` 是事实层；所有下游 claim 必须能回溯。
+- 区分已核验、用户陈述、推测和待核验信息；不得编造指标、日期、状态或贡献边界。
+- JD 与项目 Prompt 原文应保留来源和抓取日期，分析与原文分开。
+- 事实变化先改源条目；只改措辞或岗位取舍时，不必反向改写源条目。
+- 写简历条目前先判断 ATS、招聘 / HR、hiring manager / team leader、技术面试官和未来同组 / 跨职能人员中哪些会参与；首条跨专业可理解，后续提供可追问的判断、技术、验证与团队证据。
+- 优先更新 canonical 文件，不创建平行副本。
+- 未经明确要求，不提交申请、不发送消息、不改变外部账户状态。
 
-## Core Rules
+## 目录职责
 
-- Treat `experiences/`, `projects/`, and `publications/` as the factual source of truth.
-- Create new source entries from `TEMPLATE.md` first, then derive CV and interview artifacts.
-- Prefer updating canonical files instead of creating duplicates.
-- Use `interview/interview.md` for reusable speaking material.
-- Use `interview/<company>/` for company- or role-specific prep.
-- When a JD is provided for a company-specific prep pack, save it into that company directory first, typically as `jd.md`.
+- `jobs/`：求职目标、JD 快照、公司调研和投递追踪
+- `cv/`：条目池、目标岗位审计、TeX 简历和检查工具
+- `interview/`：通用故事库和目标公司面试包
+- `academia/`：按官方 Prompt 维护的学术申请材料
+- `discard/`：非 canonical 的归档内容
 
-## Expected Directory Shape
+## 更新顺序
 
-- `experiences/`
-- `projects/`
-- `publications/`
-- `publications/papers/`
-- `cv/`
-- `interview/`
-- `TEMPLATE.md`
-- `README.md`
-
-## Resume Workflow
-
-1. Update or create source entries
-2. Sync `cv/CV_ENTRY_BANK.md`
-3. Update `.tex` resume variants
-4. Run local TeX dependency and page checks
-
-## Interview Workflow
-
-1. Keep reusable material in `interview/interview.md`
-2. Create `interview/<company>/` for targeted prep
-3. Store the JD in that folder
-4. After the JD is saved, the next natural step is to generate `mock.md`
+1. 读取本文件和当前目录结构
+2. 确认 canonical 文件与来源证据
+3. 更新最小必要范围
+4. 检查日期、状态、语言、路径和 claim 一致性
+5. TeX 变更后编译、渲染并检查文本提取

@@ -1,77 +1,47 @@
-# Statement of Purpose (SOP)
+# Academic / Statement of Purpose Template
 
-> Purpose: draft an application personal statement from source entries, typically 800-1000 words, customized per school.
-> Status: template
+> Preserve the official prompt and constraints before choosing a structure. Programs may define SOP, academic statement, and personal statement differently.
 
-## Writing Principles
+## Application brief
 
-- SOP is narrative, not a resume list. Write "why I want to do this" and "what I've done that makes me fit."
-- Extract facts from source entries first, then weave into a coherent story.
-- Customize per school: swap school name, research group, advisor name, course name; core narrative can be reused.
-- Typical length: 800-1000 words (US), 500-800 words (UK/EU/Asia), some programs allow shorter.
-- Do not fabricate achievements or experiences; all claims must be traceable to source entries.
+- Institution / program / degree:
+- Official requirements URL:
+- Exact prompt:
+- Word / page / file limits:
+- Deadline and time zone:
+- Verified: YYYY-MM-DD
 
-## Recommended Structure
+## Prompt-to-evidence map
 
-```md
-# Statement of Purpose
+| Prompt component | Candidate evidence | Source path | Intended takeaway | Gap |
+|---|---|---|---|---|
+|  |  |  |  |  |
 
-## Paragraph 1: Opening Hook
-Open with 1-2 compelling sentences that introduce your research or career interest.
+## Outline
 
-## Paragraph 2: Research / Project Experience (Body 1)
-- What you did (specific problem + technical approach + result)
-- Why it mattered
-- What you learned (methodology / technical / perspective)
+### Academic or professional direction
 
-## Paragraph 3: Deepening (Body 2)
-- If you have a second research experience, write it here
-- Or write about a course / self-study experience that shows your technical foundation
+State the current intellectual problem, goal, and reason for applying now. Avoid a generic hook.
 
-## Paragraph 4: Why This Program (Body 3)
-- Which lab / professor / course at this school attracts you
-- What you can bring to this program
+### Preparation and key experiences
 
-## Paragraph 5: Future Direction
-- PhD path / career direction
-- Long-term vision
+Choose the 1–3 experiences that best prove readiness. Explain the problem, action, result, and the next question each experience created.
 
-## Paragraph 6: Closing
-- Brief summary + anticipation
-```
+### Next-step goals
 
-## Customization by Program Type
+Explain the capability, research question, or professional direction to develop in the program.
 
-### PhD / Research Master's
+### Program fit
 
-- Research focus: 60-70%
-- Must name potential advisors or labs
-- Demonstrate independent research ability, not just coursework
+Use verified curriculum, faculty, lab, resource, or program-structure details to explain a specific fit. Do not perform name-only substitution.
 
-### MBA / Professional Master's
+## Draft
 
-- Leadership + impact: 40-50%
-- Narrative arc: challenge → action → result
-- Show career progression logic
 
-### Hybrid Directions (MPP / MEd / MFA)
+## Checks
 
-- Policy analysis / education / arts narratives each have different focuses
-- See corresponding sections
-
-## Source Mapping
-
-| Content | Primary Source | Notes |
-|---|---|---|
-| Research experience 1 | `projects/xxx.md` or `experiences/xxx.md` | |
-| Research experience 2 | `publications/xxx.md` | if published |
-| Course projects | `projects/xxx.md` | shows technical foundation |
-| Extracurricular / leadership | `experiences/xxx.md` | |
-
-## Sync Checklist
-
-- [ ] each paragraph's facts are traceable to a source entry
-- [ ] target school / advisor / lab has been customized
-- [ ] word count is within target school requirements
-- [ ] grammar and expression checked
-- [ ] no claims beyond source entries
+- [ ] answers the full prompt instead of a generic template
+- [ ] every substantive claim is traceable
+- [ ] program and faculty details come from current official sources
+- [ ] distinct from concurrently required personal-history or research statements
+- [ ] meets word, page, language, and file constraints

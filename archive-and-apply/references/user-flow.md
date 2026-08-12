@@ -1,194 +1,65 @@
-# Guided User Flow
+# Handoff and Continuation
 
-Use this reference when you want the skill to feel like a guided product flow instead of a one-shot editor.
+Use this reference when a task has reached a real milestone and a useful continuation exists.
 
-## Principle
+## Handoff contract
 
-After every meaningful milestone, do two things:
+Report four things:
 
-1. briefly state what was completed
-2. offer 2 to 4 concrete next-step options
+1. **Completed:** the canonical files or artifacts changed.
+2. **Verified:** checks run and evidence inspected.
+3. **Open:** unresolved facts, missing inputs, or validation limits.
+4. **Next:** at most three concrete actions that follow naturally.
 
-These next-step options are not single-choice by default. Present them as actions the user may choose one or more of, especially when multiple follow-ups can sensibly happen in parallel.
+Do not append a menu to a fully complete one-shot request. Do not ask the user to choose among actions that can safely be completed within the current request.
 
-Do not end a milestone with only a status summary when there is an obvious next move.
+## Useful continuations by milestone
 
-## Step 0: Skill Installed or First Invocation
+### Workspace initialized
 
-When the user has just installed or first invoked the skill, the default next-step prompt should point to workspace creation.
+- ingest a specific material directory
+- create the first source entry
+- import existing job targets or resume files
 
-Default language behavior for first workspace bootstrap:
+### Source entry created or updated
 
-- if the user's install prompt or first invocation prompt is in Chinese, default the new workspace to Chinese
-- otherwise, default the new workspace to English
-- if the user explicitly requests another language, follow that request
-- if the target repo already exists, follow the repo's current language instead of the prompt default
+- resolve evidence gaps
+- refresh affected reusable bullets
+- refresh an interview story or application evidence map that depends on the entry
 
-Recommended options:
+### Job captured
 
-- create a new archive-and-apply workspace at a chosen path
-- point the agent at an existing workspace to inspect its structure
-- give a directory, repo, or notes folder to ingest into a workspace
+- complete the requirement-to-evidence matrix
+- decide apply / research / deprioritize
+- tailor the requested resume or interview material
 
-## Step 1: Workspace Created
+### Resume/CV changed
 
-Immediately after creating a new workspace:
+- compile and visually inspect the final file
+- audit against one specific JD
+- create a clearly named alternate variant only when the target genuinely differs
 
-- report the canonical workspace path
-- if the agent surface supports memory, store that path as the default archive-and-apply location
-- if the agent surface has explicit memory or profile features, prefer persisting the path there
-- if persistent memory is unavailable, write the path into the repo README or remind the user to reuse the same path in future requests
+### Interview pack changed
 
-Recommended options after bootstrap:
+- run a mock focused on the highest-risk gaps
+- tighten answers that lack evidence or exceed the desired speaking time
+- research unresolved company or team questions from authoritative sources
 
-- create entries from a local directory, repo, PDF folder, notes dump, or copied text
-- add the first experience manually from raw facts
-- inspect TeX availability before the first resume workflow
+### Academic prompt captured
 
-Special note for OpenClaw / Hermes style surfaces:
+- build the prompt-to-evidence outline
+- verify program, faculty, and deadline details
+- draft only the documents the program requires
 
-- treat the first successful bootstrap as a memory-worthy event
-- remember the canonical workspace path so later tasks can say "use my archive-and-apply workspace" without restating the location
+### Academic draft changed
 
-## Step 2: First Entries Created
+- run claim and prompt-coverage checks
+- remove overlap between concurrently required statements
+- prepare the recommender packet and deadline tracker
 
-After one or more source entries have been created, the user usually wants one of three things:
+## Avoid
 
-- create more entries
-- turn existing entries into CV content
-- turn existing entries into interview material
-
-Recommended options:
-
-- ingest more materials into additional entries
-- create `cv/CV_ENTRY_BANK.md` with bullet-style resume content
-- create or update `interview/interview.md`
-
-## Step 3: CV Content Bank Created
-
-After creating a CV content bank:
-
-- tell the user it can now be used to draft `.tex` resumes
-- if this is the first CV workflow in the workspace, detect TeX tooling first
-
-Recommended options:
-
-- detect TeX dependencies and local compile tools
-- create an English resume from the template
-- create a Chinese resume from the template
-- create a one-page or two-page variant
-
-## Step 4: First Resume Draft Created
-
-After drafting the first TeX resume:
-
-- check whether TeX tooling is available if that has not already been done
-- compile the resume
-- report actual page count
-- report whether the page is sparse, acceptable, or well-filled
-
-Recommended options:
-
-- tighten content to fit one page
-- expand content to better fill a sparse page
-- generate another language or another page-count variant
-- update the CV entry bank before redrafting
-
-## Step 5: Interview Base File Created
-
-After creating `interview/interview.md`:
-
-- remind the user that this is the reusable base file
-- suggest either expanding generic project intros or creating a company-specific pack
-
-Recommended options:
-
-- expand project intros and technical topic notes
-- create `interview/<company>/` for a target role
-- generate bilingual spoken introductions from the current entries
-
-## Step 6: Company-Specific Directory Created
-
-When `interview/<company>/` is created:
-
-- save the JD first, usually as `jd.md`
-- explicitly tell the user that the next natural step is mock generation
-
-Recommended options:
-
-- paste or save the JD into `jd.md`
-- generate `mock.md` from the JD plus current source entries
-- generate `my-q.md` with closing questions
-
-## Step 7: Source Entry Updated Later
-
-When an existing source entry is changed, do not stop at "updated".
-
-If `cv/CV_ENTRY_BANK.md` already exists, treat "Should I update the CV content bank too?" as the default first follow-up.
-
-Recommended options:
-
-- sync the CV entry bank
-- refresh the relevant TeX resume
-- refresh `interview/interview.md`
-- refresh a company-specific mock pack that depended on this entry
-
-## Step 8: Academia Application Started
-
-When the user starts a graduate / professional school application:
-
-- first ensure source entries under `experiences/`, `projects/`, and `publications/` are complete — this is the foundation for all academic materials
-- generate `academia/PUBLICATION_SUMMARY.md` from paper-ready projects and publications
-- determine which materials the target program requires: SOP only, SOP + Personal Statement, Research Statement, Writing Sample
-
-Recommended options:
-
-- generate `academia/SOP.md` from source entries (PhD, research master's, or fellowship)
-- generate `academia/RESEARCH_STATEMENT.md` (PhD / research master's)
-- generate `academia/PERSONAL_STATEMENT.md` (if required by the program)
-- audit source entries for research-relevant content before drafting
-
-## Step 9: SOP / Research Statement Drafted
-
-After drafting SOP or Research Statement:
-
-- explicitly check that all claims are traceable to source entries
-- note that this draft should be customized per school later
-- if applying to multiple programs, suggest creating per-school subdirectories
-
-Recommended options:
-
-- review for factual accuracy against source entries
-- generate the other narrative type (SOP if you drafted Research Statement, or vice versa)
-- start identifying recommenders and fill `academia/REC_TRACKER.md`
-
-## Step 10: Recommender Identified
-
-When recommenders are identified and tracked:
-
-- remind the user to reach out 1-2 months before the earliest deadline
-- suggest providing recommenders with CV + SOP draft to help them write personalized letters
-- track the relationship depth: which specific work or qualities each recommender can highlight
-
-Recommended options:
-
-- send initial outreach email to recommenders
-- prepare CV + SOP draft to send to recommenders
-- check whether each recommender can speak to your research in concrete detail
-- if a recommender cannot provide specific examples, consider finding someone else
-
-## Step 11: Per-School Customization
-
-When general application materials are ready and the user has a list of target schools:
-
-- for each school, create `academia/<school-name>/`
-- copy the general SOP / Research Statement / Personal Statement into that directory
-- customize per school: swap school name, professor names, lab descriptions, course names
-- keep the core research narrative unchanged across schools
-
-Recommended options:
-
-- create the first school subdirectory and customize it
-- generate per-school `notes.md` with school selection reasoning and professor research notes
-- track deadlines in `academia/<school>/deadline.md`
-- do a final review to make sure school-specific names are accurate (check professor pages / lab websites)
+- offering the same next step after every edit
+- claiming that a path was stored in memory when no memory feature was used
+- treating a generated draft as submitted
+- proposing broad repo rewrites after a narrowly scoped task

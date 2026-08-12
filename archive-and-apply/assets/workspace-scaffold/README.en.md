@@ -1,45 +1,23 @@
-# Archive and Apply
+# Archive and Apply Workspace
 
-This repository is a long-term archive of experiences, projects, and publications that feeds CV, resume, and interview materials.
+This repository turns detailed experience evidence into job, interview, and academic application materials.
 
-## Recommended Structure
+## Directories
 
-- `experiences/`: internships, research, and other experience entries
-- `projects/`: course projects, research projects, side projects, and competitions
-- `publications/`: papers and research outputs
-- `publications/papers/`: paper notes, parsed content, or reading notes
-- `cv/`: resume source files, entry banks, audits, and TeX tooling
-- `interview/`: reusable interview intros, company-specific prep, and coding notes
-- `TEMPLATE.md`: canonical source-entry template
+- `experiences/`, `projects/`, `publications/`: factual and evidence layer
+- `jobs/`: targets, JD snapshots, company research, comparisons, and application tracking
+- `cv/`: entry bank, target audits, TeX resumes, and validation tools
+- `interview/`: reusable spoken material and target-specific interview packs
+- `academia/`: academic materials governed by official prompts
+- `discard/`: explicitly archived, non-canonical material
+- `TEMPLATE.md`: source-entry template
 
-## Recommended Workflow
+## Principles
 
-1. Build or update source entries in `experiences/`, `projects/`, and `publications/`.
-2. Derive `cv/CV_ENTRY_BANK.md` from those source entries.
-3. Create or revise `.tex` resume variants and run page checks.
-4. Maintain `interview/interview.md` and company-specific folders under `interview/<company>/`.
+1. Preserve facts, sources, ownership boundaries, and unknowns.
+2. Preserve raw JDs and prompts with capture dates before analysis.
+3. Generate target materials from evidence maps; never turn a gap into a claim.
+4. Sync only affected downstream files and avoid duplicate drafts.
+5. After TeX changes, compile, render, and check text extraction.
 
-## `cv/` Overview
-
-Recommended files in `cv/`:
-
-- `cv.tex` / `cv_cn.tex`
-- `cv_1page.tex` / `cv_cn_1page.tex`
-- `CV_ENTRY_BANK.md`
-- `CV_ENTRY_AUDIT.md`
-- `templates/README.md`
-- `tools/detect_tex_dependencies.py`
-- `tools/check_tex_pages.py`
-
-## `interview/` Overview
-
-- `interview/interview.md`: reusable project intros and topic bank
-- `interview/coding/`: coding drills and implementation notes
-- `interview/<company>/`: company- or role-specific prep folder
-
-Company-specific folders usually contain:
-
-- `jd.md`
-- `mock.md`
-- `my-q.md`
-- optional domain notes
+See each directory's `README.md` for its detailed conventions.

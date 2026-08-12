@@ -1,77 +1,92 @@
-# Entry Template
+# Source Entry Template
 
-Use this template for source entries under `experiences/`, `projects/`, and `publications/`. The goal is to capture factual detail first, then derive CV, interview, and application materials from it.
+> Capture facts and evidence before deriving resume, application, interview, or academic materials. Remove sections that do not fit the entry type.
 
-## Writing Principles
+## Entry Name
 
-- Write factual source material first instead of jumping straight to resume bullets
-- Quantify when possible
-- Leave uncertain details blank rather than inventing them
-- Reuse one shared structure across experiences, projects, and publications, while adapting sections as needed
+### Basic information
 
-## Suggested Header
-
-Use the entry name directly as the title, for example:
-
-```md
-# Example Entry Title
-```
-
-## General Template
-
-```md
-# Entry Name
-
-## Basic Info
-
-- Type: experience / research internship / project / publication / competition / other
-- Time:
+- Type: experience / project / publication / competition / other
+- Organization / Team:
 - Role:
-- Team / Institution:
-- Mentor / Collaborators:
-- Focus Area:
-- Relevant Links:
-  - 
+- Dates: YYYY-MM — YYYY-MM / present
+- Location:
+- Collaborators / Mentor:
+- Relevant links:
+- Information status: verified / user-reported / pending verification
 
-## One-Line Summary
+### Factual summary
 
-Use 1 to 2 sentences to explain the scenario, the problem, and what you mainly did.
+In 1–2 sentences, state the context, problem, personal scope, and main output. Keep this factual rather than promotional.
 
-## Background and Goal
+### Context and goal
 
-Explain the background, target user or research question, and why the work mattered.
+- User, business context, or research question:
+- Why the work mattered:
+- Success criteria:
 
-## My Work
+### Ownership and boundaries
 
-- What I directly owned
-- Where my scope began and ended
-- What modules, tools, workflows, or experiments I delivered
+- Independently owned:
+- Co-developed:
+- Outside my scope / dependencies:
+- Team size and collaboration model:
+- Interfaces / handoffs / reviews I owned:
+- How I clarified requirements, handled disagreement, or unblocked work, when applicable:
+- Verifiable change for teammates or the team lead:
 
-## Technical Approach
+### Work and decisions
 
-- Models, frameworks, systems, and toolchains used
-- How data was organized, cleaned, trained, evaluated, or deployed
-- Key engineering design choices, tradeoffs, interface constraints, or risk controls
+#### Workstream 1
 
-## Results and Outputs
+- Problem or constraint:
+- My action / design:
+- Key tradeoff:
+- Deliverable:
 
-- Metrics, rankings, publications, launch results, tests, user value, or deliverables
+#### Workstream 2 (if applicable)
 
-## Challenges and Reflection
+- Problem or constraint:
+- My action / design:
+- Key tradeoff:
+- Deliverable:
 
-- Hardest problem
-- How it was handled
-- Reusable lessons
+### Results and validation
 
-## Technical Keywords
+| Result / behavior | Value or evidence | Baseline / test conditions | Status |
+|---|---|---|---|
+|  |  |  | verified / user-reported / pending |
 
-`Keyword1` `Keyword2` `Keyword3`
+When reliable metrics do not exist, record verifiable deliverables, tests, launch scope, publication status, or qualitative outcomes. Do not invent numbers.
 
-## Follow-Up Items
+### Technical approach
 
-- [ ] Dataset / user / document scale
-- [ ] Quantitative metrics
-- [ ] My exact scope
-- [ ] Architecture / workflow / system diagram
-- [ ] Good interview follow-up questions
-```
+- Key methods / models / systems:
+- Data and evaluation:
+- Engineering environment / interfaces / deployment:
+- Technologies only when they help explain the work:
+
+### Evidence and provenance
+
+| Fact | Source path / URL / provider | Date | Disclosure |
+|---|---|---|---|
+|  |  |  | public / private / confidential |
+
+### Interview reflection
+
+- Hardest problem:
+- Key decision and alternatives:
+- Failure, correction, or limitation:
+- What collaborators owned and which part of the team result is attributable to me:
+- Defensible follow-up questions:
+
+### Open facts
+
+- [ ]
+
+### Downstream map
+
+- CV entry bank:
+- Target roles / application records:
+- Interview material:
+- Academic application material:

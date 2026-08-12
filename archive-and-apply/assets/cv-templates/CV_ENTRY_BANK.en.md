@@ -1,92 +1,57 @@
 # CV Entry Bank
 
-> Purpose: maintain reusable CV bullets for different role directions in one place instead of re-extracting them from long source entries every time.
-> Status: template
+> Maintain reusable, traceable candidate bullets. Put target-specific selection in `CV_ENTRY_AUDIT.md`; finalize wording in the target resume.
 
-## 1. Maintenance Rules
+## Conventions
 
-- Try to keep two versions for each entry:
-  - `short`: for a 1-page CV, usually 1 sentence or 1-2 bullets
-  - `long`: for a 2-page CV, usually 1 paragraph or 2-3 bullets
-- Keep at least one verifiable fact per entry:
-  - metric
-  - named interface / module / method
-  - engineering constraint / risk boundary / test result
-- Suggested priorities:
-  - `P0`: mainline entries
-  - `P1`: backup entries
-  - `Drop`: historical only, no longer worth polishing
-- Update this file before syncing `.tex` CV files.
+- Every candidate bullet needs a source path and evidence status.
+- Maintain short and extended versions only when both are genuinely reusable.
+- `P0`, `P1`, and `Archive` indicate maintenance priority, not universal resume order.
+- Update source entries when facts change; wording-only changes may be made here.
 
-### Bullet Structure
+## Entry index
 
-- Write for two readers: a recruiter should understand what was built and why, while a domain engineer should still see a concrete design and result.
-- For a major entry, use 2-3 bullets: overview first, followed by technical problems, decisions, boundaries, or outcomes.
-- For a compact project, use `what was built -> key approach -> result`.
-- Do not lead with internal class names or architecture inventories; use component names as implementation evidence.
-- Make every bullet independently understandable and traceable to a source entry.
+| ID | Title | Primary source | Maintenance priority | Evidence gap |
+|---|---|---|---|---|
+| example | Example entry | `projects/example.md` | P0 | scale pending |
 
-## 2. Mainline Summary
+## Entries
 
-### P0
+### example — Example entry
 
-- `entry_id_a`
-- `entry_id_b`
+- Role / dates:
+- Primary source: `projects/example.md`
+- Relevant signals: systems / research / data / collaboration (adapt as needed)
+- Primary reader value:
+  - Recruiter / HR should immediately understand:
+  - Hiring manager / team leader should judge:
+  - Technical interviewer can probe:
+  - Potential peer / cross-functional partner should see, when relevant:
 
-### P1
+#### Candidate bullets
 
-- `entry_id_c`
+- [orientation / first bullet: problem, scope, and personal ownership]
+- [technical judgment: method, constraint, tradeoff, or failure handling]
+- [evidence and team: validation, impact, collaboration interface, or team leverage]
+- [short version: maintain only when genuinely reusable]
 
-### Drop
+#### Evidence map
 
-- `entry_id_d`
-
-## 3. Source Mapping
-
-| Entry ID | Primary Source | Priority | Notes |
+| Claim in bullet | Source location | Status | Notes |
 |---|---|---|---|
-| entry_id_a | `projects/example-project.md` | P0 | mainline project |
-| entry_id_b | `experiences/example-experience.md` | P0 | mainline experience |
-| entry_id_c | `publications/example-paper.md` | P1 | optional publication |
-| entry_id_d | `projects/example-legacy.md` | Drop | historical only |
+|  | `projects/example.md#results-and-validation` | verified / user-reported / pending |  |
 
-## 4. Entry Pool
+#### Deprecated wording
 
-### 4.1 Example Entry (`entry_id_a`)
+- Old wording:
+- Reason to avoid: changed fact / overclaim / readability / redundancy
 
-- Short:
-  Use one sentence to state the problem, your contribution, and one hard result.
+## Sync checks
 
-- Long:
-  Use one paragraph or 2-3 bullets to explain the system goal, approach, scope, and outcome.
-
-- Verifiable Facts:
-  - example interface or module
-  - example metric
-  - example test or constraint
-
-## 5. Recommended by Role Direction
-
-### Agent / LLM Engineering
-
-- Must keep:
-  - `entry_id_a`
-  - `entry_id_b`
-
-### Data Science / Applied AI
-
-- Must keep:
-  - `entry_id_b`
-  - `entry_id_c`
-
-### CV / Multimodal
-
-- Must keep:
-  - `entry_id_c`
-
-## 6. Sync Checklist
-
-- [ ] source entry updated
-- [ ] this file refreshed
-- [ ] role-specific keep / weaken decisions revisited
-- [ ] `.tex` CV synced
+- [ ] source paths resolve
+- [ ] dates, role, metrics, and ownership agree
+- [ ] pending facts are absent from final resumes
+- [ ] target resume selects evidence relevant to its role
+- [ ] the first bullet is accessible outside the specialty and later bullets provide probe-worthy depth
+- [ ] team results are separated from individual contribution; collaboration is shown through behavior and consequence
+- [ ] every retained claim can survive follow-up on choices, baseline/validation, failures, and collaborators

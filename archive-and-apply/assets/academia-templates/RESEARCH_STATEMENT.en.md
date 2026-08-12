@@ -1,73 +1,47 @@
-# Research Statement
+# Research Statement / Proposal Template
 
-> Purpose: detailed research narrative for PhD and research master's applications, more technical than SOP, typically 1-2 pages (500-1000 words).
-> Status: template
+> Follow the target program's official prompt. First determine whether it requests prior research, a future agenda, or a full proposal.
 
-## Writing Principles
+## Application brief and prompt
 
-- Research Statement focuses on "your research" more than "your growth story" — more technical, less personal.
-- Clearly articulate: what was the research problem → what did you do → what were the results → what do you want to do next.
-- Usually requires naming potential advisors and explaining fit with their work.
-- Content must be 100% traceable to source entries; do not write about uncertain things.
-- Some schools call this Research Statement, others call it Statement of Research Interests / Research Proposal.
+- Program / degree:
+- Official URL:
+- Exact prompt:
+- Constraints:
+- Verified: YYYY-MM-DD
 
-## Recommended Structure
+## Research throughline
 
-```md
-# Research Statement
+- Central problem:
+- How prior work created this direction:
+- Specific future questions:
 
-## Opening: Research Interest Overview
-Summarize your overall research interests and direction in 1-2 paragraphs.
+## Prior-research evidence
 
-## Research Experience 1
-### Problem
-What specific problem did you address?
+| Research problem | My contribution and boundary | Method | Result / status | Source |
+|---|---|---|---|---|
+|  |  |  |  |  |
 
-### Approach
-What technical approach did you use?
+## Future research agenda
 
-### Results
-What were the results (metrics / paper / system / deployment impact)?
+- Problem and significance:
+- Initial hypothesis or questions:
+- Feasible methods / data / evaluation:
+- Risks, alternatives, and limitations:
 
-### Reflection
-What deeper questions did this experience spark?
+## Program fit
 
-## Research Experience 2
-Same format. If you only have one major experience, write this section more deeply.
+| Faculty / lab / resource | Current official source | Specific intellectual connection | Open check |
+|---|---|---|---|
+|  |  |  |  |
 
-## Future Research Direction
-- What problems interest you most, what do you want to explore next
-- Which professors / labs at the target school are most relevant
+## Draft
 
-## Why This Program
-- Specifically name 1-3 professors and explain what about their work attracts you
-- What you can bring to them
 
-## Closing
-```
+## Checks
 
-## How This Differs from SOP
-
-| Dimension | SOP | Research Statement |
-|---|---|---|
-| Focus | personal growth + motivation | technical research content |
-| Audience | admissions committee (broad read) | professors (close read) |
-| Length | 800-1000 words | 500-1000 words |
-| Narrative arc | personal growth arc | research problem arc |
-| Letter of rec alignment | needed | needed, preferably from research-relevant professors |
-
-## Source Mapping
-
-| Content | Primary Source | Notes |
-|---|---|---|
-| Core research experience | `projects/xxx.md` | usually paper-ready or published |
-| Lab experience | `experiences/xxx.md` | RA / research assistantship |
-| Publications | `publications/xxx.md` | attach 1-sentence summary per paper |
-
-## Sync Checklist
-
-- [ ] each research experience is traceable to a source entry
-- [ ] each named professor / lab has a basis (read their papers or homepage)
-- [ ] no exaggerated or fabricated technical details
-- [ ] length matches target school requirements
-- [ ] content does not contradict SOP but has a different focus
+- [ ] publication status, author order, and contribution boundaries are accurate
+- [ ] future work is not presented as completed candidate work
+- [ ] faculty availability is not implied without current authoritative evidence
+- [ ] shares a coherent direction with the SOP without duplicating paragraphs
+- [ ] satisfies the official prompt and limits

@@ -1,65 +1,37 @@
-# Publication Summary
+# Publication and Research Output Summary
 
-> Purpose: maintain 1-2 sentence academic abstracts for all papers in one place, ready to cite in SOP / Research Statement / recommendation letters / CV.
-> Status: template
+> Preserve accurate research facts and adaptable source material. Reframe for each application prompt instead of pasting one summary everywhere.
 
-## Writing Principles
+## Entries
 
-- For each paper, clearly state: venue + research problem + approach + main result.
-- Use academic language, not resume bullet style.
-- Write abstracts here once; cite directly in application materials without rewriting.
-- Select papers by application type — different directions prioritize different work.
+### Paper / output title
 
-## Recommended Structure
+- Current status: published / accepted / in press / under review / submitted / preprint / work in progress
+- Venue / target venue:
+- Author order:
+- My contribution:
+- DOI / arXiv / project page:
+- Last verified: YYYY-MM-DD
 
-```md
-# Publication Summary
+#### One-sentence contribution
 
-## Note
-This file maintains academic abstracts for all papers / preprints, ready to cite in application materials.
 
----
+#### Research summary material
 
-## Published / Accepted
+- Problem:
+- Method:
+- Data / evaluation:
+- Result:
+- Limitations:
 
-### Paper Title 1
-- **Venue:** Conference / Journal (Year)
-- **Role:** First author / Co-author
-- **One sentence:** What this paper does.
-- **Abstract:**
-  Research problem, proposed method, where validated (dataset / scenario), results (metrics / impact).
+#### Sources
 
----
+- `publications/...`
+- `projects/...`
 
-## Under Review / Preprint
+## Checks
 
-### Paper Title 2
-- **Venue:** arXiv / Under review at XXX
-- **Role:** First author / Co-author
-- **Status:** Under review / Revision
-- **One sentence:** ...
-- **Abstract:** ...
-```
-
-## Selecting Papers by Application Type
-
-| Application Direction | Recommended Papers |
-|---|---|
-| PhD CS / ECE / AI | 2-3 most relevant; if no publications, choose strongest projects |
-| Research Master | 1-2 papers; demonstrate research potential |
-| MBA / Management | publications not required; quality course projects can substitute |
-| Law | publications not required; policy-related projects optional |
-| MFA | publications usually not needed; writing sample substitutes |
-
-## Source Mapping
-
-| Paper | Primary Source | arXiv / Link |
-|---|---|---|
-| paper_title | `publications/xxx.md` | link |
-
-## Sync Checklist
-
-- [ ] all papers have 1-2 sentence academic abstracts
-- [ ] tense is correct when citing (past for published, future perfect for accepted)
-- [ ] arXiv links are valid
-- [ ] under-review papers have clear target venue
+- [ ] status, author order, venue, and links are accurate
+- [ ] submitted or under-review work is not called accepted
+- [ ] candidate contribution is distinct from the paper's overall contribution
+- [ ] numerical results agree with the paper or source entry

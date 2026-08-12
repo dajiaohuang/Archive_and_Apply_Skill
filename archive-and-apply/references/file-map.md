@@ -1,142 +1,98 @@
-# Archive and Apply File Map
+# Workspace Map and Canonicalization
 
-Use this reference when the repo appears to be an archive-and-apply workspace that feeds resume and interview outputs.
+Read this reference at the start of non-trivial work.
 
-## Bootstrap shape for a new workspace
+## Discover before changing
 
-When creating a new archive-and-apply workspace from scratch, prefer this base structure:
+1. Read repo-local instructions such as `AGENTS.md`.
+2. Inventory relevant files with `rg --files`.
+3. Check the repository status and preserve unrelated changes.
+4. Identify the canonical artifact from actual links, recent edits, and repo instructions.
+5. Treat README descriptions as hints until verified against the filesystem.
 
-- `experiences/`
-- `projects/`
-- `publications/`
-- `publications/papers/`
-- `cv/templates/`
-- `cv/tools/`
-- `interview/coding/`
-- `academia/`
-- root `README.md`
-- root `AGENTS.md`
-- root `TEMPLATE.md`
-- root `.gitignore`
+Do not force a migration merely because the workspace differs from this map.
 
-When the user prefers a language-specific workspace, choose Chinese or English scaffold files and copy them into these canonical names.
+## Recommended new-workspace shape
 
-## Source-of-truth layers
+```text
+experiences/                 factual work and research experiences
+projects/                    factual project entries
+publications/                publication records
+publications/papers/         paper notes or extracted source material
+jobs/targets.md              search criteria and priorities
+jobs/saved/                  captured JDs plus role analysis
+jobs/companies/              reusable company research
+jobs/comparisons/            cross-role comparisons
+jobs/applications.md         application event/status tracker
+cv/CV_ENTRY_BANK.md          reusable resume wording and evidence links
+cv/CV_ENTRY_AUDIT.md         reusable role-selection decisions
+cv/tools/                    local validation scripts
+interview/interview.md       reusable spoken material
+interview/<target>/          target-specific interview material
+academia/                    graduate/professional application material
+discard/                     explicitly archived, non-canonical material
+```
 
-### Source experiences
+## Artifact roles
 
-- `experiences/`
-- legacy `internships/`
-- `projects/`
-- `publications/`
+### Source layer
 
-When creating a new source entry from scratch, start from:
+`experiences/`, `projects/`, and `publications/` hold detailed facts, contribution boundaries, provenance, outcomes, and unknowns. New files start from the matching source template.
 
-- `assets/source-templates/TEMPLATE.cn.md` inside the skill for Chinese libraries
-- `assets/source-templates/TEMPLATE.en.md` inside the skill for English libraries
+### Job layer
 
-These hold detailed factual material and should be updated first when experience content changes.
+- `jobs/targets.md`: desired roles, constraints, location, timing, and priorities.
+- `jobs/saved/<company>-<role>.md`: raw JD snapshot, capture metadata, evidence map, gaps, and decision.
+- `jobs/companies/<company>.md`: reusable, sourced company research.
+- `jobs/applications.md`: event log and current status. Keep dates explicit; distinguish planned from submitted.
 
-### CV derivatives
+### Resume layer
 
-- `cv/CV_ENTRY_BANK.md`
-- `cv/CV_ENTRY_AUDIT.md`
-- `cv/cv_cn.tex`
-- `cv/cv_cn_1page.tex`
-- `cv/cv.tex`
-- `cv/cv_1page.tex`
-- optional draft files in `cv/`
-- `cv/cv fixed/` only as historical reference, not the default editing target
+- `cv/CV_ENTRY_BANK.md`: reusable candidate bullets backed by source entries.
+- `cv/CV_ENTRY_AUDIT.md`: role-specific selection logic, not another resume draft.
+- `cv/tools/setup_tex_dependencies.py`: detect dependencies, smoke-test English/Chinese TeX, and propose a confirmation-gated platform install plan.
+- `cv/tools/check_resume_layout.py`: inspect page fill, safety margins, page-break context, fonts, links, extraction, and render all pages for visual review.
+- Resume/CV outputs: names are workspace-specific. Common legacy names include `cv.tex`, `cv_1page.tex`, `cv_cn.tex`, and `cv_cn_1page.tex`.
 
-If `cv/CV_ENTRY_BANK.md` already exists, any source-entry update should consider whether the bank needs to be refreshed from the updated source facts.
+### Interview layer
 
-When drafting or rewriting bullets, read `references/resume-bullet-writing.md` from the skill before editing the entry bank or TeX resume.
+- `interview/interview.md`: reusable stories and technical explanations.
+- `interview/<target>/jd.md`: JD snapshot or a link to the canonical job record.
+- `interview/<target>/mock.md`: target-specific mock questions and answer outlines.
+- `interview/<target>/my-q.md`: questions to ask the interviewer.
 
-Use `cv/CV_ENTRY_AUDIT.md` when the user wants role-specific CV decisions such as:
+Avoid duplicating a full JD in multiple places. If the canonical copy is under `jobs/saved/`, link to it from the interview folder.
 
-- which entries belong in an Agent / LLM CV versus a Data Science CV
-- which entries should be shortened, weakened, or dropped
-- which skills should stay in the Skills section versus only appear inside bullets
+### Academic layer
 
-### Resume templates and checks
+Create only documents required by the target program. Common names include:
 
-- `assets/tex-templates/` inside the skill for canonical TeX resume templates
-- `cv/templates/README.md` inside the repo for the current template mapping
-- `cv/tools/detect_tex_dependencies.py` inside the repo for local dependency checks
-- `cv/tools/check_tex_pages.py` inside the repo for local page-count, text fill, and bottom-fill checks
-- `cv/tools/check_pdf_fill.py` inside the repo for standalone bottom-fill analysis on an already-compiled PDF
-- `scripts/detect_tex_dependencies.py` for package and tool detection
-- `scripts/check_tex_pages.py` for page count and fill heuristics
+- `academia/PUBLICATION_SUMMARY.md`
+- `academia/SOP.md` or `ACADEMIC_STATEMENT.md`
+- `academia/PERSONAL_STATEMENT.md` or `PERSONAL_HISTORY.md`
+- `academia/RESEARCH_STATEMENT.md`
+- `academia/REC_TRACKER.md`
+- `academia/<program>/` for prompt, research notes, and final tailored files
 
-### Interview derivatives
+Do not assume these documents are interchangeable; the program prompt defines the role of each.
 
-- `interview/interview.md` for general reusable speaking materials
-- `interview/<company>/` for company-specific prep
-- `interview/<company>/jd.md` for the saved job description
-- `interview/<company>/mock.md` for mock interview Q&A
-- `interview/<company>/my-q.md` for closing questions the candidate wants to ask
-- `interview/coding/` for coding practice and implementation drills
+## Dependency direction
 
-Current known company-specific pattern:
+```text
+source entries ─┬─> CV entry bank ─> targeted resume/CV
+                ├─> job evidence map ─> application materials
+                ├─> reusable interview stories ─> target interview pack
+                └─> academic evidence map ─> program-specific statements
+```
 
-- `interview/binance/crypto.md`
-- `interview/binance/mock.md`
-- `interview/binance/my-q.md`
+Update only downstream artifacts affected by the changed fact or request.
 
-### Academia derivatives
+## Staleness signals
 
-- `academia/PUBLICATION_SUMMARY.md` — 1-2 sentence academic abstracts for all papers. Always kept current; cite from here in other materials.
-- `academia/SOP.md` — Statement of Purpose. Research motivation + experience narrative. Customize per school.
-- `academia/RESEARCH_STATEMENT.md` — PhD / research master's only. Deeper technical narrative, names potential advisors.
-- `academia/PERSONAL_STATEMENT.md` — required by some programs. Personal growth narrative; do not copy SOP content here.
-- `academia/REC_TRACKER.md` — tracks recommenders: relationship, highlights, request timing, submission status.
-- `academia/<school>/` — per-school customized materials: copy general files and swap school / professor / lab names.
-- `academia/writing-samples/` — writing sample storage (course papers, published work).
-
-**Typical update order for academia:**
-
-1. Source entries complete and current
-2. `academia/PUBLICATION_SUMMARY.md`
-3. `academia/SOP.md`
-4. `academia/RESEARCH_STATEMENT.md` (if PhD / research master's)
-5. `academia/PERSONAL_STATEMENT.md` (if required)
-6. `academia/REC_TRACKER.md` — start early, 1-2 months before deadline
-7. Per-school customization in `academia/<school>/`
-
-### Archive and discard areas
-
-- `discard/` holds archived experiments, job-search artifacts, old scripts, and deprecated drafts
-- treat `discard/` as non-canonical unless the user explicitly wants to recover something from it
-
-## Maintenance conventions
-
-- Keep Chinese as the default for repo-authored archival and interview notes unless the artifact is explicitly English or bilingual.
-- Generic interview material belongs in `interview/interview.md`, not `cv/`.
-- Company-specific prep belongs under `interview/<company>/`.
-- Coding-prep snippets belong under `interview/coding/`.
-- Treat `cv/cv fixed/` and `discard/` as reference-only by default.
-- If a README mentions files that no longer exist, verify against the filesystem before copying the reference forward.
-
-## Typical update order
-
-1. Source entry
-2. `cv/CV_ENTRY_BANK.md`
-3. Resume variants in `cv/`
-4. `interview/interview.md`
-5. company-specific interview files
-6. repo-local checks in `cv/tools/` when TeX artifacts changed
-7. `README.md` or `AGENTS.md` if needed
-
-When building company-specific prep from a JD:
-
-1. create `interview/<company>/`
-2. store the JD there first
-3. create `mock.md`
-4. create `my-q.md`
-
-## Signals that derivative docs are stale
-
-- references to deleted files
-- stronger claims than the source entries support
-- duplicated interview files in multiple folders
-- old workflow notes that point to the wrong canonical file
+- a derivative claim has no source or is stronger than its source
+- a JD analysis lacks the raw JD, URL, or capture date
+- an application status has no date or evidence
+- multiple files claim to be the canonical resume or interview base
+- a program essay contains another school's faculty, lab, or program name
+- docs reference missing files or templates
+- archived files under `discard/` are treated as current without explicit recovery

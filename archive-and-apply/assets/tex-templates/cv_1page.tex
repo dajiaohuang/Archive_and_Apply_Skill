@@ -3,20 +3,11 @@
 %----------------------------------------------------------------------------------------
 \documentclass[a4paper,10pt]{extarticle}
 
-\usepackage{url}
 \usepackage{parskip}
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[dvipsnames]{xcolor}
-\usepackage[margin=0.42in]{geometry}
-\usepackage{tabularx}
+\usepackage[margin=0.55in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
-\usepackage[unicode, draft=false]{hyperref}
-\usepackage{fontawesome5}
-
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\usepackage[unicode,hidelinks]{hyperref}
 
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{3pt}{2pt}
@@ -24,13 +15,25 @@
 \setlist[itemize]{leftmargin=1.05em,itemsep=0pt,topsep=1pt,parsep=0pt,partopsep=0pt}
 \hyphenpenalty=5000
 \tolerance=1000
+\emergencystretch=1em
+\clubpenalty=10000
+\widowpenalty=10000
+\brokenpenalty=10000
+\raggedbottom
+
+\newcommand{\cvneedspace}[1]{%
+  \par\ifdim\dimexpr\pagegoal-\pagetotal\relax<#1\relax\newpage\fi
+}
+\newcommand{\cvsection}[1]{\cvneedspace{4\baselineskip}\section{#1}}
 
 \newcommand{\entry}[3]{%
+  \cvneedspace{4\baselineskip}%
   \textbf{#1} \hfill \textit{#2}\\[-1pt]
   \textit{#3}
 }
 
 \newcommand{\project}[2]{%
+  \cvneedspace{4\baselineskip}%
   \textbf{#1} \hfill \textit{#2}
 }
 
@@ -44,16 +47,17 @@
 \begin{center}
   {\LARGE\bfseries Candidate Name} \\[3pt]
   {\small City, Country \ $|$ \
-  \href{https://github.com/your-handle}{\faGithub\ your-handle} \ $|$ \
-  \href{mailto:you@example.com}{\faEnvelope\ you@example.com} \ $|$ \
-  \href{https://www.linkedin.com/in/your-handle}{\faLinkedin\ your-linkedin}}
+  \href{https://github.com/your-handle}{github.com/your-handle} \ $|$ \
+  \href{mailto:you@example.com}{you@example.com} \ $|$ \
+  \href{https://www.linkedin.com/in/your-handle}{linkedin.com/in/your-handle}}
 \end{center}
 
-\section{Education}
+\cvsection{Education}
+\cvneedspace{3\baselineskip}
 \textbf{University Name} -- M.Sc., Program Name \hfill \textit{2023 -- 2025}\\
-\textbf{University Name} -- B.Eng., Program Name \hfill \textit{2019 -- 2023}; GPA: 3.8 / 4.0
+\textbf{University Name} -- B.Eng., Program Name \hfill \textit{2019 -- 2023}; GPA: \textit{optional}
 
-\section{Experience}
+\cvsection{Experience}
 \entry{Company or Lab Name}{2024 -- 2025}{Role Title}
 \vspace{-0.7em}
 {\small
@@ -71,7 +75,7 @@
 \end{itemize}
 }
 
-\section{Selected Projects}
+\cvsection{Selected Projects}
 \project{Project Name}{2025}
 \projectkeywords{Agent, RAG, Systems}
 \vspace{-0.85em}
@@ -90,11 +94,11 @@
 \end{itemize}
 }
 
-\section{Skills}
+\cvsection{Skills}
 {\scriptsize
-\textbf{ML / AI:} PyTorch, Transformers, retrieval, evaluation, multimodal modeling.\\
-\textbf{Engineering:} Python, TypeScript, SQL, Docker, Linux, APIs, testing.\\
-\textbf{Focus Areas:} data science, agent systems, computer vision, recommendation.
+\textbf{ML / AI:} Replace with target-relevant skills supported by the entries.\\
+\textbf{Engineering:} Replace with defensible languages, systems, and tools.\\
+\textbf{Languages / Other:} Include only accurate, relevant capabilities.
 }
 
 \end{document}

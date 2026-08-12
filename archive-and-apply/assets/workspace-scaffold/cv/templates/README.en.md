@@ -1,17 +1,3 @@
-# TeX Templates
+# TeX Template Notes
 
-This folder documents the current resume template mapping.
-
-Recommended baseline files:
-
-- `cv.tex`
-- `cv_1page.tex`
-- `cv_cn.tex`
-- `cv_cn_1page.tex`
-
-If you are starting from the skill-bundled assets, copy from:
-
-- `assets/tex-templates/cv.tex`
-- `assets/tex-templates/cv_1page.tex`
-- `assets/tex-templates/cv_cn.tex`
-- `assets/tex-templates/cv_cn_1page.tex`
+The initializer copies the selected language's TeX starting points into `cv/`. Every name, institution, GPA, date, and bullet in a template is placeholder content and must be replaced with verified facts. Follow any explicit recipient formatting requirements.

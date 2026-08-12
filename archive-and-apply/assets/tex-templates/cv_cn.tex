@@ -1,62 +1,63 @@
 %----------------------------------------------------------------------------------------
-% Generic two-page Chinese CV template
+% Generic expanded Chinese resume/CV template (final length depends on content)
 %----------------------------------------------------------------------------------------
-\documentclass[a4paper,12pt]{article}
+\documentclass[UTF8,a4paper,11pt]{ctexart}
 
-\usepackage[UTF8]{ctex}
-\usepackage{url}
 \usepackage{parskip}
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-\usepackage{tabularx}
+\usepackage[margin=0.65in]{geometry}
 \usepackage{enumitem}
-\usepackage{supertabular}
 \usepackage{titlesec}
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage[style=authoryear,sorting=ynt,maxbibnames=2]{biblatex}
-\usepackage[unicode, draft=false]{hyperref}
-\usepackage{fontawesome5}
+\usepackage[unicode,hidelinks]{hyperref}
 
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 \titleformat{\section}{\Large\bfseries\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{6pt}{4pt}
 \setlength{\parindent}{0pt}
 \hyphenpenalty=5000
 \tolerance=1000
-\newcolumntype{C}{>{\centering\arraybackslash}X}
+\emergencystretch=1em
+\clubpenalty=10000
+\widowpenalty=10000
+\brokenpenalty=10000
+\raggedbottom
+
+\newcommand{\cvneedspace}[1]{%
+  \par\ifdim\dimexpr\pagegoal-\pagetotal\relax<#1\relax\newpage\fi
+}
+\newcommand{\cvsection}[1]{\cvneedspace{4\baselineskip}\section{#1}}
 
 \begin{document}
 \pagestyle{empty}
 
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{候选人姓名} \\[7.5pt]
-\href{https://github.com/your-handle}{\raisebox{-0.05\height}\faGithub\ your-handle} \ $|$ \
-\href{mailto:you@example.com}{\raisebox{-0.05\height}\faEnvelope \ you@example.com} \ $|$ \
-\href{https://www.linkedin.com/in/your-handle}{\raisebox{-0.05\height}\faLinkedin \ your-linkedin}\\
-\end{tabularx}
+\begin{center}
+\Huge\textbf{候选人姓名} \\[5pt]
+\normalsize
+\href{https://github.com/your-handle}{github.com/your-handle} \ $|$ \
+\href{mailto:you@example.com}{you@example.com} \ $|$ \
+\href{https://www.linkedin.com/in/your-handle}{linkedin.com/in/your-handle}
+\end{center}
 
-\section{教育背景}
+\cvsection{教育背景}
+\cvneedspace{3\baselineskip}
 \textbf{学校名称} \hfill \textit{2023年9月 -- 2025年6月}\\
 硕士，专业名称
 
+\cvneedspace{3\baselineskip}
 \textbf{学校名称} \hfill \textit{2019年9月 -- 2023年6月}\\
-学士，专业名称 \hfill 均分 / GPA：示例数值
+学士，专业名称 \hfill 均分 / GPA：按要求选填
 
-\section{经历}
+\cvsection{经历}
+\cvneedspace{4\baselineskip}
 \textbf{公司或实验室名称} \hfill \textit{2024年 -- 2025年}\\
 \textit{岗位名称}
 {\small
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
   \item 用 2 到 4 条说明这个经历解决的核心问题、你的职责边界和交付内容。
   \item 优先写系统能力、模型方案、评测方式、上线边界或业务价值。
-  \item 至少保留一条带数字的结果，例如准确率、时延、覆盖率、测试数或排名。
+  \item 补充有来源支持的结果，例如准确率、时延、覆盖率、测试证据或排名；仅在事实支持时量化。
 \end{itemize}
 }
 
+\cvneedspace{4\baselineskip}
 \textbf{团队或机构名称} \hfill \textit{2023年 -- 2024年}\\
 \textit{科研实习生 / 工程师 / 分析师}
 {\small
@@ -65,7 +66,8 @@
 \end{itemize}
 }
 
-\section{项目经历}
+\cvsection{项目经历}
+\cvneedspace{4\baselineskip}
 \textbf{项目名称} \hfill \textit{2025年}\\
 {\small
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
@@ -74,6 +76,7 @@
 \end{itemize}
 }
 
+\cvneedspace{4\baselineskip}
 \textbf{项目名称} \hfill \textit{2024年}\\
 {\small
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
@@ -81,7 +84,7 @@
 \end{itemize}
 }
 
-\section{论文与成果}
+\cvsection{论文与成果}
 {\small
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
   \item \textbf{论文标题}，会议 / 期刊，年份。用一句话说明研究问题、你的关联和价值。
@@ -89,11 +92,9 @@
 \end{itemize}
 }
 
-\section{技能}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{机器学习 / AI} & PyTorch、Transformers、检索、评测、多模态建模 \\
-\textbf{工程能力} & Python、TypeScript、SQL、Docker、Linux、API、测试 \\
-\textbf{关注方向} & 数据科学、Agent 系统、计算机视觉、推荐系统 \\
-\end{tabularx}
+\cvsection{技能}
+\textbf{机器学习 / AI：} 按目标岗位填写可自证技能。\\
+\textbf{工程能力：} 按目标岗位填写语言、系统与工具。\\
+\textbf{语言 / 其他：} 仅填写真实且相关的能力。
 
 \end{document}

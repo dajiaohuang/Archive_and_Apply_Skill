@@ -1,60 +1,42 @@
-# Personal Statement
+# Personal Statement / Personal History Template
 
-> Purpose: some programs require Personal Statement instead of (or in addition to) SOP, with focus on personal growth, diversity, and non-academic aspects. When both are required, they must be clearly differentiated.
-> Status: template
+> The document title does not define its content; the official prompt does. Include only personal information the user wants to disclose and that answers the prompt.
 
-## Writing Principles
+## Application brief
 
-- PS answers "who you are as a person"; SOP answers "what research you want to do."
-- Common themes: upbringing, cultural identity, overcoming challenges, leadership, community contribution, service motivation.
-- Do not copy the SOP — if the school requires both files, content must be differentiated.
-- Typical length: 500-800 words.
-- Authenticity first; do not fabricate stories.
+- Program:
+- Official URL:
+- Exact prompt:
+- Constraints:
+- Verified: YYYY-MM-DD
 
-## Recommended Structure
+## Prompt-to-experience map
 
-```md
-# Personal Statement
+| Prompt component | Authentic experience | Source / user confirmation | Intended perspective | Privacy risk |
+|---|---|---|---|---|
+|  |  |  |  |  |
 
-## Paragraph 1: Personal Background Hook
-Open with 1 vivid personal story or experience that introduces your identity or motivation.
+## Outline
 
-## Paragraph 2: Shaping Experiences
-Describe one or several experiences that shaped you:
-- Upbringing
-- Key turning points
-- Challenges faced and how you overcame them
+### Formative context or experience
 
-## Paragraph 3: Skills and Values
-What skills did you develop and what values did you form through these experiences?
+Use specific experiences to explain context, responsibility, opportunity, barriers, service, or values. Do not manufacture hardship for narrative effect.
 
-## Paragraph 4: Connection to the Program
-How do these skills and values make you a good fit for this program?
+### Action and growth
 
-## Paragraph 5: Future Vision
-What kind of person do you want to become and what do you want to do through this program?
-```
+Explain choices, actions, impact, and the capability or perspective developed.
 
-## Division of Labor with SOP
+### Contribution to program or community
 
-| File | Answers | Research vs Personal |
-|---|---|---|
-| SOP | What research do you want to do and why? | 60-70% research |
-| Personal Statement | Who are you and why are you a fit? | 60-70% personal narrative |
+Connect future contribution only when the prompt asks, and keep it concrete.
 
-If the school only asks for Personal Statement (not separate SOP), merge research content with personal narrative, but research still occupies 40-50%.
+## Draft
 
-## Source Mapping
 
-| Content | Primary Source | Notes |
-|---|---|---|
-| Personal growth experience | `experiences/` | non-work experiences: clubs, volunteering, entrepreneurship |
-| Research experience summary | `projects/` or `publications/` | briefly mention in PS, do not repeat SOP details |
-| Leadership | `experiences/xxx.md` | on-campus / off-campus leadership |
+## Checks
 
-## Sync Checklist
-
-- [ ] stories are authentic with specific details
-- [ ] differentiated from SOP (not the same file)
-- [ ] word count within target school requirements
-- [ ] grammar and expression checked
+- [ ] answers the current prompt
+- [ ] sensitive information has explicit user approval
+- [ ] demonstrates qualities through examples
+- [ ] does not duplicate concurrently required academic-purpose paragraphs
+- [ ] meets official limits

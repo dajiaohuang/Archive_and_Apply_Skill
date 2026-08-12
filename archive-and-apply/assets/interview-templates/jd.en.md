@@ -1,15 +1,16 @@
-# JD
+# Interview Target and JD
 
-## Basic Info
+- Company / role:
+- Canonical JD path: `jobs/saved/...`
+- Source URL:
+- Captured: YYYY-MM-DD
 
-- Company:
-- Role:
-- Source Link:
+## Interview focus
 
-## Raw JD
+- Strongest role-relevant evidence:
+- Largest gap / risk:
+- Questions to clarify with the interviewer:
 
-Paste the full job description or the key requirements here.
+> If the JD is not yet saved under `jobs/saved/`, preserve a temporary raw copy below. Keep analysis out of the raw text.
 
-## My Initial Notes
-
-- 
+## Raw JD (optional)

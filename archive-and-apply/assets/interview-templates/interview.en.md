@@ -1,20 +1,37 @@
-# Interview Base File
+# Reusable Interview Material
 
-> Purpose: maintain reusable project intros, experience intros, and technical topic notes.
+> Keep only material reusable across targets. Put company-specific questions under `interview/<target>/`.
 
-## Project Intros
+## Introduction
 
-### Project / Experience Name
+### 30-second version
 
-- 30-second version:
-- 90-second version:
-- good follow-up questions:
 
-## Technical Topic Bank
+### 90-second version
 
-### Topic Name
 
-- core concept:
-- when to use it:
-- common follow-up questions:
-- example from my experience:
+### Evidence sources
+
+-
+
+## Experience story bank
+
+### Story: title
+
+- Suitable questions:
+- Situation / goal:
+- My action and boundary:
+- Result and evidence:
+- Reflection / what I would change:
+- Source path:
+- Likely follow-ups:
+
+## Technical topic bank
+
+### Topic
+
+- One-sentence explanation:
+- When to use / avoid:
+- Tradeoffs and failure modes:
+- My example and source:
+- Likely follow-ups:

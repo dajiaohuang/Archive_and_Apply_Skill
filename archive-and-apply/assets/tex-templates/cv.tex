@@ -1,22 +1,13 @@
 %----------------------------------------------------------------------------------------
-% Generic two-page English CV template
+% Generic expanded English resume/CV template (final length depends on content)
 %----------------------------------------------------------------------------------------
 \documentclass[a4paper,11pt]{extarticle}
 
-\usepackage{url}
 \usepackage{parskip}
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[dvipsnames]{xcolor}
-\usepackage[margin=0.58in]{geometry}
-\usepackage{tabularx}
+\usepackage[margin=0.65in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
-\usepackage[unicode, draft=false]{hyperref}
-\usepackage{fontawesome5}
-
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\usepackage[unicode,hidelinks]{hyperref}
 
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{5pt}{4pt}
@@ -24,13 +15,25 @@
 \setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt,parsep=0pt,partopsep=0pt}
 \hyphenpenalty=5000
 \tolerance=1000
+\emergencystretch=1em
+\clubpenalty=10000
+\widowpenalty=10000
+\brokenpenalty=10000
+\raggedbottom
+
+\newcommand{\cvneedspace}[1]{%
+  \par\ifdim\dimexpr\pagegoal-\pagetotal\relax<#1\relax\newpage\fi
+}
+\newcommand{\cvsection}[1]{\cvneedspace{4\baselineskip}\section{#1}}
 
 \newcommand{\datedentry}[3]{%
+  \cvneedspace{4\baselineskip}%
   \textbf{#1} \hfill \textit{#2}\\
   \textit{#3}
 }
 
 \newcommand{\projectentry}[2]{%
+  \cvneedspace{4\baselineskip}%
   \textbf{#1} \hfill \textit{#2}
 }
 
@@ -45,27 +48,29 @@
   {\LARGE\bfseries Candidate Name} \\[4pt]
   {\small
     City, Country \ $|$ \
-    \href{https://github.com/your-handle}{\faGithub\ your-handle} \ $|$ \
-    \href{mailto:you@example.com}{\faEnvelope\ you@example.com} \ $|$ \
-    \href{https://www.linkedin.com/in/your-handle}{\faLinkedin\ your-linkedin}
+    \href{https://github.com/your-handle}{github.com/your-handle} \ $|$ \
+    \href{mailto:you@example.com}{you@example.com} \ $|$ \
+    \href{https://www.linkedin.com/in/your-handle}{linkedin.com/in/your-handle}
   }\\[-1pt]
 \end{center}
 
-\section{Education}
+\cvsection{Education}
+\cvneedspace{3\baselineskip}
 \textbf{University Name} \hfill \textit{2023 -- 2025}\\
 M.Sc., Program Name
 
+\cvneedspace{3\baselineskip}
 \textbf{University Name} \hfill \textit{2019 -- 2023}\\
-B.Eng., Program Name \hfill GPA: 3.8 / 4.0
+B.Eng., Program Name \hfill GPA: \textit{optional}
 
-\section{Experience}
+\cvsection{Experience}
 \datedentry{Company or Lab Name}{2024 -- 2025}{Role Title}
 \vspace{-0.6em}
 {\small
 \begin{itemize}
   \item Built or supported a system relevant to the target role; summarize the core problem, technical scope, and user or business value.
   \item Describe the architecture or workflow using concrete tools such as FastAPI, PyTorch, vector retrieval, evaluation gates, or production constraints.
-  \item Add one quantified outcome such as latency, accuracy, coverage, reliability, test count, or launch criteria.
+  \item Add a sourced outcome such as latency, accuracy, coverage, reliability, test evidence, or launch criteria; quantify only when the source supports it.
 \end{itemize}
 }
 
@@ -78,7 +83,7 @@ B.Eng., Program Name \hfill GPA: 3.8 / 4.0
 \end{itemize}
 }
 
-\section{Selected Projects}
+\cvsection{Selected Projects}
 \projectentry{Project Name}{2025}
 \projectkeywords{Agent, RAG, Evaluation}
 \vspace{-0.7em}
@@ -98,7 +103,7 @@ B.Eng., Program Name \hfill GPA: 3.8 / 4.0
 \end{itemize}
 }
 
-\section{Publications}
+\cvsection{Publications}
 {\small
 \begin{itemize}
   \item \textbf{Paper Title}, Venue 2024. One-line description of the problem, your contribution, and the significance.
@@ -106,11 +111,11 @@ B.Eng., Program Name \hfill GPA: 3.8 / 4.0
 \end{itemize}
 }
 
-\section{Skills}
+\cvsection{Skills}
 {\small
-\textbf{ML / AI:} PyTorch, Transformers, retrieval, evaluation, multimodal modeling.\\
-\textbf{Systems:} Python, TypeScript, SQL, Docker, Linux, APIs, testing.\\
-\textbf{Focus Areas:} agent systems, data science, applied ML, computer vision, recommendation.
+\textbf{ML / AI:} Replace with target-relevant skills supported by the entries.\\
+\textbf{Systems:} Replace with defensible languages, systems, and tools.\\
+\textbf{Languages / Other:} Include only accurate, relevant capabilities.
 }
 
 \end{document}

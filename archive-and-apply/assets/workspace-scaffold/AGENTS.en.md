@@ -1,41 +1,29 @@
 # AGENTS.md
 
-This file provides guidance to coding agents when working in this repository.
+This repository is a source-first workspace for experience evidence, job applications, and academic applications.
 
-## Purpose
+## Core rules
 
-This is a personal archive-and-apply workspace: a source-first archive of experiences, projects, publications, CV artifacts, and interview materials.
+- `experiences/`, `projects/`, and `publications/` are the factual layer; every downstream claim must be traceable.
+- Distinguish verified, user-reported, inferred, and pending information. Never invent metrics, dates, status, or ownership.
+- Preserve raw JDs and program prompts with sources and capture dates; keep analysis separate.
+- Update source entries when facts change. Wording-only or target-selection changes do not require rewriting the source.
+- Before writing resume entries, infer which of ATS, recruiting/HR, hiring manager/team lead, technical reviewers, and potential peers/cross-functional partners are involved; keep the first bullet broadly accessible and use later bullets for defensible judgment, technical, validation, and team evidence.
+- Update canonical files instead of creating parallel copies.
+- Do not submit applications, send messages, or change external account state without an explicit request.
 
-## Core Rules
+## Directory roles
 
-- Treat `experiences/`, `projects/`, and `publications/` as the factual source of truth.
-- Create new source entries from `TEMPLATE.md` first, then derive CV and interview artifacts.
-- Prefer updating canonical files instead of creating duplicates.
-- Use `interview/interview.md` for reusable speaking material.
-- Use `interview/<company>/` for company- or role-specific prep.
-- When a JD is provided for a company-specific prep pack, save it into that company directory first, typically as `jd.md`.
+- `jobs/`: targets, JD snapshots, company research, and application tracking
+- `cv/`: entry bank, target audits, TeX resumes, and validation tools
+- `interview/`: reusable story bank and target-specific interview packs
+- `academia/`: academic application materials governed by official prompts
+- `discard/`: archived, non-canonical material
 
-## Expected Directory Shape
+## Update order
 
-- `experiences/`
-- `projects/`
-- `publications/`
-- `publications/papers/`
-- `cv/`
-- `interview/`
-- `TEMPLATE.md`
-- `README.md`
-
-## Resume Workflow
-
-1. Update or create source entries
-2. Sync `cv/CV_ENTRY_BANK.md`
-3. Update `.tex` resume variants
-4. Run local TeX dependency and page checks
-
-## Interview Workflow
-
-1. Keep reusable material in `interview/interview.md`
-2. Create `interview/<company>/` for targeted prep
-3. Store the JD in that folder
-4. After the JD is saved, the next natural step is to generate `mock.md`
+1. Read this file and inspect the current layout.
+2. Confirm canonical files and source evidence.
+3. Update the smallest complete scope.
+4. Check dates, status, language, paths, and claim consistency.
+5. After TeX changes, compile, render, and check text extraction.

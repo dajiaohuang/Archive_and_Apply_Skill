@@ -1,17 +1,3 @@
-# TeX Templates
+# TeX 模板说明
 
-这个目录用于说明当前简历模板来源。
-
-推荐至少维护：
-
-- `cv.tex`
-- `cv_1page.tex`
-- `cv_cn.tex`
-- `cv_cn_1page.tex`
-
-如果是从 skill 自带模板起步，可以先复制：
-
-- `assets/tex-templates/cv.tex`
-- `assets/tex-templates/cv_1page.tex`
-- `assets/tex-templates/cv_cn.tex`
-- `assets/tex-templates/cv_cn_1page.tex`
+初始化脚本已把当前语言的 TeX 起点复制到 `cv/`。模板中的所有姓名、学校、GPA、日期和 bullet 都是占位内容，必须用已核验事实替换。若招聘系统对格式有明确要求，以对方要求为准。

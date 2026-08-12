@@ -1,61 +1,187 @@
-# Resume Bullet Writing
+# Evidence-Backed, Multi-Reader Resume Writing
 
-Use this reference when drafting or auditing resume bullets, especially for technical roles where both recruiters and domain engineers will read the same page.
+Read this reference whenever drafting, rewriting, selecting, or auditing resume bullets. A resume is a compact decision aid and an interview agenda—not an autobiography, project README, or stack inventory.
 
-## Reader Contract
+## Start with the reader path
 
-Write every entry for two readers:
+Do not assume one universal reader or hiring sequence. Infer the likely path from the employer, role, seniority, locale, and job description; state assumptions when the path is unknown.
 
-- A recruiter should understand what was built, who it served, and why it mattered without knowing internal class names.
-- A domain engineer should still find a concrete problem, technical decision, boundary, or measurable result worth discussing.
+| Reader or system | Decision they are trying to make | Evidence to surface | Common failure |
+|---|---|---|---|
+| ATS / application parser | Can the document be parsed and does it contain supported role signals? | standard titles/sections, exact defensible terminology, dates, skills in context | keyword stuffing, graphics/tables, synonyms that hide the required skill |
+| Recruiter / HR / talent partner | Does this person plausibly meet the role, level, domain, and basic constraints? | recognizable problem, scope, ownership, relevant outcome, transferable signal | jargon before context, unclear seniority, responsibilities with no evidence |
+| Hiring manager / team leader | Is this evidence of performance in the actual job, at the expected level? | end-to-end scope, prioritization, judgment, impact, reliability, stakeholder or user value | impressive technology with no reason, outcome, or ownership boundary |
+| Technical interviewer / domain reviewer | Is the claimed depth real and worth probing? | architecture/method, constraints, tradeoffs, evaluation, failure handling, concrete tools when material | shallow tool lists, unexplained metrics, claims the candidate cannot defend |
+| Potential teammate / peer | Will this person execute clearly and improve the team's work? | interfaces, debugging, testing, maintainability, documentation, handoff, collaboration and conflict resolution | “collaborated” with no personal contribution or team outcome |
+| Cross-functional partner | Can this person translate needs and make useful tradeoffs across functions? | customer/problem framing, requirements, communication artifact, decision, measurable effect | internal implementation detail with no shared objective |
+| Senior leader / hiring committee, when relevant | Does the candidate show leverage, trajectory, and appropriate risk judgment? | organizational scope, strategic choice, multiplier effect, durable outcome | inflated leadership language or activity counts without consequence |
 
-Each bullet must stand on its own. Do not require the reader to decode a previous bullet or an internal architecture diagram.
+These are lenses, not stereotypes. Recruiters can be technical; managers may inspect implementation; peers may care about user impact. Future teammates may not screen the initial application, but often participate later. Optimize first for the actual gate sequence, then ensure the document remains credible to all later readers.
 
-## Default Entry Structure
+## Use progressive disclosure inside each entry
 
-For a major experience or project with two or three bullets:
+Make the first meaningful clause understandable without specialized context. Add only enough technical specificity to distinguish the work and support a useful interview question. End with evidence of outcome, validation, or operating consequence.
 
-1. **Overview** — state ownership, the system or research output, its user/problem, and the main capability delivered.
-2. **Technical highlight** — name a concrete failure mode or constraint, then explain the design used to solve it and the behavior it produced.
-3. **Technical highlight or result** — cover a second hard problem, engineering boundary, evaluation, scale, or outcome.
+Default bullet shape:
 
-For a compact project with only one bullet, use:
+`ownership/action + recognizable problem or scope + discriminating method/decision + outcome or validation`
 
-`what was built -> key approach -> result`
+The order may change for readability. Do not force every element into one crowded bullet.
 
-Do not turn the overview into an architecture inventory. Detailed frameworks, internal services, and metrics belong in later bullets unless they are essential to understanding the project.
+For a major entry, use bullets with distinct jobs:
 
-## Writing Rules
+1. **Orientation:** what was built, changed, or studied; for whom or why; and the candidate's ownership.
+2. **Judgment/depth:** a consequential design choice, constraint, tradeoff, experiment, or failure mode.
+3. **Evidence:** measured result, validated behavior, release/adoption, reliability, cost, learning, or external artifact.
+4. **Team leverage, only when material:** clarified requirements, aligned stakeholders, improved review/testing/docs, unblocked others, or owned an interface/handoff.
 
-- Start with an ownership verb such as built, designed, implemented, led, trained, evaluated, or shipped.
-- Keep one main idea per bullet.
-- State the user-visible or engineering problem before specialized implementation names.
-- Use internal component names as evidence, not as the subject of the sentence.
-- Prefer plain-language outcomes such as “prevented cross-branch memory leakage” over unexplained abstractions such as “implemented revision ancestry filtering.”
-- Attach metrics to the behavior they validate; do not append test counts or model names only to make a bullet look quantitative.
-- Keep claims traceable to source entries. Preserve contribution boundaries such as independently built, led, contributed, or supported.
-- Expand uncommon abbreviations on first use or remove them when they do not help the target role.
-- Remove tool and framework laundry lists. Keep only technologies that explain the design choice or establish role relevance.
-- For a one-page CV, prefer one or two readable lines per bullet. Shorten wording before shrinking typography.
+The first bullet must survive a non-specialist scan. Later bullets may become more technical, but each still needs a clear purpose.
 
-## AI / LLM / Agent Emphasis
+## Gather facts before writing
 
-For AI Agent roles, make the system overview legible before naming orchestration internals. Strong technical highlights usually explain one of these problems:
+Capture these fields from source material or explicit user statements:
 
-- tool discovery, selection, exposure, or authorization
-- retrieval quality, versioning, evidence, or hallucination control
-- long-term memory, identity, branch, or audience isolation
-- workflow orchestration, retries, idempotency, or state ownership
-- evaluation, observability, latency, cost, or launch safety
+- target role, level, locale, and likely reader path
+- problem, user, research question, or operating need
+- candidate's personal ownership boundary versus team output
+- scale and constraints: traffic, data, latency, cost, safety, deadline, regulation, ambiguity
+- action and consequential decision—not every implementation step
+- why that method was selected and what alternative/tradeoff mattered
+- result, output, validation method, baseline, and time window
+- team topology: collaborators, interfaces, dependencies, review/handoff, disagreement or coordination when material
+- source path, evidence status, confidentiality boundary, and unresolved questions
 
-Describe the failure that was prevented. “Rejected unauthorized calls at the MCP boundary” is clearer than listing permission-service classes. “Prevented other characters' or GM-only knowledge from entering the response” is clearer than listing knowledge-model fields.
+If a key fact is unknown, ask for it or omit the claim. Do not turn an intended outcome into an achieved result.
 
-## Readability Check
+## Choose signals by reader value
 
-Before accepting a bullet, verify:
+### Recruiter-readable signal
 
-1. Can a recruiter explain the project after reading only the first bullet?
-2. Can an engineer identify the hard technical problem in each later bullet?
-3. Does every acronym or internal name earn its space?
-4. Is the outcome tied to the solution rather than appended as an unrelated metric?
-5. Can every claim be traced back to a source entry?
+Answer in plain language: What kind of work was this, how large or important was it, what did the candidate own, and why is it relevant? Introduce uncommon product names and acronyms only after the problem is clear.
+
+### Manager-readable signal
+
+Show judgment and consequence: what priority or constraint shaped the work, what changed because of it, and what level of ownership is supported? For senior roles, show leverage through systems, standards, decisions, or people enabled—not just a longer technology list.
+
+### Technical-interview signal
+
+Include one or two details that distinguish depth: architecture boundary, model/data choice, evaluation design, bottleneck, reliability mechanism, security/safety constraint, or rejected alternative. A technical term earns space only when it helps explain the decision or matches a substantiated target requirement.
+
+### Peer/team signal
+
+Use team evidence only when concrete. Prefer:
+
+- defined an API or ownership boundary that reduced integration ambiguity
+- added tests, observability, runbooks, or review gates that changed team behavior
+- translated requirements with product/design/research and documented the decision
+- diagnosed a cross-service failure and coordinated the repair
+- mentored/reviewed/unblocked others with a stated scope or outcome
+
+Avoid unsupported personality labels such as “team player” or “excellent communicator.” Demonstrate the behavior and consequence.
+
+## Evidence hierarchy
+
+Prefer the strongest available evidence:
+
+1. externally verifiable outcome: release, publication, award, patent, public artifact, accepted contribution
+2. measured change against a named baseline: quality, latency, cost, scale, coverage, reliability, conversion
+3. validated behavior: experiment, test suite, evaluation protocol, incident evidence, safety boundary, reproducible result
+4. concrete operational or team outcome: adoption, decision enabled, handoff completed, process/review time changed
+5. concrete deliverable: system, model, dataset, analysis, interface, process
+6. responsibility only: use only when stronger evidence does not exist
+
+Do not invent numbers. A precise qualitative result is stronger than a fabricated metric. Distinguish team result from individual contribution: “contributed X to a team that achieved Y” when that is the supported scope.
+
+## Quantify with meaning
+
+Use a number only when the source supports it and the reader can tell what it proves. Prefer:
+
+- change plus baseline: `reduced median latency from A to B under C workload`
+- scale plus behavior: `processed N records/day while meeting SLO X`
+- evaluation design: `evaluated N models on M examples using metric X`
+- selection rate: `selected as 1 of N` when externally supported and relevant
+- team/organizational scope when it explains leadership or coordination
+
+Name the denominator, baseline, time window, or condition when needed. Dataset size, test count, team size, or lines of code are not impact by themselves.
+
+## Preserve interview integrity
+
+Treat every bullet as a promise that the candidate can explain:
+
+- What exactly did you own?
+- Why did the problem matter?
+- Why this approach rather than an alternative?
+- What constraint or tradeoff drove the decision?
+- How was the outcome measured and against what baseline?
+- What failed, changed, or remained unresolved?
+- Who else contributed, and how did your work interface with theirs?
+- What would you do differently now?
+
+Remove or weaken a claim if the candidate cannot answer likely follow-ups accurately. Do not disclose confidential architecture, customer data, unreleased metrics, security details, or employer-sensitive information merely to sound specific; describe the class of problem or relative effect instead.
+
+## Writing rules
+
+- Start with a specific ownership/action verb; avoid “responsible for,” “helped,” or “worked on” unless limited scope is the truth.
+- Put the problem, user, or consequence before obscure internal names.
+- Keep one main claim per bullet and one distinct purpose per bullet set.
+- Prefer concrete nouns and verbs over adjectives such as “novel,” “robust,” “high-performance,” or “significant.”
+- Preserve tense, dates, seniority, authorship, and contribution level.
+- Expand an uncommon acronym once or remove it.
+- Use JD vocabulary only when the source substantiates it; do not copy entire requirement phrases.
+- Show interpersonal skills through decisions and outcomes, not a generic soft-skills list.
+- Avoid repeating the same evidence in summary, skills, and multiple bullets unless each placement serves a different decision.
+- Prefer readable space and hierarchy over aggressive compression.
+
+## Drafting and compression loop
+
+1. Write an evidence-complete version without optimizing line count.
+2. Label each clause by function: orientation, ownership, decision/method, outcome, or team leverage.
+3. Remove clauses that serve no likely reader or duplicate a stronger bullet.
+4. Move the most relevant and differentiating signal earlier.
+5. Replace jargon with accessible language; retain only discriminating technical terms.
+6. Verify every claim and metric against its source and contribution boundary.
+7. Read the entry through each relevant reader lens.
+8. Render the resume and revise for actual line breaks; do not sacrifice truth or readability merely to save one line.
+
+## Multi-reader audit
+
+For each major entry, answer:
+
+### Recruiter / HR
+
+- Can a non-specialist name the problem, scope, ownership, and relevance after the first bullet?
+- Are level and transferable skills visible without decoding internal terminology?
+
+### Hiring manager / team leader
+
+- Does the entry predict performance in the target job rather than merely list past activity?
+- Is there evidence of judgment, prioritization, end-to-end ownership, and consequence at the claimed level?
+
+### Technical reviewer
+
+- Is there at least one concrete technical decision, constraint, or validation method worth probing?
+- Are tools connected to an architectural or methodological purpose?
+
+### Potential peer / cross-functional partner
+
+- Is the individual contribution distinguishable from the team's result?
+- Where relevant, does the entry show interface ownership, quality practices, communication, or team leverage?
+
+### ATS / document system
+
+- Are required supported terms present in ordinary text and in their expected context?
+- Does extracted text preserve headings, dates, bullets, and reading order?
+
+### Evidence and interview
+
+- Is every material claim sourced, correctly scoped, confidentially safe, and defensible under follow-up?
+- Does each bullet add a signal that is not already conveyed better elsewhere?
+
+## Research basis
+
+- Microsoft states that applications may move from Recruiting to the hiring team, including hiring managers, screeners, and interviewers; interviews may include potential teammates and cross-functional colleagues: <https://careers.microsoft.com/v2/global/en/hiringfaqs.html> and <https://careers.microsoft.com/v2/global/en/hiring-tips>
+- Microsoft asks candidates to connect past examples and transferable skills to the target role, and expects honest representation throughout the process: <https://careers.microsoft.com/v2/global/en/hiring-tips>
+- MIT advises writing for recruiters, hiring managers, or committees; making technical work understandable to broader audiences; targeting the job; and using project/action/result evidence: <https://capd.mit.edu/resources/career-toolkit-crafting-an-effective-resume/> and <https://capd.mit.edu/resources/resumes/>
+- Yale recommends accomplishment statements that distinguish individual action, project/problem, result, tangible evidence, and team contribution: <https://ocs.yale.edu/resources/writing-impactful-resume-bullets/>
+- Harvard recommends specific, active, fact-based language written for people and systems that scan quickly: <https://careerservices.fas.harvard.edu/resources/create-a-strong-resume/>
+- Amazon describes interview loops in which different employees assess different aspects of skills and experience; technical hiring considers both technical and behavioral competencies: <https://amazon.jobs/content/en/how-we-hire/interview-loop> and <https://amazon.jobs/content/en/how-we-hire/university/additional-tech>

@@ -1,81 +1,41 @@
-# Recommendation Letter Tracker
+# Recommendation Tracker
 
-> Purpose: manage relationship maintenance, request timing, and submission status for each recommender.
-> Status: template
+> Schedule requests and reminders from program requirements, deadlines, and the recommender relationship. Do not apply one universal lead time.
 
-## Principles
+## Program requirements
 
-- Recommendation letters are the least controllable part of your application; plan early and reach out early.
-- Maintain a record per recommender: relationship depth, academic highlights, when to contact, submission status.
-- Recommend reaching out 1-2 months in advance, with a final follow-up 2 weeks before deadline.
-- Record submission time and confirmation after each submission.
+| Program | Count | Recommender eligibility | Deadline / time zone | Official source | Verified |
+|---|---:|---|---|---|---|
+|  |  |  |  |  |  |
 
-## Recommender Evaluation Dimensions
+## Recommenders
 
-Before requesting, evaluate each recommender on:
+### Name
 
-- **Depth of knowledge:** grade in their course / project involvement / duration of collaboration
-- **Highlightable strengths:** which of your specific work / qualities they can give concrete examples for
-- **Writing quality:** whether they're willing to write personalized letters or just submit forms
-- **Reliability:** whether they're on campus this semester / timely / dependable
-
-## Recommender Sources
-
-| Recommender Type | Suitable For | Weight |
-|---|---|---|
-| Research advisor / lab supervisor | PhD / research master's | core |
-| Course professor | everyone | supplements technical foundation |
-| Internship supervisor | MBA / professional master's | supplements professional competence |
-| Project lead | everyone | supplements teamwork |
-| Social activity leader | MPA / public service | supplements service motivation |
-
-## Template
-
-```md
-# Recommendation Letter Tracker
-
-## Recommender A
-
-### Basic Info
-- Name:
-- Title: Professor / Associate Professor / Lecturer / Internship Supervisor / Project Lead
-- Institution:
+- Title / institution:
 - Contact:
-- How long known: through what
+- Relationship and duration:
+- Specific work or qualities they can support:
+- Claims they should not be asked to support:
+- Willing to write a strong letter: not asked / yes / no
 
-### Highlightable Strengths
-- (from source entries — what they can give concrete examples for)
-- ...
+#### Packet
 
-### Relationship Maintenance Log
-- YYYY-MM-DD: [event]
-- ...
+- [ ] CV / resume
+- [ ] transcript if appropriate
+- [ ] statement draft
+- [ ] research / project summary
+- [ ] program list, deadlines, and submission instructions
 
-### Request and Submission Status
-- Planned request: YYYY-MM-DD
-- Actual request: YYYY-MM-DD
-- Deadline: YYYY-MM-DD
-- Number of schools:
-- Submission status:
-  - [ ] School 1 — submitted / not submitted
-  - [ ] School 2 — submitted / not submitted
+#### Events
 
-### Follow-up Log
-- YYYY-MM-DD: reminder sent
-- YYYY-MM-DD: submission confirmation received
-```
+| Date | Event | Program | Status / notes |
+|---|---|---|---|
+| YYYY-MM-DD | initial conversation / formal request / reminder / submission confirmation |  |  |
 
-## Notes
+## Checks
 
-- When requesting, provide your CV + SOP draft to help them write targeted content
-- Request at least 2 weeks in advance as buffer
-- If a recommender says "I don't know your research well enough," find someone else
-- Do not let recommenders submit letters they can't support with concrete examples
-
-## Sync Checklist
-
-- [ ] recommender evaluated and confirmed willing to write personalized letter
-- [ ] outreach started 1-2 months in advance
-- [ ] CV + SOP draft provided to recommender
-- [ ] final follow-up 2 weeks before deadline
-- [ ] status recorded after each submission
+- [ ] recommender satisfies each program's eligibility rules
+- [ ] recommender can provide specific and relevant examples
+- [ ] deadlines include time zones and current official sources
+- [ ] reminders respect the recommender's time and communication preferences

@@ -1,28 +1,28 @@
 %----------------------------------------------------------------------------------------
 % Generic one-page Chinese CV template
 %----------------------------------------------------------------------------------------
-\documentclass[a4paper,9pt]{extarticle}
+\documentclass[UTF8,a4paper,10pt]{ctexart}
 
-\usepackage[UTF8]{ctex}
-\usepackage{url}
 \usepackage{parskip}
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[margin=0.5in]{geometry}
-\usepackage{tabularx}
+\usepackage[margin=0.55in]{geometry}
 \usepackage{titlesec}
-\usepackage[unicode, draft=false]{hyperref}
-\usepackage{fontawesome5}
+\usepackage[unicode,hidelinks]{hyperref}
 
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 \titleformat{\section}{\large\bfseries\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{4pt}{2pt}
 \setlength{\parindent}{0pt}
 \hyphenpenalty=5000
 \tolerance=1000
-\newcolumntype{C}{>{\centering\arraybackslash}X}
+\emergencystretch=1em
+\clubpenalty=10000
+\widowpenalty=10000
+\brokenpenalty=10000
+\raggedbottom
+
+\newcommand{\cvneedspace}[1]{%
+  \par\ifdim\dimexpr\pagegoal-\pagetotal\relax<#1\relax\newpage\fi
+}
+\newcommand{\cvsection}[1]{\cvneedspace{4\baselineskip}\section{#1}}
 
 \begin{document}
 \pagestyle{empty}
@@ -30,44 +30,48 @@
 \begin{center}
   {\LARGE\bfseries 候选人姓名} \\[4pt]
   {\small
-    \href{https://github.com/your-handle}{\faGithub\ your-handle} \ $|$ \
-    \href{mailto:you@example.com}{\faEnvelope\ you@example.com} \ $|$ \
-    \href{https://www.linkedin.com/in/your-handle}{\faLinkedin\ your-linkedin}
+    \href{https://github.com/your-handle}{github.com/your-handle} \ $|$ \
+    \href{mailto:you@example.com}{you@example.com} \ $|$ \
+    \href{https://www.linkedin.com/in/your-handle}{linkedin.com/in/your-handle}
   }
 \end{center}
 
-\section{教育背景}
+\cvsection{教育背景}
+\cvneedspace{3\baselineskip}
 \textbf{学校名称} \hfill 2023 -- 2025 \\
 硕士，专业名称
 
+\cvneedspace{3\baselineskip}
 \textbf{学校名称} \hfill 2019 -- 2023 \\
 学士，专业名称
 
-\section{经历}
+\cvsection{经历}
+\cvneedspace{4\baselineskip}
 \noindent\textbf{公司或实验室名称 \quad 岗位名称} \hfill 2024 -- 2025
 
-{\small 用一段紧凑文字概括：你解决了什么问题，用了什么技术方案，交付了什么结果。建议至少保留一个可量化结果。}
+{\small 用一段紧凑文字概括：你解决了什么问题，用了什么技术方案，交付了什么结果；仅在来源支持时使用量化结果。}
 
 \vspace{3pt}
+\cvneedspace{4\baselineskip}
 \noindent\textbf{团队或机构名称 \quad 科研实习生 / 工程师 / 分析师} \hfill 2023 -- 2024
 
 {\small 用一段紧凑文字概括第二段代表经历，强调职责边界、方法和结果。}
 
-\section{项目经历}
+\cvsection{项目经历}
+\cvneedspace{4\baselineskip}
 \noindent\textbf{项目名称} \hfill 2025
 
 {\small 用一段紧凑文字说明项目目标、系统结构、个人贡献和结果。}
 
 \vspace{3pt}
+\cvneedspace{4\baselineskip}
 \noindent\textbf{项目名称} \hfill 2024
 
 {\small 用一段更短的文字补充第二个代表项目。}
 
-\section{技能}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{机器学习 / AI} & PyTorch、Transformers、检索、评测、多模态建模 \\
-\textbf{工程能力} & Python、TypeScript、SQL、Docker、Linux、API、测试 \\
-\textbf{关注方向} & 数据科学、Agent 系统、计算机视觉、推荐系统 \\
-\end{tabularx}
+\cvsection{技能}
+\textbf{机器学习 / AI：} 按目标岗位填写可自证技能。\\
+\textbf{工程能力：} 按目标岗位填写语言、系统与工具。\\
+\textbf{语言 / 其他：} 仅填写真实且相关的能力。
 
 \end{document}

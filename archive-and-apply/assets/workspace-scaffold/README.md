@@ -1,45 +1,23 @@
 # Archive and Apply 工作区
 
-这个目录用于沉淀和维护我的实习、项目与论文经历，作为简历之外的长期 archive-and-apply 工作区。
+本仓库把详细经历证据持续转化为求职、面试和学术申请材料。
 
-## 目录结构
+## 目录
 
-- `experiences/`：实习与科研经历
-- `projects/`：课程项目、研究项目与竞赛项目
-- `publications/`：论文条目
-- `publications/papers/`：论文解析、技术阅读笔记或从 PDF 提取的完整内容
-- `cv/`：简历正文、条目池、条目审计和 TeX 检查工具
-- `interview/`：通用面试介绍、公司定制材料和 coding 准备
-- `TEMPLATE.md`：新增源条目的统一模板
+- `experiences/`、`projects/`、`publications/`：事实与证据层
+- `jobs/`：目标、JD 快照、公司调研、岗位对比与投递追踪
+- `cv/`：条目池、目标审计、TeX 简历与检查工具
+- `interview/`：通用口述材料与目标公司面试包
+- `academia/`：按官方 Prompt 管理的学术申请材料
+- `discard/`：明确归档、默认不再维护的内容
+- `TEMPLATE.md`：源条目模板
 
-## 推荐工作流
+## 工作原则
 
-1. 先完善 `experiences/`、`projects/`、`publications/` 下的源条目
-2. 再从源条目提炼 `cv/CV_ENTRY_BANK.md`
-3. 然后创建或更新 `.tex` 简历，并运行页数检查
-4. 最后维护 `interview/interview.md` 和 `interview/<company>/` 下的定制面试包
+1. 保存事实、来源、贡献边界和未知项。
+2. 保存 JD / Prompt 原文及抓取日期，再做分析。
+3. 从证据映射生成目标材料，不把缺口写成 claim。
+4. 只同步受影响的下游文件，避免重复草稿。
+5. TeX 变更后编译、渲染并检查文本提取。
 
-## `cv/` 目录说明
-
-推荐在 `cv/` 中维护：
-
-- `cv.tex` / `cv_cn.tex`
-- `cv_1page.tex` / `cv_cn_1page.tex`
-- `CV_ENTRY_BANK.md`
-- `CV_ENTRY_AUDIT.md`
-- `templates/README.md`
-- `tools/detect_tex_dependencies.py`
-- `tools/check_tex_pages.py`
-
-## `interview/` 目录说明
-
-- `interview/interview.md`：通用项目介绍和技术 topic bank
-- `interview/coding/`：coding 题和实现草稿
-- `interview/<company>/`：某公司或某岗位的定制材料目录
-
-公司目录通常可以包含：
-
-- `jd.md`
-- `mock.md`
-- `my-q.md`
-- 其他 domain notes
+查看各目录的 `README.md` 了解具体约定。

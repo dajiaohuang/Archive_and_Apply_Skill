@@ -1,27 +1,8 @@
-# Interview Workspace
+# 面试工作区
 
-`interview/` 目录用于维护可复用的项目介绍、技术 topic bank，以及面向具体公司的定制面试包。
+- `interview.md`：跨岗位复用的自我介绍、经历故事和技术 topic
+- `coding/`：coding 练习与实现复盘
+- `templates/`：JD 链接、mock 和反问模板
+- `<target>/`：特定公司或岗位的面试包
 
-## 通用文件
-
-- `interview.md`：通用项目介绍和技术面试素材
-- `coding/`：coding 题和实现草稿
-
-## 公司目录建议
-
-每个公司或岗位可以单独建一个子目录，例如：
-
-- `interview/binance/`
-- `interview/tiktok-data-science/`
-
-每个目录通常包含：
-
-- `jd.md`
-- `mock.md`
-- `my-q.md`
-
-推荐顺序：
-
-1. 先放入 `jd.md`
-2. 再基于 JD 和现有 lib 生成 `mock.md`
-3. 最后整理 `my-q.md`
+目标面试包应链接到 `jobs/saved/` 中的 canonical JD，避免多份 JD 漂移。问题按岗位相关性与证据风险排序，回答必须标注来源与 claim 边界。面试后把新事实记录到相应岗位或公司文件，不要直接把未经核验的信息写入通用材料。
