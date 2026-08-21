@@ -2,6 +2,13 @@
 
 This repository is a source-first workspace for experience evidence, job applications, and academic applications.
 
+## Start a task
+
+- Invoke `$archive-and-apply` and let the agent inspect this workspace; do not manually choose scripts or copy templates.
+- Enter a concrete workflow immediately when the request is clear. Offer evidence ingest, job/application, resume/CV, interview, or academic application choices only when intent is genuinely unclear.
+- A repository, note bundle, JD, program prompt, existing resume, or PDF can be the workflow entry point; build a source map before strengthening claims.
+- For a bare “start” request, inspect canonical files read-only, identify the highest-value current milestone, and ask at most one question required to proceed.
+
 ## Core rules
 
 - `experiences/`, `projects/`, and `publications/` are the factual layer; every downstream claim must be traceable.

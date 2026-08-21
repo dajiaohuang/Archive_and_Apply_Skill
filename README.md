@@ -24,11 +24,24 @@ $skillRoot = if ($env:CODEX_HOME) { $env:CODEX_HOME } else { Join-Path $HOME '.c
 Copy-Item -Recurse .\archive-and-apply (Join-Path $skillRoot 'skills\archive-and-apply')
 ```
 
-## 调用示例
+## 直接进入流程
+
+安装后可以只调用 Skill；它会先检查当前工作区并进入最合适的流程，而不是只介绍功能：
 
 ```text
-Use $archive-and-apply to audit this workspace, preserve source evidence, and update only the application artifacts affected by my request.
+$archive-and-apply
 ```
+
+也可以把材料直接作为入口，不需要先整理成特定目录：
+
+```text
+用 $archive-and-apply 把这个 repo 和项目笔记整理成可追溯的经历条目。
+用 $archive-and-apply 保存这份 JD，分析匹配度并定制一页英文简历。
+用 $archive-and-apply 检查这份 PDF 的换页、每页底边填充、字体和文本提取，并修正 TeX。
+用 $archive-and-apply 根据这所学校的官方 Prompt 开始 SOP 流程。
+```
+
+请求明确时 Skill 直接执行；仅说“开始”时，它会只读检查现有工作区，指出最有价值的下一里程碑，并最多询问一个推进所必需的问题。若尚无工作区，则先预览初始化计划。
 
 ## 初始化工作区
 

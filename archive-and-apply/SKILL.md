@@ -1,11 +1,28 @@
 ---
 name: archive-and-apply
-description: Build and maintain a source-first career and academic application workspace. Use when Codex needs to initialize or audit an archive-and-apply repository; ingest projects, experiences, publications, or raw evidence; manage job targets, saved JDs, company research, and application status; tailor resumes/CVs, cover letters, interview packs, or graduate-school statements; or compile and visually validate TeX resumes while keeping every claim traceable to its source.
+description: Build and maintain a source-first career and academic application workspace. Use when Codex needs to initialize, inspect, or continue an archive-and-apply workspace; ingest projects, experiences, publications, repositories, PDFs, or raw evidence; manage job targets, saved JDs, company research, and application status; tailor or audit resumes/CVs, cover letters, interview packs, or graduate-school statements; install or diagnose XeLaTeX/PDF dependencies; or compile and visually validate resume pagination and page fill while keeping every claim traceable to its source. Also use when the user invokes $archive-and-apply without a detailed request and needs to be guided directly into the appropriate workflow.
 ---
 
 # Archive and Apply
 
 Maintain one evidence-backed archive and derive targeted application artifacts from it. Preserve the user's existing layout when it is coherent; use the bundled layout only for a new workspace or an explicit migration.
+
+## Enter the workflow immediately
+
+Treat every invocation as an operational entry point, not a request for a capability description.
+
+1. Match the user's language unless the requested artifact requires another language.
+2. If the user gives a concrete task, file, JD, program prompt, resume, repository, or evidence bundle, inspect it and begin the matching workflow immediately. Do not make the user choose a menu first.
+3. If the request is only `$archive-and-apply`, “start”, “help me apply”, or similarly underspecified, inspect the current user-scoped directory read-only before asking questions:
+   - detect an existing workspace from repo-local instructions and canonical directories such as `experiences/`, `projects/`, `publications/`, `jobs/`, `cv/`, `interview/`, or `academia/`;
+   - if one exists, summarize its current state and the most useful next milestone, then ask at most one question needed to proceed;
+   - if none exists, ask only for the target path and preferred language, run `scripts/init_workspace.py <target> --language <zh|en> --dry-run`, explain the plan, and create it after the user confirms the target;
+   - if several plausible workspaces exist, list their resolved paths and ask which one to use rather than combining them.
+4. Offer a compact route choice only when neither the request nor the inspected workspace reveals intent: **build/import evidence**, **job search/application**, **resume/CV**, **interview**, or **academic application**.
+5. Perform the work through the skill. Do not require the user to read bundled references, copy templates manually, or run commands that the active environment can safely run.
+6. Ask for missing facts only when they block the next safe action. Continue with read-only inspection, evidence mapping, or a clearly marked draft wherever possible.
+
+At the first useful milestone, show the artifact or diagnosis produced, unresolved evidence, and the next decision. Do not end the first response with a generic feature list.
 
 ## Non-negotiable rules
 
