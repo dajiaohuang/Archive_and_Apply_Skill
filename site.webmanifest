@@ -1,0 +1,16 @@
+{
+  "name": "Archive & Apply",
+  "short_name": "A&A",
+  "description": "Source-first career and academic application workflows.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#edf2f1",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

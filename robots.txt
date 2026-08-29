@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dajiaohuang.github.io/Archive_and_Apply_Skill/sitemap.xml

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111827" />
+    <meta
+      name="description"
+      content="Archive & Apply：把经历证据转化为可追溯、可核验的简历、投递、面试与学术申请材料。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Archive & Apply — 让每个 claim 回到来源" />
+    <meta
+      property="og:description"
+      content="Source-first 的 Codex skill：从经历证据派生目标材料，并保留验证链路。"
+    />
+    <meta property="og:url" content="https://dajiaohuang.github.io/Archive_and_Apply_Skill/" />
+    <meta name="twitter:card" content="summary" />
+    <title>Archive & Apply — 让每个 claim 回到来源</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.documentElement.classList.add('js');
+      const savedLanguage = localStorage.getItem('archive-apply-language');
+      if (savedLanguage === 'en') {
+        document.documentElement.dataset.lang = 'en';
+        document.documentElement.lang = 'en';
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-zh="跳到正文" data-en="Skip to content">跳到正文</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Archive & Apply 首页">
+        <span class="brand-mark" aria-hidden="true">A/A</span>
+        <span>Archive <i>&</i> Apply</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航" data-nav-label data-zh-label="主导航" data-en-label="Primary navigation">
+        <a href="#lineage" data-zh="证据链" data-en="Lineage">证据链</a>
+        <a href="#workflows" data-zh="工作流" data-en="Workflows">工作流</a>
+        <a href="#toolkit" data-zh="工具" data-en="Toolkit">工具</a>
+        <a href="#start" data-zh="开始使用" data-en="Start">开始使用</a>
+      </nav>
+      <div class="header-actions">
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Switch to English">
+          <span class="language-active" data-language-current>中</span>
+          <span aria-hidden="true">/</span>
+          <span data-language-other>EN</span>
+        </button>
+        <a class="header-github" href="https://github.com/dajiaohuang/Archive_and_Apply_Skill" target="_blank" rel="noreferrer">
+          <span data-zh="GitHub" data-en="GitHub">GitHub</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow" data-zh="SOURCE-FIRST · CODEX SKILL" data-en="SOURCE-FIRST · CODEX SKILL">SOURCE-FIRST · CODEX SKILL</p>
+          <h1>
+            <span data-zh="让每个" data-en="Make every">让每个</span>
+            <strong>claim</strong>
+            <span data-zh="回到来源。" data-en="trace back.">回到来源。</span>
+          </h1>
+          <p class="hero-lede" data-zh="把仓库、笔记、PDF、职位描述与项目 Prompt 整理成事实层，再派生简历、投递材料、面试包与学术文书。" data-en="Turn repositories, notes, PDFs, job descriptions, and program prompts into a factual source layer—then derive resumes, application materials, interview packs, and academic statements.">
+            把仓库、笔记、PDF、职位描述与项目 Prompt 整理成事实层，再派生简历、投递材料、面试包与学术文书。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#start">
+              <span data-zh="开始使用" data-en="Get started">开始使用</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="button button-quiet" href="https://github.com/dajiaohuang/Archive_and_Apply_Skill/tree/master/archive-and-apply" target="_blank" rel="noreferrer">
+              <span data-zh="浏览 Skill" data-en="Browse the skill">浏览 Skill</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-record" aria-label="证据记录示例" data-zh-label="证据记录示例" data-en-label="Evidence record example">
+          <div class="record-topline">
+            <span data-zh="记录 / 0042" data-en="RECORD / 0042">记录 / 0042</span>
+            <span class="record-status"><i></i><span data-zh="可追溯" data-en="TRACEABLE">可追溯</span></span>
+          </div>
+          <dl>
+            <div><dt data-zh="来源" data-en="SOURCE">来源</dt><dd>projects/agent-system.md</dd></div>
+            <div><dt data-zh="范围" data-en="SCOPE">范围</dt><dd data-zh="独立实现 · 已核验" data-en="independently built · verified">独立实现 · 已核验</dd></div>
+            <div><dt data-zh="状态" data-en="STATUS">状态</dt><dd data-zh="事实层" data-en="source layer">事实层</dd></div>
+            <div><dt data-zh="下游" data-en="DERIVATIVES">下游</dt><dd>CV · JD map · interview</dd></div>
+          </dl>
+          <div class="record-claim">
+            <span data-zh="派生 CLAIM" data-en="DERIVED CLAIM">派生 CLAIM</span>
+            <p data-zh="每个动词、数字和贡献边界都能被追问。" data-en="Every verb, metric, and contribution boundary can survive follow-up.">每个动词、数字和贡献边界都能被追问。</p>
+          </div>
+          <div class="record-stamp" aria-hidden="true">SOURCE<br />FIRST</div>
+        </div>
+      </section>
+
+      <section class="manifesto" aria-label="核心原则" data-zh-label="核心原则" data-en-label="Core principles">
+        <p data-zh="事实不是文案。" data-en="Facts are not copy.">事实不是文案。</p>
+        <p data-zh="状态不是猜测。" data-en="Status is not a guess.">状态不是猜测。</p>
+        <p data-zh="自动检查不是证明。" data-en="Automation is not proof.">自动检查不是证明。</p>
+      </section>
+
+      <section class="section lineage-section" id="lineage">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-zh="01 / 可交互证据链" data-en="01 / INTERACTIVE LINEAGE">01 / 可交互证据链</p>
+            <h2 data-zh="材料只向一个方向流动。" data-en="Evidence moves in one direction.">材料只向一个方向流动。</h2>
+          </div>
+          <p data-zh="事实先进入 canonical source；目标材料从证据映射中派生。点击任一步，查看它负责什么。" data-en="Facts enter canonical sources first. Targeted materials derive from evidence maps. Select a step to inspect its contract.">
+            事实先进入 canonical source；目标材料从证据映射中派生。点击任一步，查看它负责什么。
+          </p>
+        </div>
+
+        <div class="lineage-lab">
+          <div class="lineage-track" role="tablist" aria-label="证据链步骤" data-zh-label="证据链步骤" data-en-label="Evidence lineage steps">
+            <button class="lineage-step is-active" type="button" role="tab" aria-selected="true" aria-controls="lineage-detail" data-lineage="source">
+              <span>01</span><b data-zh="原始材料" data-en="Raw material">原始材料</b><small>repo · note · PDF</small>
+            </button>
+            <i aria-hidden="true">→</i>
+            <button class="lineage-step" type="button" role="tab" aria-selected="false" aria-controls="lineage-detail" data-lineage="record">
+              <span>02</span><b data-zh="事实条目" data-en="Source entry">事实条目</b><small>experience · project</small>
+            </button>
+            <i aria-hidden="true">→</i>
+            <button class="lineage-step" type="button" role="tab" aria-selected="false" aria-controls="lineage-detail" data-lineage="map">
+              <span>03</span><b data-zh="证据映射" data-en="Evidence map">证据映射</b><small>target · reader · gap</small>
+            </button>
+            <i aria-hidden="true">→</i>
+            <button class="lineage-step" type="button" role="tab" aria-selected="false" aria-controls="lineage-detail" data-lineage="artifact">
+              <span>04</span><b data-zh="目标材料" data-en="Target artifact">目标材料</b><small>CV · interview · SOP</small>
+            </button>
+            <i aria-hidden="true">→</i>
+            <button class="lineage-step" type="button" role="tab" aria-selected="false" aria-controls="lineage-detail" data-lineage="verify">
+              <span>05</span><b data-zh="核验" data-en="Verification">核验</b><small>claim · layout · status</small>
+            </button>
+          </div>
+
+          <article class="lineage-detail" id="lineage-detail" aria-live="polite">
+            <div>
+              <p class="detail-index" data-detail-index>STEP 01 / INPUT</p>
+              <h3 data-detail-title>保留原貌，再开始判断。</h3>
+            </div>
+            <p data-detail-copy>仓库、笔记、PDF、JD 与项目 Prompt 先作为来源被读取；原文和后续分析不会混写。</p>
+            <ul data-detail-list>
+              <li>记录来源路径或 URL</li>
+              <li>保存抓取日期与原始状态</li>
+              <li>不从文件存在推断作者或贡献</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workflows-section" id="workflows">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-zh="02 / 五条工作流" data-en="02 / FIVE WORKFLOWS">02 / 五条工作流</p>
+            <h2 data-zh="一个证据层，五种去向。" data-en="One evidence layer. Five destinations.">一个证据层，五种去向。</h2>
+          </div>
+          <p data-zh="不同任务共享事实，但不会共享未经核验的措辞。" data-en="Workflows share verified facts—not unsupported wording.">不同任务共享事实，但不会共享未经核验的措辞。</p>
+        </div>
+
+        <div class="workflow-grid">
+          <article class="workflow-card workflow-source">
+            <span class="card-code">SRC</span>
+            <h3 data-zh="证据归档" data-en="Evidence ingest">证据归档</h3>
+            <p data-zh="把材料整理成经历、项目和论文条目，明确 provenance、时间、结果、贡献边界与未知项。" data-en="Turn material into experience, project, and publication entries with provenance, dates, outcomes, contribution boundaries, and unknowns.">把材料整理成经历、项目和论文条目，明确 provenance、时间、结果、贡献边界与未知项。</p>
+            <ul><li>experiences/</li><li>projects/</li><li>publications/</li></ul>
+          </article>
+          <article class="workflow-card">
+            <span class="card-code">JOB</span>
+            <h3 data-zh="岗位与投递" data-en="Jobs & applications">岗位与投递</h3>
+            <p data-zh="保留 JD 原文，分开分析 must-have、preferred、约束、证据映射和 gap；用事件记录状态。" data-en="Preserve raw JDs; separately map requirements, constraints, evidence, and gaps; record status as events.">保留 JD 原文，分开分析 must-have、preferred、约束、证据映射和 gap；用事件记录状态。</p>
+            <ul><li>jobs/saved/</li><li>jobs/companies/</li><li>jobs/applications.md</li></ul>
+          </article>
+          <article class="workflow-card">
+            <span class="card-code">CV</span>
+            <h3 data-zh="简历与 CV" data-en="Resume & CV">简历与 CV</h3>
+            <p data-zh="按实际读者路径选择和组织信号；让每条 bullet 都能经得起所有权、方法、结果和协作追问。" data-en="Select and order signals for the real reader path; make each bullet defensible on ownership, method, outcome, and collaboration.">按实际读者路径选择和组织信号；让每条 bullet 都能经得起所有权、方法、结果和协作追问。</p>
+            <ul><li>CV_ENTRY_BANK.md</li><li>CV_ENTRY_AUDIT.md</li><li>TeX / PDF</li></ul>
+          </article>
+          <article class="workflow-card">
+            <span class="card-code">INT</span>
+            <h3 data-zh="面试准备" data-en="Interview preparation">面试准备</h3>
+            <p data-zh="从通用故事库派生岗位 mock、证据锚点与真正想问的问题；不制造公司事实。" data-en="Derive target mocks, evidence anchors, and genuine candidate questions from reusable stories—without inventing company facts.">从通用故事库派生岗位 mock、证据锚点与真正想问的问题；不制造公司事实。</p>
+            <ul><li>interview.md</li><li>mock.md</li><li>my-q.md</li></ul>
+          </article>
+          <article class="workflow-card">
+            <span class="card-code">ACA</span>
+            <h3 data-zh="学术申请" data-en="Academic applications">学术申请</h3>
+            <p data-zh="先保存项目官方 Prompt、限制与截止时间，再建立 prompt-to-evidence map，最后写目标文书。" data-en="Capture official prompts, limits, and deadlines first; build a prompt-to-evidence map; then draft target-specific statements.">先保存项目官方 Prompt、限制与截止时间，再建立 prompt-to-evidence map，最后写目标文书。</p>
+            <ul><li>SOP</li><li>Personal Statement</li><li>Research Statement</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section readers-section">
+        <div class="reader-intro">
+          <p class="eyebrow" data-zh="03 / 多读者简历" data-en="03 / MULTI-READER RESUME">03 / 多读者简历</p>
+          <h2 data-zh="一页简历，不止一个判断者。" data-en="One page. More than one decision-maker.">一页简历，不止一个判断者。</h2>
+          <p data-zh="Archive & Apply 不假设统一的招聘漏斗。它从岗位、地区与职位层级推断谁会读、他们在判断什么，再安排信息密度。" data-en="Archive & Apply does not assume a universal hiring funnel. It infers who is likely to read, what they must decide, and how much detail each layer needs.">Archive & Apply 不假设统一的招聘漏斗。它从岗位、地区与职位层级推断谁会读、他们在判断什么，再安排信息密度。</p>
+        </div>
+        <ol class="reader-stack">
+          <li><span>01</span><div><b>ATS / Parser</b><p data-zh="结构能否恢复，关键词是否有事实支撑。" data-en="Can the structure be recovered, and are role terms supported?">结构能否恢复，关键词是否有事实支撑。</p></div></li>
+          <li><span>02</span><div><b data-zh="招聘 / HR" data-en="Recruiting / HR">招聘 / HR</b><p data-zh="问题、范围、职责与相关性是否清楚。" data-en="Are the problem, scope, ownership, and relevance clear?">问题、范围、职责与相关性是否清楚。</p></div></li>
+          <li><span>03</span><div><b>Hiring manager / Team lead</b><p data-zh="能否从证据预测岗位表现与判断力。" data-en="Does the evidence predict performance and judgment?">能否从证据预测岗位表现与判断力。</p></div></li>
+          <li><span>04</span><div><b data-zh="技术评审" data-en="Technical reviewer">技术评审</b><p data-zh="方法、约束、取舍与验证是否值得追问。" data-en="Are the methods, constraints, tradeoffs, and validation probe-worthy?">方法、约束、取舍与验证是否值得追问。</p></div></li>
+          <li><span>05</span><div><b data-zh="潜在同事" data-en="Potential peer">潜在同事</b><p data-zh="个人贡献、协作接口与质量实践是否可见。" data-en="Are individual contribution, interfaces, and quality practices visible?">个人贡献、协作接口与质量实践是否可见。</p></div></li>
+        </ol>
+      </section>
+
+      <section class="section toolkit-section" id="toolkit">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-zh="04 / 验证工具" data-en="04 / VALIDATION TOOLKIT">04 / 验证工具</p>
+            <h2 data-zh="编译成功，只是检查的开始。" data-en="A successful build is only the beginning.">编译成功，只是检查的开始。</h2>
+          </div>
+          <p data-zh="仓库内的 Python 工具覆盖依赖诊断、TeX 编译和 PDF 版式检查；安装动作保持确认门。" data-en="Bundled Python tools inspect dependencies, compile TeX, and analyze PDF layout. Installation remains confirmation-gated.">仓库内的 Python 工具覆盖依赖诊断、TeX 编译和 PDF 版式检查；安装动作保持确认门。</p>
+        </div>
+
+        <div class="tool-grid">
+          <article><span>01</span><h3>setup_tex_dependencies.py</h3><p data-zh="检测 XeLaTeX、PDF 工具与 Python 依赖；可运行中英文 smoke。默认不安装。" data-en="Detect XeLaTeX, PDF tools, and Python dependencies; optionally run Chinese and English smoke tests. Installs nothing by default.">检测 XeLaTeX、PDF 工具与 Python 依赖；可运行中英文 smoke。默认不安装。</p></article>
+          <article><span>02</span><h3>detect_tex_dependencies.py</h3><p data-zh="递归读取 TeX include 与 package，并核对本地工具。" data-en="Inspect recursive TeX includes and packages, then check local tools.">递归读取 TeX include 与 package，并核对本地工具。</p></article>
+          <article><span>03</span><h3>check_tex_pages.py</h3><p data-zh="编译 TeX，检查页数、断页、边界、字体与链接，并渲染所有页面。" data-en="Compile TeX; inspect pages, breaks, bounds, fonts, and links; render every page.">编译 TeX，检查页数、断页、边界、字体与链接，并渲染所有页面。</p></article>
+          <article><span>04</span><h3>check_resume_layout.py</h3><p data-zh="对现有 PDF 做页底填充、四边安全区、文本提取、字体与页面渲染检查。" data-en="Analyze an existing PDF for fill, edge safety, text extraction, fonts, and rendered pages.">对现有 PDF 做页底填充、四边安全区、文本提取、字体与页面渲染检查。</p></article>
+        </div>
+
+        <div class="check-strip" aria-label="检查覆盖" data-zh-label="检查覆盖" data-en-label="Validation coverage">
+          <span data-zh="页数" data-en="PAGES">页数</span><span data-zh="断页" data-en="BREAKS">断页</span><span data-zh="边界" data-en="BOUNDS">边界</span><span data-zh="字体" data-en="FONTS">字体</span><span data-zh="链接" data-en="LINKS">链接</span><span data-zh="提取" data-en="EXTRACTION">提取</span><span data-zh="逐页视觉" data-en="VISUAL REVIEW">逐页视觉</span>
+        </div>
+      </section>
+
+      <section class="section start-section" id="start">
+        <div class="start-copy">
+          <p class="eyebrow" data-zh="05 / 从这里开始" data-en="05 / START HERE">05 / 从这里开始</p>
+          <h2 data-zh="先调用 Skill。材料无需预先整理。" data-en="Invoke the skill. Your materials can stay messy.">先调用 Skill。材料无需预先整理。</h2>
+          <p data-zh="请求明确时直接进入对应流程；请求只有“开始”时，Skill 会先只读检查工作区，再指出一个最有价值的里程碑。" data-en="A clear request enters its workflow immediately. A bare “start” request triggers a read-only workspace inspection and one highest-value milestone.">请求明确时直接进入对应流程；请求只有“开始”时，Skill 会先只读检查工作区，再指出一个最有价值的里程碑。</p>
+        </div>
+        <div class="command-card">
+          <div class="command-bar"><span></span><span></span><span></span><small>Codex</small></div>
+          <code data-command>$archive-and-apply</code>
+          <button type="button" data-copy-command>
+            <span data-copy-label data-zh="复制命令" data-en="Copy command">复制命令</span>
+          </button>
+        </div>
+        <div class="start-links">
+          <a href="https://github.com/dajiaohuang/Archive_and_Apply_Skill#快速开始" target="_blank" rel="noreferrer"><span data-zh="阅读中文 README" data-en="Read the Chinese README">阅读中文 README</span><b>↗</b></a>
+          <a href="https://github.com/dajiaohuang/Archive_and_Apply_Skill/blob/master/README-en.md" target="_blank" rel="noreferrer"><span data-zh="Read in English" data-en="Read in English">Read in English</span><b>↗</b></a>
+          <a href="https://github.com/dajiaohuang/Archive_and_Apply_Skill/blob/master/LICENSE" target="_blank" rel="noreferrer"><span>MIT License</span><b>↗</b></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><span class="brand-mark" aria-hidden="true">A/A</span><strong>Archive & Apply</strong></div>
+      <p data-zh="Source-first 的经历、求职与学术申请工作流。" data-en="Source-first career and academic application workflows.">Source-first 的经历、求职与学术申请工作流。</p>
+      <p><span data-zh="由 Wu Shuwen 构建 · 无追踪器 · 无远程字体" data-en="Built by Wu Shuwen · no trackers · no remote fonts">由 Wu Shuwen 构建 · 无追踪器 · 无远程字体</span> · <span data-year></span></p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
