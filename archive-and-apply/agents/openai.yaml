@@ -1,4 +1,4 @@
 interface:
   display_name: "Archive and Apply"
-  short_description: "Evidence-backed career and academic applications"
-  default_prompt: "Use $archive-and-apply to update my source evidence, target applications, and derived materials consistently."
+  short_description: "Start source-first career and application workflows"
+  default_prompt: "Use $archive-and-apply to inspect this workspace and take me directly into the right evidence, job, resume, interview, or academic application workflow."

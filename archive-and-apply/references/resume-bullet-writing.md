@@ -92,6 +92,21 @@ Prefer the strongest available evidence:
 
 Do not invent numbers. A precise qualitative result is stronger than a fabricated metric. Distinguish team result from individual contribution: “contributed X to a team that achieved Y” when that is the supported scope.
 
+## Do not lead with activity volume
+
+Do not treat raw activity counts—such as numbers of pull requests, commits, tickets, tests, files, meetings, or repositories touched—as the headline result. Preserve them in the evidence layer when they help with auditability, but lead resume bullets with the problem solved, the candidate's substantive contribution or judgment, and the change that was accepted, released, adopted, or validated.
+
+For open-source work, prefer a small number of representative accepted changes and their technical or user consequence over submission volume. Keep open, draft, closed-unmerged, and merged contributions distinct; never present work awaiting review as upstream adoption. A count earns resume space only when it proves meaningful scale, selectivity, adoption, reliability, or organizational scope and the surrounding clause explains that meaning. When a large count competes with a more specific outcome, keep the outcome.
+
+## Introduce notable upstream projects before personal contribution
+
+When a notable external open-source project merits its own resume entry, default to two bullets with separate jobs:
+
+1. **Project orientation and influence:** explain what the project does, the problem or user group it serves, and why it matters in its ecosystem. Use one or two current, publicly verifiable influence signals—such as GitHub Stars/Forks, downstream adoption, releases, or recognized ecosystem role—only when they materially help the reader calibrate the project. Date-stamp volatile repository metrics and recheck them before each resume release.
+2. **Candidate's accepted contribution:** identify the candidate as an external contributor when applicable, then summarize a small number of representative merged changes, the technical problem each addressed, and the reliability, compatibility, security, or user consequence. Keep PR links and detailed status counts in the evidence layer.
+
+Never transfer the project's popularity to the candidate: Stars, Forks, users, and ecosystem reach describe the upstream project, not the individual's impact. Do not imply maintainership, adoption, or ownership without evidence. Exclude open, draft, or closed-unmerged PRs from the accepted-contribution bullet unless their status is explicitly stated and there is a separate reason to include them. If popularity metrics are weak or misleading, orient the reader with the project's function and use stronger evidence such as releases, downstream integration, or maintainer-accepted design changes instead.
+
 ## Quantify with meaning
 
 Use a number only when the source supports it and the reader can tell what it proves. Prefer:

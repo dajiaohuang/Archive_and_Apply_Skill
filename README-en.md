@@ -24,11 +24,24 @@ $skillRoot = if ($env:CODEX_HOME) { $env:CODEX_HOME } else { Join-Path $HOME '.c
 Copy-Item -Recurse .\archive-and-apply (Join-Path $skillRoot 'skills\archive-and-apply')
 ```
 
-## Example invocation
+## Enter a workflow directly
+
+After installation, invoke the skill by itself. It inspects the current workspace and enters the most appropriate workflow instead of only listing capabilities:
 
 ```text
-Use $archive-and-apply to audit this workspace, preserve source evidence, and update only the application artifacts affected by my request.
+$archive-and-apply
 ```
+
+Materials can also be the entry point; users do not need to organize them first:
+
+```text
+Use $archive-and-apply to turn this repository and my notes into traceable experience entries.
+Use $archive-and-apply to save this JD, assess fit, and tailor a one-page English resume.
+Use $archive-and-apply to inspect this PDF's page breaks, bottom fill, fonts, and text extraction, then fix the TeX.
+Use $archive-and-apply to start an SOP workflow from this program's official prompt.
+```
+
+The skill begins clear requests immediately. For a bare “start” request, it inspects the existing workspace read-only, identifies the highest-value current milestone, and asks at most one question required to continue. If no workspace exists, it previews an initialization plan first.
 
 ## Initialize a workspace
 
