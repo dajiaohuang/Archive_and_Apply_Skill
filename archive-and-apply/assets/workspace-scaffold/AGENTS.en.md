@@ -16,6 +16,8 @@ This repository is a source-first workspace for experience evidence, job applica
 - Preserve raw JDs and program prompts with sources and capture dates; keep analysis separate.
 - Update source entries when facts change. Wording-only or target-selection changes do not require rewriting the source.
 - Before writing resume entries, infer which of ATS, recruiting/HR, hiring manager/team lead, technical reviewers, and potential peers/cross-functional partners are involved; keep the first bullet broadly accessible and use later bullets for defensible judgment, technical, validation, and team evidence.
+- For bilingual resumes, lock the Chinese two-page file section by section, then sync the other TeX files and the entry bank. Do not compile until that lock is complete. After the lock, tighten empty vertical space and the skills block first.
+- Keep an iterative narrative in the fact layer; do not overwrite an old design as if it never existed. Keep protocol dates, schema versions, and unmeasured scores out of resume bullets. Stars and PR totals are not personal impact.
 - Update canonical files instead of creating parallel copies.
 - Do not submit applications, send messages, or change external account state without an explicit request.
 

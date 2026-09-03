@@ -64,6 +64,8 @@ Never convert an evidence gap into a claim.
 
 Keep a skill when it is important to the target and the resume contains defensible evidence for it. A one-off library may belong only inside a project bullet. Group skills by useful categories, not by perceived prestige.
 
+After a wording lock, compress the skills **layout** before rewriting the words. One-page and English variants may drop rows; they must not add skills that no other entry can defend.
+
 ## Ordering and length
 
 - Follow explicit employer requirements first.
