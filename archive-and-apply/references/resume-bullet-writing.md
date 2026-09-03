@@ -134,6 +134,12 @@ Treat every bullet as a promise that the candidate can explain:
 
 Remove or weaken a claim if the candidate cannot answer likely follow-ups accurately. Do not disclose confidential architecture, customer data, unreleased metrics, security details, or employer-sensitive information merely to sound specific; describe the class of problem or relative effect instead.
 
+## Bilingual and Chinese wording
+
+When the workspace keeps Chinese and English resumes, also read `references/resume-wording-constraints.md` and, for a full rewrite, `references/resume-section-lock.md`.
+
+Do not start every bullet with “独立设计”. Do not nest a second colon after a bold label. Do not hitch a second action with “并以…”. Keep protocol dates, schema versions, unpublished scores, and stacked inventory counts in the fact layer. Preserve an iterative route instead of presenting only the latest architecture. Use official publication titles; if the author list is omitted, write the authorship role.
+
 ## Writing rules
 
 - Start with a specific ownership/action verb; avoid “responsible for,” “helped,” or “worked on” unless limited scope is the truth.

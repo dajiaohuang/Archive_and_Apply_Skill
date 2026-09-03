@@ -52,7 +52,7 @@ discard/                     explicitly archived, non-canonical material
 - `cv/CV_ENTRY_AUDIT.md`: role-specific selection logic, not another resume draft.
 - `cv/tools/setup_tex_dependencies.py`: detect dependencies, smoke-test English/Chinese TeX, and propose a confirmation-gated platform install plan.
 - `cv/tools/check_resume_layout.py`: inspect page fill, safety margins, page-break context, fonts, links, extraction, and render all pages for visual review.
-- Resume/CV outputs: names are workspace-specific. Common legacy names include `cv.tex`, `cv_1page.tex`, `cv_cn.tex`, and `cv_cn_1page.tex`.
+- Resume/CV outputs: names are workspace-specific. Common legacy names include `cv.tex`, `cv_1page.tex`, `cv_cn.tex`, and `cv_cn_1page.tex`. When those four exist, lock wording against `cv_cn.tex` first; see `references/resume-section-lock.md`.
 
 ### Interview layer
 

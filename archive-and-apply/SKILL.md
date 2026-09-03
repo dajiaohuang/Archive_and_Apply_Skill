@@ -43,7 +43,8 @@ At the first useful milestone, show the artifact or diagnosis produced, unresolv
 | Create a workspace | Bootstrap | `references/file-map.md` |
 | Import a repo, notes, PDFs, or raw text | Evidence ingest | `references/file-map.md` |
 | Save or compare roles, track applications | Job pipeline | `references/application-workflows.md` |
-| Tailor or audit a resume/CV | Resume pipeline | `references/resume-bullet-writing.md`, then `references/role-cv-audit.md` |
+| Tailor or audit a resume/CV | Resume pipeline | `references/resume-bullet-writing.md`, `references/resume-wording-constraints.md`, then `references/role-cv-audit.md` |
+| Lock bilingual resume wording section by section | Section lock | `references/resume-section-lock.md`, then `references/resume-wording-constraints.md` |
 | Diagnose or install XeLaTeX/PDF dependencies | TeX setup | `references/tex-setup.md` |
 | Compile, inspect, or adjust resume pagination/layout | Layout QA | `references/resume-layout-qa.md` |
 | Build interview material | Interview pipeline | `references/application-workflows.md` |
@@ -82,6 +83,7 @@ After bootstrap, report the resolved workspace path. Do not claim persistent mem
 4. Capture provenance, contribution scope, dates, outcomes, and unresolved facts.
 5. Deduplicate against existing entries by project, organization, time range, and links.
 6. Update the workspace index only if it exists and is actively maintained.
+7. When a system replaces an earlier design, keep the old state as history. Do not overwrite the source so that only the latest architecture appears to have existed.
 
 Do not turn a repository's existence into proof that the user authored all of it. Use commit history or explicit user statements only when authorship matters and is available.
 
@@ -104,11 +106,13 @@ Never infer that an application was submitted merely because materials were prep
 
 1. Confirm whether the target is an industry resume, academic CV, region-specific CV, or portal-specific form.
 2. Read the JD or target direction and infer the likely reader path: application parser, recruiter/HR, hiring manager/team leader, technical reviewers, potential peers, and cross-functional interviewers as applicable. State assumptions rather than treating every process as identical.
-3. Build entries with progressive disclosure: an accessible problem/ownership signal first, discriminating method or judgment next, and evidence of outcome/validation/team leverage last. Make every clause defensible in an interview.
-4. Update `cv/CV_ENTRY_BANK.md` only when reusable wording, reader signal, or evidence changes.
-5. Record role-specific keep, weaken, omit, and reader-coverage decisions in `cv/CV_ENTRY_AUDIT.md` when they will be reused.
-6. Tailor the actual target document; do not blindly synchronize every variant or keyword-stuff for an assumed ATS.
-7. Prefer simple, consistent formatting and readable text extraction. Follow explicit employer length and file requirements over generic page rules.
+3. Build entries with progressive disclosure: an accessible problem/ownership signal first, discriminating method or judgment next, and evidence of outcome/validation/team leverage last. Make every clause defensible in an interview. Follow `references/resume-wording-constraints.md` for bilingual punctuation, version leakage, score leakage, and combo-entry rules.
+4. For a full bilingual rewrite, lock wording section by section against `cv/cv_cn.tex` before compiling. Follow `references/resume-section-lock.md`. Treat “不用改了”, “下一节”, or “先不变了” as a lock for the section under discussion.
+5. After each locked section, sync meaning to the other TeX variants and `cv/CV_ENTRY_BANK.md`. Variants may be shorter or omit an item; they must not contradict the locked claim or invent a stronger result.
+6. Update `cv/CV_ENTRY_BANK.md` only when reusable wording, reader signal, or evidence changes.
+7. Record role-specific keep, weaken, omit, and reader-coverage decisions in `cv/CV_ENTRY_AUDIT.md` when they will be reused.
+8. Tailor the actual target document; do not blindly synchronize every variant or keyword-stuff for an assumed ATS.
+9. Prefer simple, consistent formatting and readable text extraction. Follow explicit employer length and file requirements over generic page rules.
 
 For TeX work:
 
@@ -122,7 +126,7 @@ python scripts/check_resume_layout.py path/to/check.pdf --render-dir path/to/ren
 
 The setup helper is detect-only by default. If it reports missing dependencies, show its install plan and explain the platform-level changes. TeX distributions can be large and may require elevation or a terminal restart. Obtain explicit user confirmation immediately before running `python scripts/setup_tex_dependencies.py --install --yes`; never add `--yes` merely to bypass that boundary. Do not silently replace an existing partial TeX installation. Follow `references/tex-setup.md` for repair and managed-TeX alternatives.
 
-Compile after every meaningful layout edit. Review the last/first lines around every page boundary; every page's top, bottom, left, and right safety bands; stranded section/entry headings; split bullets or paragraphs; density balance; compile warnings; font embedding; links; and extracted reading order. Then inspect every rendered page for clipping, overlap, broken glyphs, hierarchy, alignment, and spacing. Follow `references/resume-layout-qa.md` for the correction order and repeat the full compile-render-inspect loop after each coherent pass. Page count and bounding-box heuristics are diagnostics, not proof of visual quality or ATS compatibility.
+Do not compile during a section-by-section wording lock. After the full wording lock—or after a later layout-only request—compile every target TeX with this skill's `scripts/check_tex_pages.py` and `--output` next to the source. Prefer that script over a stale workspace copy of `cv/tools/check_tex_pages.py`; older local copies may fail on Windows when `pathlib.Path` is passed to `subprocess`. Review the last/first lines around every page boundary; every page's top, bottom, left, and right safety bands; stranded section/entry headings; split bullets or paragraphs; density balance; compile warnings; font embedding; links; and extracted reading order. Then inspect every rendered page for clipping, overlap, broken glyphs, hierarchy, alignment, and spacing. First reduce empty vertical space and the skills block; then follow `references/resume-layout-qa.md` for the rest of the correction order. Repeat the full compile-render-inspect loop after each coherent pass. Page count and bounding-box heuristics are diagnostics, not proof of visual quality or ATS compatibility.
 
 ## Interview pipeline
 

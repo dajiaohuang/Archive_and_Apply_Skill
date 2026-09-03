@@ -2,6 +2,8 @@
 
 Read this reference whenever a resume/CV is compiled, visually reviewed, or adjusted for page count.
 
+If wording is still being locked section by section, stop and follow `resume-section-lock.md` first. Compile only after that lock, or when the user explicitly asks for layout work.
+
 ## Acceptance model
 
 A resume is not layout-ready merely because it compiles or matches a target page count. Require all three layers:
@@ -57,14 +59,15 @@ The bundled templates avoid adding another package dependency by defining a smal
 
 Correct the cause with the least damaging change:
 
-1. Remove unsupported, redundant, or target-irrelevant content.
-2. Rewrite verbose bullets without weakening evidence or inventing metrics.
-3. Reorder or move whole semantic units to improve breaks.
-4. Add `\Needspace`/widow-orphan controls or one intentional page break.
-5. Tune list and section spacing modestly and consistently.
-6. Adjust margins or type size only when recipient constraints allow it; preserve readability and visual hierarchy.
+1. After a wording lock, first remove empty vertical space: stray `\vspace`, a continuation page that starts with extra top gap, and oversized gaps between entries. Then compress the skills block layout (type size, row spacing, column packing) without rewriting locked skill wording.
+2. Remove unsupported, redundant, or target-irrelevant content.
+3. Rewrite verbose bullets without weakening evidence or inventing metrics.
+4. Reorder or move whole semantic units to improve breaks.
+5. Add `\Needspace`/widow-orphan controls or one intentional page break.
+6. Tune list and section spacing modestly and consistently.
+7. Adjust margins or type size only when recipient constraints allow it; preserve readability and visual hierarchy.
 
-Do not use filler, arbitrary vertical space, negative spacing scattered through the document, or global typography shrinkage as the first fix.
+Do not use filler, arbitrary vertical space, negative spacing scattered through the document, or global typography shrinkage as the first fix. Do not reopen locked bullets to save a line unless the user asks.
 
 ## Required iteration loop
 
@@ -72,8 +75,10 @@ Do not use filler, arbitrary vertical space, negative spacing scattered through 
 2. Run the comprehensive layout checker and render every page:
 
    ```bash
-   python cv/tools/check_tex_pages.py cv/cv.tex --target-pages 2 --output cv/check.pdf --render-dir cv/rendered --json
+   python scripts/check_tex_pages.py path/to/cv.tex --target-pages 2 --output path/to/cv.pdf --render-dir path/to/rendered --json
    ```
+
+   Prefer this skill script. A stale workspace `cv/tools/check_tex_pages.py` may compile to a temp directory, omit `--output`, or fail on Windows when `pathlib.Path` is passed to `subprocess`.
 
    For an existing PDF:
 
